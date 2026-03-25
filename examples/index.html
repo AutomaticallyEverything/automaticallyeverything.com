@@ -14,18 +14,18 @@
     />
 
     <!-- Stylesheets -->
-    <link href="/style/80b5c237a3c8f701440e5c27f79cffcb96df125d61f84295e27411d70e81f7eb-output.css" rel="stylesheet" />
+    <link href="/style/e8267f38594929c9549584d657c891a91235430dd1705932deb4012ede368951-output.css" rel="stylesheet" />
 
     <!--Favicon-->
     <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon" />
     <link rel="icon" href="/assets/images/favicon.svg" type="image/x-icon" />
   </head>
   <body>
-    <header class="fixed w-full">
+    <header class="fixed w-full z-50">
     
-      <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
+      <nav class="w-full bg-white border-b border-gray-200 py-2.5 dark:bg-gray-900 dark:border-gray-700">
         <div
-          class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto"
+          class="flex flex-wrap items-center justify-between max-w-screen-xl px-6 lg:px-8 mx-auto"
         >
           <a href="/" class="flex items-center">
             <span
@@ -68,42 +68,39 @@
             </button>
           </div>
           <div
-            class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+            class="hidden w-full lg:flex lg:w-auto lg:order-1"
             id="mobile-menu-2"
           >
-            <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <ul class="flex flex-col divide-y divide-blue-100 border-t border-blue-100 lg:divide-y-0 lg:border-0 lg:flex-row lg:space-x-8 font-medium">
             
               <li>
               
                 <a
                   href="/"
-                  class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white "
-                  aria-current="page"
+                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white "
                   >Home</a
                 >
-               
+              
               </li>
             
               <li>
               
                 <a
                   href="/examples"
-                  class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white "
-                  aria-current="page"
-                  >Idea Generator</a
+                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white"
+                  >Projects And Ideas</a
                 >
-               
+              
               </li>
             
               <li>
               
                 <a
                   href="/contact"
-                  class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white "
-                  aria-current="page"
+                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white"
                   >Contact Us</a
                 >
-               
+              
               </li>
             
             </ul>
@@ -124,7 +121,7 @@
           <h2 class="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Recent Projects and Ideas</h2>
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">You dream it, we build it.</h1>
           <p class="mt-6 text-lg leading-8 text-gray-600">Reach out and tell us what could help you make more (or waste less) money and we&#39;ll probably have a trick or two up our sleeves. Check out this list of random ideas below to see if anything sounds like your work.</p>
-          <div class="mt-10 flex items-center justify-center gap-x-4">
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
             <a x-attr-filter="all" class="idea-filter-all border rounded-md px-3.5 py-2.5 text-sm font-semibold bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">All</a>
             <a x-attr-filter="brands" class="idea-filter border rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Brands</a>
             <a x-attr-filter="sales" class="idea-filter border rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sales</a>
@@ -139,13 +136,181 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
               <div class="mx-auto flow-root max-w-2xl lg:mx-0 lg:max-w-none">
                 <!--<div class="x-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">-->
-                <div class="x-mt-8 sm:-mx-4 grid grid-cols-3 sm:text-[0]">
-                  <div class="ideas-emptystate p-8 w-full col-span-3" style="display: none">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div class="ideas-emptystate p-8 w-full col-span-full" style="display: none">
                     <h3 class="text-center text-lg font-bold">Select a Category Above!</h3>
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
+                    
+                    x-attr-tag-sales="1" x-attr-tag-marketing="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Tap-to-Call Button on Mobile</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>One tap connects a mobile visitor straight to your phone. The single highest-converting thing we can add for most service businesses — and it takes ten minutes.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Sales, Marketing
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-brands="1" x-attr-tag-marketing="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Before and After Slider</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Show your work side by side with an interactive slider. Great for contractors, landscapers, cleaners, salons, and anyone whose results speak for themselves.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Brands, Marketing
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-brands="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Photo Gallery</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>A clean grid of your best work that opens into a full-screen viewer. Better than sending people to Facebook or Yelp to see your photos.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Brands
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-brands="1" x-attr-tag-sales="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Rotating Customer Quotes</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Let happy customers do the selling for you — a rotating set of testimonials keeps fresh social proof front and center without cluttering the page.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Brands, Sales
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-marketing="1" x-attr-tag-brands="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Look Great When Someone Shares Your Link</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>When your site gets shared on social media, iMessage, or Slack, it shows your logo, a real photo, and the right description — not a blank box with a URL.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Marketing, Brands
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-ops="1" x-attr-tag-marketing="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Show Your Hours (and Whether You&#39;re Open Right Now)</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Your hours live on your site with a live Open or Closed badge that updates automatically. No more customers calling just to ask if you&#39;re there.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Ops, Marketing
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-marketing="1" x-attr-tag-sales="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Seasonal Banners That Run Themselves</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Announce a holiday sale, a closure, or a limited-time offer with a banner that appears and disappears on schedule — no login, no remembering to take it down.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Marketing, Sales
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
                     x-attr-tag-all="1"
                   >
                     <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
@@ -167,7 +332,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     
                     x-attr-tag-brands="1" x-attr-tag-sales="1" 
                     
@@ -191,7 +356,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     
                     x-attr-tag-sales="1" 
                     
@@ -215,13 +380,13 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     x-attr-tag-all="1"
                   >
                     <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
                       <h2 class="text-2xl mt-1 items-center">Receive Email at Your Domain</h2>
                       <blockquote class="mt-2 text-gray-900">
-                        <p>Get email addresses at your domain name without having to pay a giant monthly fee for tools like gmail or zoho</p>
+                        <p>Get email addresses at your domain name instead of something generic like @gmail.</p>
                       </blockquote>
                       <figcaption class="mt-6 flex items-center gap-x-4">
                         <div>
@@ -237,51 +402,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
-                    x-attr-tag-all="1"
-                  >
-                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
-                      <h2 class="text-2xl mt-1 items-center">Add Banners To Your Site</h2>
-                      <blockquote class="mt-2 text-gray-900">
-                        <p>Add info banners to your website, controllable from an easy-to-edit spreadsheet so you can keep visitors informed of sales or upcoming changes.</p>
-                      </blockquote>
-                      <figcaption class="mt-6 flex items-center gap-x-4">
-                        <div>
-                          <div class="font-semibold text-gray-900">
-                          
-                            All Businesses
-                          
-                          </div>
-                          <div class="text-gray-600"></div>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </div>
-                
-                  <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
-                    x-attr-tag-all="1"
-                  >
-                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
-                      <h2 class="text-2xl mt-1 items-center">Marketing in a Box</h2>
-                      <blockquote class="mt-2 text-gray-900">
-                        <p>Not doing any marketing yet? Use our seasoned fractional marketing team to immediately start with best practices that drive more sales.</p>
-                      </blockquote>
-                      <figcaption class="mt-6 flex items-center gap-x-4">
-                        <div>
-                          <div class="font-semibold text-gray-900">
-                          
-                            All Businesses
-                          
-                          </div>
-                          <div class="text-gray-600"></div>
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </div>
-                
-                  <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     
                     x-attr-tag-brands="1" x-attr-tag-sales="1" 
                     
@@ -305,7 +426,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     x-attr-tag-all="1"
                   >
                     <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
@@ -327,7 +448,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     
                     x-attr-tag-sales="1" x-attr-tag-marketing="1" 
                     
@@ -351,7 +472,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     
                     x-attr-tag-sales="1" x-attr-tag-marketing="1" 
                     
@@ -375,7 +496,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     
                     x-attr-tag-sales="1" x-attr-tag-marketing="1" 
                     
@@ -399,7 +520,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     
                     x-attr-tag-sales="1" x-attr-tag-workflow="1" x-attr-tag-ops="1" 
                     
@@ -423,7 +544,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     
                     x-attr-tag-sales="1" x-attr-tag-workflow="1" x-attr-tag-ops="1" 
                     
@@ -447,7 +568,7 @@
                   </div>
                 
                   <div
-                    class="idea-block pt-8 sm:inline-block sm:w-full sm:px-4"
+                    class="idea-block"
                     x-attr-tag-all="1"
                   >
                     <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
@@ -460,6 +581,222 @@
                           <div class="font-semibold text-gray-900">
                           
                             All Businesses
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-brands="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Meet the Team</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Put faces to your business. Customers are more likely to call when they already feel like they know you. Easy to update as your team grows.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Brands
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-brands="1" x-attr-tag-sales="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Services and Pricing at a Glance</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Show what you offer and what it costs. Clear pricing builds trust and cuts the number of &quot;how much do you charge?&quot; calls your team fields every week.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Brands, Sales
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-marketing="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Events and Upcoming Dates</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Promote classes, open houses, seasonal availability, or special events. Past events disappear automatically — nothing to maintain.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Marketing
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-ops="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Now Hiring Page</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>One place to list your open roles and point applicants to. Close a position and it&#39;s gone the same day without anyone having to touch the website.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Ops
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-sales="1" x-attr-tag-ops="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Online Booking</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Let customers schedule appointments directly from your site, any time of day. No phone tag, no missed leads, no back-and-forth.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Sales, Ops
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-brands="1" x-attr-tag-marketing="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Instagram Feed</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Pull your latest posts onto your website automatically so it always looks current — without any extra work on your end.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Brands, Marketing
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-brands="1" x-attr-tag-marketing="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Your Google Reviews on Your Website</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Pull your Google reviews directly onto your site so visitors see your stars without ever leaving the page. Social proof that updates on its own.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Brands, Marketing
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-marketing="1" x-attr-tag-sales="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Countdown to Something</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Create urgency around a sale, a grand opening, or a limited-time offer with a live countdown. Simple, effective, and removes the &quot;I&#39;ll check it out later&quot; excuse.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Marketing, Sales
+                          
+                          </div>
+                          <div class="text-gray-600"></div>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </div>
+                
+                  <div
+                    class="idea-block"
+                    
+                    x-attr-tag-marketing="1" 
+                    
+                  >
+                    <figure class="rounded-2xl bg-gray-50 p-6 text-sm leading-6">
+                      <h2 class="text-2xl mt-1 items-center">Show Up Better in Google</h2>
+                      <blockquote class="mt-2 text-gray-900">
+                        <p>Behind-the-scenes setup that tells Google exactly who you are, where you are, and what you do — so your star ratings and hours appear right in search results before anyone even clicks.</p>
+                      </blockquote>
+                      <figcaption class="mt-6 flex items-center gap-x-4">
+                        <div>
+                          <div class="font-semibold text-gray-900">
+                          
+                            Marketing
                           
                           </div>
                           <div class="text-gray-600"></div>
@@ -563,7 +900,7 @@
           }
         });
 
-        block.style.display = shouldShow ? 'inline-block' : 'none';
+        block.style.display = shouldShow ? 'block' : 'none';
       }
     }
 
@@ -628,7 +965,7 @@
           </a>
           <span
             class="block text-sm text-center text-gray-500 dark:text-gray-400"
-            >© 2024 AutomaticallyEverything. All Rights Reserved.
+            >© <span id="copyright-year">2024</span> AutomaticallyEverything. All Rights Reserved.
           </span>
           <span class="block text-xs text-center text-gray-500 dark:text-gray-400">
           
@@ -639,5 +976,6 @@
     </footer>
 
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
   </body>
 </html>
