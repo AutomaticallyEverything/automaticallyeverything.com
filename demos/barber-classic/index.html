@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Old Blade Barbershop — Est. 1987</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F5F0E8',
+            charcoal: '#2C2C2C',
+            gold: '#C9A84C',
+            'gold-dark': '#A8893D',
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Lato', 'Helvetica', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    html { scroll-behavior: smooth; }
+    .ph {
+      background: repeating-linear-gradient(
+        45deg,
+        #d4d0c8,
+        #d4d0c8 10px,
+        #ccc8bf 10px,
+        #ccc8bf 20px
+      );
+    }
+    .ph-dark {
+      background: repeating-linear-gradient(
+        45deg,
+        #3a3a3a,
+        #3a3a3a 10px,
+        #333 10px,
+        #333 20px
+      );
+    }
+  </style>
+</head>
+<body class="bg-cream text-charcoal">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-charcoal/95 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div style="font-family:'Playfair Display',serif" class="text-gold text-xl tracking-widest uppercase">Old Blade</div>
+      <div class="hidden md:flex gap-8 text-cream text-sm tracking-wider uppercase">
+        <a href="#about" class="hover:text-gold transition-colors">About</a>
+        <a href="#services" class="hover:text-gold transition-colors">Services</a>
+        <a href="#team" class="hover:text-gold transition-colors">Team</a>
+        <a href="#gallery" class="hover:text-gold transition-colors">Gallery</a>
+        <a href="#book" class="bg-gold text-charcoal px-4 py-1.5 text-xs font-bold tracking-widest uppercase hover:bg-yellow-600 transition-colors">Book Now</a>
+      </div>
+      <button class="md:hidden text-cream" onclick="this.nextElementSibling.classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div class="hidden md:hidden bg-charcoal px-6 pb-4 flex flex-col gap-3 text-cream text-sm tracking-wider uppercase">
+      <a href="#about" class="hover:text-gold">About</a>
+      <a href="#services" class="hover:text-gold">Services</a>
+      <a href="#team" class="hover:text-gold">Team</a>
+      <a href="#gallery" class="hover:text-gold">Gallery</a>
+      <a href="#book" class="bg-gold text-charcoal px-4 py-2 text-xs font-bold text-center">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden bg-charcoal">
+    <img src="/assets/demos/barber-classic/hero-interior.png" alt="" class="absolute inset-0 w-full h-full object-cover object-center" aria-hidden="true">
+    <div class="absolute inset-0 bg-charcoal/70"></div>
+    <div class="relative z-10 text-center px-6 max-w-3xl">
+      <p class="text-gold tracking-[0.4em] text-sm uppercase mb-6">Est. 1987 &middot; Downtown</p>
+      <h1 style="font-family:'Playfair Display',serif" class="text-cream text-6xl md:text-8xl font-black leading-none mb-4">
+        Old Blade
+      </h1>
+      <h1 style="font-family:'Playfair Display',serif" class="text-gold text-6xl md:text-8xl font-black leading-none mb-8">
+        Barbershop
+      </h1>
+      <div class="w-24 h-px bg-gold mx-auto mb-8"></div>
+      <p class="text-cream/70 text-lg tracking-wide mb-10 max-w-md mx-auto">Precision cuts. Classic shaves. Where tradition meets the modern gentleman.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#book" class="bg-gold text-charcoal px-8 py-3 font-bold tracking-widest uppercase text-sm hover:bg-yellow-600 transition-colors">Book Your Chair</a>
+        <a href="#services" class="border border-cream/40 text-cream px-8 py-3 font-bold tracking-widest uppercase text-sm hover:border-gold hover:text-gold transition-colors">Our Services</a>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="/assets/demos/barber-classic/about-shop.jpg" alt="Classic barbershop interior" class="w-full h-full object-cover object-center">
+        </div>
+        <div class="absolute top-4 left-4 w-16 h-16 border-t-2 border-l-2 border-gold pointer-events-none"></div>
+        <div class="absolute bottom-4 right-4 w-16 h-16 border-b-2 border-r-2 border-gold pointer-events-none"></div>
+      </div>
+      <div>
+        <p class="text-gold tracking-[0.3em] text-xs uppercase mb-4">Our Story</p>
+        <h2 style="font-family:'Playfair Display',serif" class="text-5xl font-bold leading-tight mb-6">Four Decades of<br>Honest Craft</h2>
+        <div class="w-12 h-px bg-gold mb-8"></div>
+        <p class="text-zinc-600 leading-relaxed mb-5">Old Blade opened its doors in 1987 when master barber Ray Callahan left the old country with one simple conviction: a great haircut changes how a man carries himself.</p>
+        <p class="text-zinc-600 leading-relaxed mb-5">Three generations later, we still do it the same way — sharp blades, clean razors, a hot towel, and time. No screens on the walls. No music too loud to talk over. Just the craft.</p>
+        <p class="text-zinc-600 leading-relaxed mb-10">We've cut hair for lawyers, plumbers, grandfathers, and their grandsons. Come in once and you'll understand why regulars have been coming every two weeks for twenty years.</p>
+        <div class="flex gap-12">
+          <div>
+            <div style="font-family:'Playfair Display',serif" class="text-4xl font-bold">37+</div>
+            <div class="text-xs text-zinc-500 tracking-widest uppercase mt-1">Years Open</div>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif" class="text-4xl font-bold">3</div>
+            <div class="text-xs text-zinc-500 tracking-widest uppercase mt-1">Master Barbers</div>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif" class="text-4xl font-bold">&#8734;</div>
+            <div class="text-xs text-zinc-500 tracking-widest uppercase mt-1">Happy Regulars</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-6 bg-charcoal">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold tracking-[0.3em] text-xs uppercase mb-4">What We Do</p>
+        <h2 style="font-family:'Playfair Display',serif" class="text-5xl font-bold text-cream">Services &amp; Pricing</h2>
+        <div class="w-12 h-px bg-gold mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="border border-zinc-700 p-8 hover:border-gold transition-colors">
+          <div class="text-gold text-3xl mb-4">&#9988;</div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-xl text-cream mb-3">The Classic Cut</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">Scissors or clipper cut styled to your preference. Includes a neck shave and warm towel finish.</p>
+          <div class="flex justify-between items-center">
+            <span style="font-family:'Playfair Display',serif" class="text-gold text-2xl">$38</span>
+            <span class="text-zinc-600 text-xs tracking-widest uppercase">~45 min</span>
+          </div>
+        </div>
+        <div class="border border-zinc-700 p-8 hover:border-gold transition-colors">
+          <div class="text-gold text-3xl mb-4">&#10022;</div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-xl text-cream mb-3">Hot Towel Shave</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">A full straight-razor shave with hot towels, pre-shave oil, and a soothing post-shave balm. A true ritual.</p>
+          <div class="flex justify-between items-center">
+            <span style="font-family:'Playfair Display',serif" class="text-gold text-2xl">$45</span>
+            <span class="text-zinc-600 text-xs tracking-widest uppercase">~50 min</span>
+          </div>
+        </div>
+        <div class="border border-zinc-700 p-8 hover:border-gold transition-colors">
+          <div class="text-gold text-3xl mb-4">&#9670;</div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-xl text-cream mb-3">Cut &amp; Shave Combo</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">The works — our full cut followed by a hot towel straight-razor shave. The definitive gentleman's treatment.</p>
+          <div class="flex justify-between items-center">
+            <span style="font-family:'Playfair Display',serif" class="text-gold text-2xl">$72</span>
+            <span class="text-zinc-600 text-xs tracking-widest uppercase">~90 min</span>
+          </div>
+        </div>
+        <div class="border border-zinc-700 p-8 hover:border-gold transition-colors">
+          <div class="text-gold text-3xl mb-4">&#9789;</div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-xl text-cream mb-3">Beard Trim &amp; Shape</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">Precision beard shaping with a sharp outline and clean edges. Includes beard oil conditioning.</p>
+          <div class="flex justify-between items-center">
+            <span style="font-family:'Playfair Display',serif" class="text-gold text-2xl">$28</span>
+            <span class="text-zinc-600 text-xs tracking-widest uppercase">~30 min</span>
+          </div>
+        </div>
+        <div class="border border-zinc-700 p-8 hover:border-gold transition-colors">
+          <div class="text-gold text-3xl mb-4">&#10022;</div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-xl text-cream mb-3">Kid's Cut</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">For the young gentlemen under 12. Patient, careful, fun. We've been making kids look sharp for 37 years.</p>
+          <div class="flex justify-between items-center">
+            <span style="font-family:'Playfair Display',serif" class="text-gold text-2xl">$22</span>
+            <span class="text-zinc-600 text-xs tracking-widest uppercase">~30 min</span>
+          </div>
+        </div>
+        <div class="border border-zinc-700 p-8 hover:border-gold transition-colors">
+          <div class="text-gold text-3xl mb-4">&#9812;</div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-xl text-cream mb-3">Senior Cut</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">For regulars 65 and up. Same great cut, same great care, with a little extra appreciation for the ones who've been coming longest.</p>
+          <div class="flex justify-between items-center">
+            <span style="font-family:'Playfair Display',serif" class="text-gold text-2xl">$28</span>
+            <span class="text-zinc-600 text-xs tracking-widest uppercase">~40 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold tracking-[0.3em] text-xs uppercase mb-4">The Shop</p>
+        <h2 style="font-family:'Playfair Display',serif" class="text-5xl font-bold">Our Work</h2>
+        <div class="w-12 h-px bg-gold mx-auto mt-6"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class="aspect-square overflow-hidden">
+          <img src="/assets/demos/barber-classic/gallery-cut-overhead.jpg" alt="Precision cut in progress" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden">
+          <img src="/assets/demos/barber-classic/gallery-scissors.jpg" alt="Scissors and comb styling" class="w-full h-full object-cover">
+        </div>
+        <div class="row-span-2 overflow-hidden">
+          <img src="/assets/demos/barber-classic/gallery-mirror.jpg" alt="Barber showing client the finished cut" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden">
+          <img src="/assets/demos/barber-classic/gallery-brush.jpg" alt="Classic shaving brush and products" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden">
+          <img src="/assets/demos/barber-classic/gallery-whiskey.jpg" alt="Barbershop detail — whiskey glass and scissors" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold tracking-[0.3em] text-xs uppercase mb-4">The Craftsmen</p>
+        <h2 style="font-family:'Playfair Display',serif" class="text-5xl font-bold">Meet the Barbers</h2>
+        <div class="w-12 h-px bg-gold mx-auto mt-6"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="text-center">
+          <div class="w-48 h-48 rounded-full mx-auto mb-6 overflow-hidden">
+            <img src="/assets/demos/barber-classic/team-ray.jpg" alt="Ray Callahan" class="w-full h-full object-cover object-top">
+          </div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-2xl mb-1">Ray Callahan</h3>
+          <p class="text-gold text-xs tracking-widest uppercase mb-4">Founder &middot; Master Barber</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">37 years behind the chair. Still the first one in and the last one out. Ask him about the pompadour years.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-48 h-48 rounded-full mx-auto mb-6 overflow-hidden">
+            <img src="/assets/demos/barber-classic/team-marcus.jpg" alt="Marcus Webb" class="w-full h-full object-cover object-left">
+          </div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-2xl mb-1">Marcus Webb</h3>
+          <p class="text-gold text-xs tracking-widest uppercase mb-4">Master Barber</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">Trained in Chicago, settled here 12 years ago. Specializes in tapers and fades. Plays chess between appointments.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-48 h-48 rounded-full mx-auto mb-6 overflow-hidden">
+            <img src="/assets/demos/barber-classic/team-danny.jpg" alt="Danny Callahan" class="w-full h-full object-cover object-top">
+          </div>
+          <h3 style="font-family:'Playfair Display',serif" class="text-2xl mb-1">Danny Callahan</h3>
+          <p class="text-gold text-xs tracking-widest uppercase mb-4">Barber</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">Ray's son. Grew up sweeping hair off this floor. Now cuts cleaner than anyone in the city. The next chapter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 bg-cream">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold tracking-[0.3em] text-xs uppercase mb-4">What They Say</p>
+        <h2 style="font-family:'Playfair Display',serif" class="text-5xl font-bold">Regulars Speak</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div style="font-family:'Playfair Display',serif" class="text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-zinc-600 leading-relaxed text-sm mb-6">I've been coming to Ray for 22 years. I moved across town and still make the drive. Nothing else comes close.</p>
+          <div class="text-xs tracking-widest uppercase text-zinc-400">&mdash; Tom B., 22-year regular</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif" class="text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-zinc-600 leading-relaxed text-sm mb-6">My son was terrified of haircuts. Danny had him laughing in two minutes and asking to come back before we even left.</p>
+          <div class="text-xs tracking-widest uppercase text-zinc-400">&mdash; Sarah K., new customer</div>
+        </div>
+        <div>
+          <div style="font-family:'Playfair Display',serif" class="text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-zinc-600 leading-relaxed text-sm mb-6">The hot towel shave alone is worth the trip. I scheduled it before a big job interview. Got the job. Coincidence? Doubt it.</p>
+          <div class="text-xs tracking-widest uppercase text-zinc-400">&mdash; James R., monthly client</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book" class="py-24 px-6 bg-charcoal">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-gold tracking-[0.3em] text-xs uppercase mb-4">Reserve Your Spot</p>
+      <h2 style="font-family:'Playfair Display',serif" class="text-5xl font-bold text-cream mb-6">Ready for the Chair?</h2>
+      <div class="w-12 h-px bg-gold mx-auto mb-8"></div>
+      <p class="text-zinc-400 mb-10 leading-relaxed">We take appointments and walk-ins. Call us or book online &mdash; same great experience either way.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <a href="tel:+15555550101" class="bg-gold text-charcoal px-8 py-4 font-bold tracking-widest uppercase text-sm hover:bg-yellow-600 transition-colors">(555) 555-0101</a>
+        <a href="#" class="border border-gold text-gold px-8 py-4 font-bold tracking-widest uppercase text-sm hover:bg-gold hover:text-charcoal transition-colors">Book Online</a>
+      </div>
+      <div class="border-t border-zinc-700 pt-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-cream text-xs tracking-widest uppercase mb-2">Monday</div>
+          <div class="text-zinc-400 text-sm">9am &ndash; 6pm</div>
+        </div>
+        <div>
+          <div class="text-cream text-xs tracking-widest uppercase mb-2">Tue &ndash; Fri</div>
+          <div class="text-zinc-400 text-sm">9am &ndash; 7pm</div>
+        </div>
+        <div>
+          <div class="text-cream text-xs tracking-widest uppercase mb-2">Saturday</div>
+          <div class="text-zinc-400 text-sm">9am &ndash; 5pm</div>
+        </div>
+        <div>
+          <div class="text-cream text-xs tracking-widest uppercase mb-2">Sunday</div>
+          <div class="text-zinc-400 text-sm">Closed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 bg-cream">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="inline-flex items-center gap-4 mb-8">
+        <div class="h-px w-10 bg-gold"></div>
+        <span class="text-gold text-xs tracking-[0.3em] uppercase">Demo by Automatically Everything</span>
+        <div class="h-px w-10 bg-gold"></div>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif" class="text-4xl md:text-5xl font-bold mb-5">Love the look?<br>Let's build yours.</h2>
+      <p class="text-zinc-500 leading-relaxed mb-10 max-w-lg mx-auto text-lg">This is a demo site. Automatically Everything designs and builds custom websites for barbershops, salons, and local businesses &mdash; built to match your style and bring in more customers.</p>
+      <a href="/contact/" class="inline-block bg-charcoal text-cream px-10 py-4 font-bold tracking-widest uppercase text-sm hover:bg-zinc-700 transition-colors">Talk to Us About Your Site</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-10 px-6 text-center">
+    <div style="font-family:'Playfair Display',serif" class="text-gold text-xl tracking-widest uppercase mb-2">Old Blade Barbershop</div>
+    <div class="text-zinc-500 text-xs tracking-widest">123 Main Street &middot; Downtown &middot; (555) 555-0101</div>
+    <div class="text-zinc-700 text-xs mt-6">&copy; <span id="yr"></span> Old Blade Barbershop. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
