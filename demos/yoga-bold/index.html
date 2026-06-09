@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Studio &mdash; Yoga &amp; Pilates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black:   '#0A0A0A',
+            'black-lt':'#141414',
+            panel:   '#1C1C1C',
+            bone:    '#F5F2EC',
+            'bone-dk':'#EAE5DC',
+            gold:    '#D4A83A',
+            'gold-dk':'#B88C28',
+            grove:   '#2D4A3E',
+            'grove-lt':'#3D5E50',
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .ph    { background: repeating-linear-gradient(45deg,#d4cfc4,#d4cfc4 12px,#c8c3b8 12px,#c8c3b8 24px); }
+    .ph-dk { background: repeating-linear-gradient(45deg,#1e1e1e,#1e1e1e 12px,#181818 12px,#181818 24px); }
+    .scroll-hide { scrollbar-width:none; -ms-overflow-style:none; }
+    .scroll-hide::-webkit-scrollbar { display:none; }
+  </style>
+</head>
+<body class="bg-black text-bone">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONFIG — edit to update classes, schedule, and gallery.
+
+  classes: The class types shown in the "What We Teach" section.
+
+  schedule: Scrollable weekly schedule strip.
+            Spots shown; turns gold when <= 3 remaining.
+
+  gallery: Square gallery grid. Add freely.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      classes: [
+        {
+          name:  'Power Yoga',
+          emoji: '🔥',
+          desc:  'Athletic, breath-driven vinyasa. You will sweat. You will leave feeling like a different person.',
+          level: 'Intermediate – Advanced',
+        },
+        {
+          name:  'Mat Pilates',
+          emoji: '⚡',
+          desc:  'Precision core work. Controlled, demanding, transformative. Builds the foundation everything else stands on.',
+          level: 'All levels',
+        },
+        {
+          name:  'Reformer Pilates',
+          emoji: '🎯',
+          desc:  'Full-body resistance training on the reformer machine. The single most efficient workout we offer.',
+          level: 'Beginner – Intermediate',
+        },
+        {
+          name:  'Sculpt',
+          emoji: '💪',
+          desc:  'Yoga flow combined with light weights and high repetition. Cardio, strength, and flexibility in one hour.',
+          level: 'Intermediate',
+        },
+        {
+          name:  'Mobility',
+          emoji: '🌊',
+          desc:  'Active recovery for everyone who trains hard. Releases tightness, restores range, protects your longevity.',
+          level: 'All levels',
+        },
+        {
+          name:  'Foundations',
+          emoji: '🌱',
+          desc:  'Proper alignment and technique for new students. The class that unlocks everything else.',
+          level: 'Beginner',
+        },
+      ],
+
+      schedule: [
+        { day: 'Mon', time: '6:30am', name: 'Power Yoga',      instructor: 'Alex',   spots: 4  },
+        { day: 'Mon', time: '12:00pm',name: 'Mat Pilates',     instructor: 'Jordan', spots: 8  },
+        { day: 'Mon', time: '6:30pm', name: 'Sculpt',          instructor: 'Alex',   spots: 2  },
+        { day: 'Tue', time: '6:30am', name: 'Reformer',        instructor: 'Sam',    spots: 6  },
+        { day: 'Tue', time: '7:00pm', name: 'Power Yoga',      instructor: 'Alex',   spots: 10 },
+        { day: 'Wed', time: '6:30am', name: 'Mat Pilates',     instructor: 'Jordan', spots: 7  },
+        { day: 'Wed', time: '12:00pm',name: 'Mobility',        instructor: 'Sam',    spots: 14 },
+        { day: 'Wed', time: '6:30pm', name: 'Power Yoga',      instructor: 'Alex',   spots: 3  },
+        { day: 'Thu', time: '6:30am', name: 'Reformer',        instructor: 'Sam',    spots: 5  },
+        { day: 'Thu', time: '7:00pm', name: 'Sculpt',          instructor: 'Alex',   spots: 9  },
+        { day: 'Fri', time: '6:30am', name: 'Power Yoga',      instructor: 'Alex',   spots: 6  },
+        { day: 'Fri', time: '12:00pm',name: 'Foundations',     instructor: 'Jordan', spots: 12 },
+        { day: 'Sat', time: '8:00am', name: 'Power Yoga',      instructor: 'Alex',   spots: 16 },
+        { day: 'Sat', time: '9:30am', name: 'Mat Pilates',     instructor: 'Jordan', spots: 11 },
+        { day: 'Sat', time: '11:00am',name: 'Mobility',        instructor: 'Sam',    spots: 18 },
+        { day: 'Sun', time: '9:00am', name: 'Reformer',        instructor: 'Sam',    spots: 5  },
+        { day: 'Sun', time: '10:30am',name: 'Foundations',     instructor: 'Jordan', spots: 8  },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/yoga-bold/gallery-1.jpg', alt: 'Power yoga class in action' },
+        { src: '/assets/demos/yoga-bold/gallery-2.jpg', alt: 'Reformer pilates session' },
+        { src: '/assets/demos/yoga-bold/gallery-3.jpg', alt: 'Studio interior at dusk' },
+        { src: '/assets/demos/yoga-bold/gallery-4.jpg', alt: 'Mat pilates core work' },
+        { src: '/assets/demos/yoga-bold/gallery-5.jpg', alt: 'Sculpt class with weights' },
+        { src: '/assets/demos/yoga-bold/gallery-6.jpg', alt: 'Mobility stretch session' },
+        { src: '/assets/demos/yoga-bold/gallery-7.jpg', alt: 'Studio equipment detail' },
+        { src: '/assets/demos/yoga-bold/gallery-8.jpg', alt: 'Instructor leading class' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/8">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div style="font-family:'Space Grotesk',sans-serif" class="font-bold text-2xl tracking-tight">
+        FORM<span class="text-gold"> STUDIO</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#classes"    class="text-bone/40 hover:text-bone transition-colors">Classes</a>
+        <a href="#schedule"   class="text-bone/40 hover:text-bone transition-colors">Schedule</a>
+        <a href="#gallery"    class="text-bone/40 hover:text-bone transition-colors">Gallery</a>
+        <a href="#membership" class="bg-gold text-black px-5 py-2.5 font-bold text-sm hover:bg-gold-dk transition-colors">Join Now</a>
+      </div>
+      <button class="md:hidden text-bone/50 hover:text-bone" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-black-lt border-t border-white/5 px-6 pb-5 pt-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#classes"    class="text-bone/50 hover:text-bone" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Classes</a>
+      <a href="#schedule"   class="text-bone/50 hover:text-bone" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Schedule</a>
+      <a href="#gallery"    class="text-bone/50 hover:text-bone" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#membership" class="bg-gold text-black px-4 py-3 font-bold text-center">Join Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <div class="absolute inset-0 ph-dk"></div>
+    <img src="/assets/demos/yoga-bold/hero.jpg" alt="Form Studio" class="absolute inset-0 w-full h-full object-cover opacity-35">
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gold"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 lg:px-20 py-24">
+      <div class="inline-flex items-center gap-2 mb-8 border border-gold/30 px-4 py-2 w-fit">
+        <span class="w-1.5 h-1.5 bg-gold"></span>
+        <span class="text-gold text-xs font-semibold tracking-[0.3em] uppercase">Yoga &middot; Pilates &middot; Sculpt &middot; Reformer</span>
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif"
+          class="text-6xl md:text-8xl lg:text-[8rem] font-bold leading-none tracking-tight mb-5">
+        Move<br>with<br><span class="text-gold">intention.</span>
+      </h1>
+      <p class="text-bone/40 text-xl max-w-lg leading-relaxed mb-10">
+        High-performance yoga and Pilates for people who want real results. No mirrors. No judgment. Just work.
+      </p>
+      <div class="flex flex-wrap gap-4 mb-16">
+        <a href="#schedule"   class="bg-gold text-black px-8 py-4 font-bold text-sm hover:bg-gold-dk transition-colors">See Today&rsquo;s Classes &rarr;</a>
+        <a href="#membership" class="border border-white/20 text-bone/60 px-8 py-4 font-bold text-sm hover:border-gold hover:text-gold transition-colors">Membership Options</a>
+      </div>
+      <div class="flex flex-wrap gap-10">
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif" class="text-4xl font-bold text-gold">17</div>
+          <div class="text-bone/30 text-xs tracking-widest uppercase mt-1">Classes / week</div>
+        </div>
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif" class="text-4xl font-bold">3</div>
+          <div class="text-bone/30 text-xs tracking-widest uppercase mt-1">Expert instructors</div>
+        </div>
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif" class="text-4xl font-bold">4.9<span class="text-gold text-2xl">★</span></div>
+          <div class="text-bone/30 text-xs tracking-widest uppercase mt-1">Google rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section id="classes" class="py-24 px-6 md:px-16 bg-black-lt">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-3">What We Teach</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif" class="text-5xl md:text-6xl font-bold tracking-tight">Classes</h2>
+      </div>
+      <!--
+        Classes rendered from CONFIG.classes.
+        To add class types: add entries above.
+      -->
+      <div id="classes-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5"></div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="py-24 px-6 md:px-16 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-3">This Week</p>
+          <h2 style="font-family:'Space Grotesk',sans-serif" class="text-5xl md:text-6xl font-bold tracking-tight">Schedule</h2>
+        </div>
+        <a href="#membership" class="hidden md:block text-bone/40 text-sm font-medium hover:text-bone transition-colors">Book a class &rarr;</a>
+      </div>
+      <!--
+        Day filter + schedule list rendered from CONFIG.schedule.
+        Low-spot classes highlighted in gold automatically.
+      -->
+      <div class="flex flex-wrap gap-2 mb-8" id="sched-filters"></div>
+      <div id="sched-list" class="divide-y divide-white/5 border-y border-white/5"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-panel">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-3">The Studio</p>
+          <h2 style="font-family:'Space Grotesk',sans-serif" class="text-5xl font-bold tracking-tight">Gallery</h2>
+        </div>
+      </div>
+      <!--
+        Gallery rendered from CONFIG.gallery.
+        First item spans 2 cols. Rest are square.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2" style="grid-auto-flow:dense;"></div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section id="membership" class="py-24 px-6 md:px-16 bg-black-lt">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-3">Pricing</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif" class="text-5xl md:text-6xl font-bold tracking-tight">Memberships</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="border border-white/8 p-8 hover:border-gold/40 transition-colors">
+          <p class="text-gold text-xs font-semibold tracking-widest uppercase mb-4">Drop-In</p>
+          <div style="font-family:'Space Grotesk',sans-serif" class="text-4xl font-bold mb-1">$25 <span class="text-bone/20 text-xl font-normal">/ class</span></div>
+          <p class="text-bone/40 text-sm leading-relaxed mb-6">No commitment. Book any class, any time there&rsquo;s space.</p>
+          <a href="#schedule" class="block border border-gold text-gold px-5 py-3 text-xs font-bold uppercase tracking-widest text-center hover:bg-gold hover:text-black transition-colors">Book a Class</a>
+        </div>
+        <div class="bg-gold p-8 border border-gold">
+          <p class="text-black/60 text-xs font-semibold tracking-widest uppercase mb-4">★ Most Popular</p>
+          <div style="font-family:'Space Grotesk',sans-serif" class="text-4xl font-bold text-black mb-1">$119 <span class="text-black/30 text-xl font-normal">/ month</span></div>
+          <p class="text-black/60 text-sm leading-relaxed mb-6">Unlimited classes. Best value for anyone coming 3+ times a week.</p>
+          <a href="#" class="block bg-black text-gold px-5 py-3 text-xs font-bold uppercase tracking-widest text-center hover:bg-black-lt transition-colors">Join Monthly</a>
+        </div>
+        <div class="border border-white/8 p-8 hover:border-gold/40 transition-colors">
+          <p class="text-gold text-xs font-semibold tracking-widest uppercase mb-4">10-Class Pack</p>
+          <div style="font-family:'Space Grotesk',sans-serif" class="text-4xl font-bold mb-1">$210 <span class="text-bone/20 text-xl font-normal">/ 10 classes</span></div>
+          <p class="text-bone/40 text-sm leading-relaxed mb-6">Valid 3 months. A commitment without the monthly subscription.</p>
+          <a href="#" class="block border border-gold text-gold px-5 py-3 text-xs font-bold uppercase tracking-widest text-center hover:bg-gold hover:text-black transition-colors">Buy a Pack</a>
+        </div>
+      </div>
+      <p class="text-bone/20 text-xs mt-6">New members: first class $10. Corporate memberships available. Ask at the studio.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 md:px-16 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-3">Members</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif" class="text-4xl md:text-5xl font-bold tracking-tight">What They Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-black-lt p-8 border border-white/5">
+          <div class="text-gold text-sm mb-4">★★★★★</div>
+          <p class="text-bone/50 text-sm leading-relaxed mb-5">&ldquo;I've done three different studios in this city. Form is the only one where I actually feel challenged every single class. Alex doesn't let you coast. In the best way.&rdquo;</p>
+          <div class="text-gold/60 text-xs uppercase tracking-wider">&mdash; David M. &middot; 8 months</div>
+        </div>
+        <div class="bg-black-lt p-8 border border-white/5">
+          <div class="text-gold text-sm mb-4">★★★★★</div>
+          <p class="text-bone/50 text-sm leading-relaxed mb-5">&ldquo;I started with Foundations and now I'm in Power Yoga twice a week. Jordan is an exceptional teacher — precise, patient, and incredibly encouraging without being fake about it.&rdquo;</p>
+          <div class="text-gold/60 text-xs uppercase tracking-wider">&mdash; Sarah K. &middot; 5 months</div>
+        </div>
+        <div class="bg-black-lt p-8 border border-white/5">
+          <div class="text-gold text-sm mb-4">★★★★★</div>
+          <p class="text-bone/50 text-sm leading-relaxed mb-5">&ldquo;The Reformer classes changed my body in ways that 12 years of gym work didn't. Signed up after the first class. Best $119 I spend every month.&rdquo;</p>
+          <div class="text-gold/60 text-xs uppercase tracking-wider">&mdash; Tara B. &middot; 1 year</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="py-16 px-6 md:px-16 bg-black border-t border-white/5">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+      <div><p class="text-gold text-[10px] tracking-[0.3em] uppercase mb-4">Location</p><div class="text-bone/40 text-sm leading-loose">320 Steel Street, Level 2<br>The Design District</div></div>
+      <div><p class="text-gold text-[10px] tracking-[0.3em] uppercase mb-4">Hours</p><div class="text-bone/40 text-sm space-y-1.5"><div class="flex justify-between max-w-[200px]"><span>Mon &ndash; Fri</span><span>6am &ndash; 9pm</span></div><div class="flex justify-between max-w-[200px]"><span>Sat &ndash; Sun</span><span>8am &ndash; 6pm</span></div></div></div>
+      <div><p class="text-gold text-[10px] tracking-[0.3em] uppercase mb-4">Contact</p><div class="text-bone/40 text-sm space-y-1.5"><div>(555) 555-2020</div><div>hello@formstudio.com</div></div></div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-black-lt border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-4">Demo by Automatically Everything</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif" class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          Want a site like this<br>for your studio?
+        </h2>
+        <p class="text-bone/40 text-lg max-w-md leading-relaxed">This is a demo. We build custom websites for fitness studios and local businesses — bold, clear, and built to fill your classes.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/" class="bg-gold text-black px-10 py-5 font-bold text-sm hover:bg-gold-dk transition-colors whitespace-nowrap text-center">Get in Touch &rarr;</a>
+        <a href="/"   class="border border-white/20 text-bone/50 px-10 py-5 font-bold text-sm hover:border-white/50 hover:text-bone transition-colors whitespace-nowrap text-center">View All Demos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 px-6 md:px-16 bg-black border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <div style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl">FORM<span class="text-gold"> STUDIO</span></div>
+      <div class="text-bone/15 text-xs">&copy; <span id="yr"></span> Form Studio. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Render class type cards
+    (function renderClasses() {
+      const grid = document.getElementById('classes-grid');
+      CONFIG.classes.forEach(function(cls) {
+        const card = document.createElement('div');
+        card.className = 'bg-black-lt p-8 hover:bg-panel transition-colors group';
+        card.innerHTML =
+          '<div class="text-3xl mb-5">' + cls.emoji + '</div>' +
+          '<h3 style="font-family:\'Space Grotesk\',sans-serif" class="text-2xl font-bold text-bone mb-2 group-hover:text-gold transition-colors">' + cls.name + '</h3>' +
+          '<p class="text-gold text-[10px] tracking-widest uppercase font-semibold mb-3">' + cls.level + '</p>' +
+          '<p class="text-bone/40 text-sm leading-relaxed">' + cls.desc + '</p>';
+        grid.appendChild(card);
+      });
+    })();
+
+    // Render schedule filter + rows
+    (function renderSchedule() {
+      const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+      const filtersEl = document.getElementById('sched-filters');
+      const listEl    = document.getElementById('sched-list');
+
+      const allBtn = document.createElement('button');
+      allBtn.className = 'text-xs font-semibold px-4 py-2 border bg-gold text-black border-gold transition-colors';
+      allBtn.dataset.day = 'all';
+      allBtn.textContent = 'All';
+      filtersEl.appendChild(allBtn);
+
+      days.forEach(function(d) {
+        const btn = document.createElement('button');
+        btn.className = 'text-xs font-semibold px-4 py-2 border border-white/15 text-bone/40 hover:border-gold hover:text-bone bg-transparent transition-colors';
+        btn.dataset.day = d;
+        btn.textContent = d;
+        filtersEl.appendChild(btn);
+      });
+
+      CONFIG.schedule.forEach(function(cls) {
+        const low = cls.spots <= 3;
+        const row = document.createElement('div');
+        row.className = 'schedule-row flex flex-wrap items-center justify-between gap-3 py-4';
+        row.dataset.day = cls.day;
+        row.innerHTML =
+          '<div class="flex items-center gap-5 flex-1 min-w-0">' +
+            '<div class="text-gold font-semibold text-sm w-8 shrink-0">' + cls.day + '</div>' +
+            '<div class="text-bone/30 text-sm w-16 shrink-0">' + cls.time + '</div>' +
+            '<div style="font-family:\'Space Grotesk\',sans-serif" class="font-semibold text-sm truncate">' + cls.name + '</div>' +
+            '<div class="text-bone/30 text-xs hidden md:block">' + cls.instructor + '</div>' +
+          '</div>' +
+          '<div class="flex items-center gap-3 shrink-0">' +
+            '<span class="text-xs ' + (low ? 'text-gold font-semibold' : 'text-bone/20') + '">' +
+              (low ? '⚡ ' + cls.spots + ' left' : cls.spots + ' spots') +
+            '</span>' +
+            '<a href="#membership" class="bg-gold text-black text-[10px] font-bold uppercase tracking-widest px-4 py-2 hover:bg-gold-dk transition-colors">Book</a>' +
+          '</div>';
+        listEl.appendChild(row);
+      });
+
+      let active = 'all';
+      filtersEl.querySelectorAll('button').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          active = this.dataset.day;
+          filtersEl.querySelectorAll('button').forEach(function(b) {
+            b.className = b.dataset.day === active
+              ? 'text-xs font-semibold px-4 py-2 border bg-gold text-black border-gold transition-colors'
+              : 'text-xs font-semibold px-4 py-2 border border-white/15 text-bone/40 hover:border-gold hover:text-bone bg-transparent transition-colors';
+          });
+          listEl.querySelectorAll('.schedule-row').forEach(function(r) {
+            r.style.display = (active === 'all' || r.dataset.day === active) ? '' : 'none';
+          });
+        });
+      });
+    })();
+
+    // Render gallery
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item, i) {
+        const cell = document.createElement('div');
+        const feat = (i === 0);
+        cell.className = 'relative overflow-hidden ph-dk group cursor-pointer ' + (feat ? 'col-span-2 aspect-[16/9]' : 'col-span-1 aspect-square');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+          '<div class="absolute inset-0 bg-gold/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-black text-xs font-bold uppercase tracking-widest">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

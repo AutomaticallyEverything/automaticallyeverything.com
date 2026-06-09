@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Ivy &mdash; Hair &amp; Color Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink:    '#1A1A1A',
+            'ink-lt': '#2E2E2E',
+            sand:   '#F7F5F2',
+            sage:   '#7A9E7E',
+            'sage-dk': '#5C7D60',
+            terra:  '#C96A3A',
+            'terra-dk': '#A85530',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Placeholder stripe for missing images */
+    .ph {
+      background: repeating-linear-gradient(
+        45deg, #e5e0d8, #e5e0d8 12px, #dcd7ce 12px, #dcd7ce 24px
+      );
+    }
+
+    /* Horizontal scroll gallery — hide scrollbar visually */
+    .gallery-scroll {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .gallery-scroll::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-sand text-ink">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  GALLERY CONFIG — edit this block to add/remove images.
+  Strip items appear in the horizontal scroll strip.
+  Grid items appear in the full gallery grid below.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      // Horizontal strip — these appear as the main "latest work" showcase.
+      // Add as many as you like; users scroll horizontally.
+      strip: [
+        { src: '/assets/demos/salon-bright/strip-1.jpg', alt: 'Lived-in blonde' },
+        { src: '/assets/demos/salon-bright/strip-2.jpg', alt: 'Textured bob' },
+        { src: '/assets/demos/salon-bright/strip-3.jpg', alt: 'Copper balayage' },
+        { src: '/assets/demos/salon-bright/strip-4.jpg', alt: 'Curtain bangs' },
+        { src: '/assets/demos/salon-bright/strip-5.jpg', alt: 'Blowout waves' },
+        { src: '/assets/demos/salon-bright/strip-6.jpg', alt: 'Rich brunette gloss' },
+      ],
+
+      // Full gallery grid — these appear in the gallery section.
+      // Add as many as you like; they fill the 3-column grid automatically.
+      gallery: [
+        { src: '/assets/demos/salon-bright/gallery-1.jpg', alt: 'Color transformation' },
+        { src: '/assets/demos/salon-bright/gallery-2.jpg', alt: 'Precision cut' },
+        { src: '/assets/demos/salon-bright/gallery-3.jpg', alt: 'Pastel highlights' },
+        { src: '/assets/demos/salon-bright/gallery-4.jpg', alt: 'Blowout finish' },
+        { src: '/assets/demos/salon-bright/gallery-5.jpg', alt: 'Salon interior' },
+        { src: '/assets/demos/salon-bright/gallery-6.jpg', alt: 'Styling detail' },
+        { src: '/assets/demos/salon-bright/gallery-7.jpg', alt: 'Toning gloss' },
+        { src: '/assets/demos/salon-bright/gallery-8.jpg', alt: 'Curl definition' },
+        { src: '/assets/demos/salon-bright/gallery-9.jpg', alt: 'Root shadow' },
+      ]
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-sand/95 backdrop-blur-sm border-b border-ink/8">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="font-bold text-xl tracking-tight">
+        Studio <span class="text-sage">Ivy</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#work"     class="text-ink/50 hover:text-ink transition-colors">Our Work</a>
+        <a href="#services" class="text-ink/50 hover:text-ink transition-colors">Services</a>
+        <a href="#team"     class="text-ink/50 hover:text-ink transition-colors">Team</a>
+        <a href="#book" class="bg-sage text-white px-5 py-2.5 text-sm font-semibold hover:bg-sage-dk transition-colors rounded-sm">Book Now &rarr;</a>
+      </div>
+      <button class="md:hidden text-ink/60 hover:text-ink" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-sand border-t border-ink/8 px-6 pb-5 pt-4 flex flex-col gap-4 text-sm">
+      <a href="#work"     class="text-ink/60 hover:text-ink font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Our Work</a>
+      <a href="#services" class="text-ink/60 hover:text-ink font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Services</a>
+      <a href="#team"     class="text-ink/60 hover:text-ink font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Team</a>
+      <a href="#book" class="bg-sage text-white px-4 py-3 font-semibold text-center rounded-sm">Book Now &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- HERO — split layout -->
+  <section class="min-h-screen grid md:grid-cols-2 pt-[61px]">
+    <!-- Left: headline + CTA -->
+    <div class="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 md:py-24 order-2 md:order-1">
+      <div class="inline-flex items-center gap-2 mb-8 bg-sage/10 text-sage rounded-full px-4 py-1.5 w-fit text-sm font-medium">
+        <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+        Now taking new clients
+      </div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
+        Hair that<br>feels like<br><span class="text-sage">you.</span>
+      </h1>
+      <p class="text-ink/50 text-lg leading-relaxed max-w-sm mb-10">
+        Color, cuts, and style for people who want their hair to work as hard as they do.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#book"     class="bg-ink text-white px-8 py-4 font-semibold text-sm hover:bg-ink-lt transition-colors">Book a Session &rarr;</a>
+        <a href="#work"     class="border border-ink/20 text-ink/60 px-8 py-4 font-semibold text-sm hover:border-ink/60 hover:text-ink transition-colors">See the Work</a>
+      </div>
+
+      <!-- Mobile rating row -->
+      <div class="flex items-center gap-3 mt-10 md:hidden">
+        <div class="text-terra font-bold">★★★★★</div>
+        <div class="text-ink/40 text-sm">4.9 &middot; 180+ reviews</div>
+      </div>
+
+      <!-- Stats row — desktop -->
+      <div class="hidden md:flex gap-10 mt-16 pt-10 border-t border-ink/10">
+        <div>
+          <div class="text-3xl font-bold">4.9</div>
+          <div class="text-ink/40 text-xs mt-0.5 uppercase tracking-widest">Google rating</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold">8+</div>
+          <div class="text-ink/40 text-xs mt-0.5 uppercase tracking-widest">Years open</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold">3</div>
+          <div class="text-ink/40 text-xs mt-0.5 uppercase tracking-widest">Expert stylists</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: hero image -->
+    <div class="relative overflow-hidden min-h-[50vw] md:min-h-0 order-1 md:order-2 ph">
+      <img src="/assets/demos/salon-bright/hero.jpg" alt="Studio Ivy hair studio"
+           class="w-full h-full object-cover object-center">
+    </div>
+  </section>
+
+  <!-- LATEST WORK — horizontal scroll strip -->
+  <section id="work" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between px-6 md:px-16 mb-8">
+        <div>
+          <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-2">Latest Work</p>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Currently Loving</h2>
+        </div>
+        <a href="#gallery" class="hidden md:block text-sm font-semibold text-ink/40 hover:text-ink transition-colors">Full gallery &rarr;</a>
+      </div>
+
+      <!--
+        Horizontal scroll strip — rendered from CONFIG.strip above.
+        Add entries to CONFIG.strip to add more images to this row.
+      -->
+      <div id="strip-container" class="flex gap-3 overflow-x-auto gallery-scroll px-6 md:px-16 pb-4 snap-x snap-mandatory"></div>
+
+      <p class="px-6 md:px-16 mt-5 text-ink/30 text-xs">Scroll to see more &rarr;</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-6 md:px-16 bg-sand">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-3">What We Do</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Services</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-white p-8 hover:shadow-md transition-shadow group">
+          <div class="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center mb-6">
+            <span class="text-sage text-lg">✂</span>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Cut &amp; Style</h3>
+          <p class="text-ink/50 text-sm leading-relaxed mb-6">Tailored to your texture, face shape, and lifestyle. Includes blowout or air-dry finish.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-bold">$85</span>
+            <a href="#book" class="text-sage text-sm font-semibold group-hover:underline underline-offset-2">Book &rarr;</a>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 hover:shadow-md transition-shadow group">
+          <div class="w-10 h-10 rounded-full bg-terra/15 flex items-center justify-center mb-6">
+            <span class="text-terra text-lg">◈</span>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Color</h3>
+          <p class="text-ink/50 text-sm leading-relaxed mb-6">Full color, roots, or toning. Damage-minimizing formulas with Olaplex bond protection.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-bold">from $120</span>
+            <a href="#book" class="text-terra text-sm font-semibold group-hover:underline underline-offset-2">Book &rarr;</a>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 hover:shadow-md transition-shadow group">
+          <div class="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center mb-6">
+            <span class="text-sage text-lg">≋</span>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Balayage</h3>
+          <p class="text-ink/50 text-sm leading-relaxed mb-6">Hand-painted highlights for a natural, sun-kissed look that grows out soft and blended.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-bold">from $200</span>
+            <a href="#book" class="text-sage text-sm font-semibold group-hover:underline underline-offset-2">Book &rarr;</a>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 hover:shadow-md transition-shadow group">
+          <div class="w-10 h-10 rounded-full bg-terra/15 flex items-center justify-center mb-6">
+            <span class="text-terra text-lg">✦</span>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Gloss &amp; Toning</h3>
+          <p class="text-ink/50 text-sm leading-relaxed mb-6">A clear or tinted gloss to boost shine, neutralize brassiness, and refresh your color.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-bold">$65</span>
+            <a href="#book" class="text-terra text-sm font-semibold group-hover:underline underline-offset-2">Book &rarr;</a>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 hover:shadow-md transition-shadow group">
+          <div class="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center mb-6">
+            <span class="text-sage text-lg">◇</span>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Blowout</h3>
+          <p class="text-ink/50 text-sm leading-relaxed mb-6">Shampoo, deep condition, blowout, and style. 90 minutes of not thinking about your hair.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-bold">$65</span>
+            <a href="#book" class="text-sage text-sm font-semibold group-hover:underline underline-offset-2">Book &rarr;</a>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 hover:shadow-md transition-shadow group">
+          <div class="w-10 h-10 rounded-full bg-terra/15 flex items-center justify-center mb-6">
+            <span class="text-terra text-lg">♦</span>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Olaplex Treatment</h3>
+          <p class="text-ink/50 text-sm leading-relaxed mb-6">Standalone bond-building treatment to restore strength and shine to damaged hair.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-bold">$55</span>
+            <a href="#book" class="text-terra text-sm font-semibold group-hover:underline underline-offset-2">Book &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-ink">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-3">The Portfolio</p>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">All Work</h2>
+        </div>
+        <a href="#book" class="hidden md:block text-sage text-sm font-semibold hover:underline underline-offset-2">Book a look &rarr;</a>
+      </div>
+
+      <!--
+        Gallery grid — rendered from CONFIG.gallery above.
+        To add images: just add entries to CONFIG.gallery. They fill in automatically.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-2"></div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="py-24 px-6 md:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-3">The Team</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Your Stylists</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group">
+          <div class="aspect-[4/5] mb-5 overflow-hidden relative ph">
+            <img src="/assets/demos/salon-bright/team-ivy.jpg" alt="Ivy Chen" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-sage transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+          </div>
+          <h3 class="font-bold text-xl">Ivy Chen</h3>
+          <p class="text-sage text-xs font-semibold uppercase tracking-widest mt-0.5 mb-2">Founder &middot; Color Director</p>
+          <p class="text-ink/50 text-sm leading-relaxed">Obsessed with lived-in color and low-maintenance transformations. If your color looks natural, that's on purpose.</p>
+        </div>
+        <div class="group">
+          <div class="aspect-[4/5] mb-5 overflow-hidden relative ph">
+            <img src="/assets/demos/salon-bright/team-maya.jpg" alt="Maya Osei" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-terra transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+          </div>
+          <h3 class="font-bold text-xl">Maya Osei</h3>
+          <p class="text-terra text-xs font-semibold uppercase tracking-widest mt-0.5 mb-2">Senior Stylist &middot; Curls</p>
+          <p class="text-ink/50 text-sm leading-relaxed">Certified curl specialist. Cuts dry, teaches clients their own hair. Particularly good with the cut you bring in on your phone.</p>
+        </div>
+        <div class="group">
+          <div class="aspect-[4/5] mb-5 overflow-hidden relative ph">
+            <img src="/assets/demos/salon-bright/team-jess.jpg" alt="Jess Park" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-sage transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+          </div>
+          <h3 class="font-bold text-xl">Jess Park</h3>
+          <p class="text-sage text-xs font-semibold uppercase tracking-widest mt-0.5 mb-2">Stylist &middot; Color</p>
+          <p class="text-ink/50 text-sm leading-relaxed">Specializes in blondes and balayage. Has a knack for guessing what you actually want from the vibe you describe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 md:px-16 bg-sand">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-3">Reviews</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight">What People Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-8">
+          <div class="text-terra mb-4 text-sm tracking-widest">★★★★★</div>
+          <p class="text-ink/60 text-sm leading-relaxed mb-6">&ldquo;Ivy completely changed how I think about my hair. I used to fight it every day. Now it just works. Worth every penny.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-xs font-bold text-sage">AK</div>
+            <div>
+              <div class="text-sm font-semibold">Ava K.</div>
+              <div class="text-ink/30 text-xs">Regular &middot; 2 years</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8">
+          <div class="text-terra mb-4 text-sm tracking-widest">★★★★★</div>
+          <p class="text-ink/60 text-sm leading-relaxed mb-6">&ldquo;Maya is the first person who has actually understood my curls. I've been going here for a year and I still get compliments every week.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-terra/20 flex items-center justify-center text-xs font-bold text-terra">TL</div>
+            <div>
+              <div class="text-sm font-semibold">Tamara L.</div>
+              <div class="text-ink/30 text-xs">Regular &middot; 1 year</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8">
+          <div class="text-terra mb-4 text-sm tracking-widest">★★★★★</div>
+          <p class="text-ink/60 text-sm leading-relaxed mb-6">&ldquo;I showed Jess a photo and she made it happen. Not an approximation — she actually nailed it. The vibe here is incredible too.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center text-xs font-bold text-sage">RF</div>
+            <div>
+              <div class="text-sm font-semibold">Riley F.</div>
+              <div class="text-ink/30 text-xs">New client</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK CTA -->
+  <section id="book" class="py-24 px-6 md:px-16 bg-sage">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
+          Let's make it<br>happen.
+        </h2>
+        <p class="text-white/70">Book online &middot; Walk-ins welcome &middot; Same-day often available</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="#" class="bg-white text-sage px-8 py-5 font-bold text-sm hover:bg-sand transition-colors text-center">Book Online &rarr;</a>
+        <a href="tel:+15555550404" class="border-2 border-white text-white px-8 py-5 font-bold text-sm hover:bg-white hover:text-sage transition-colors text-center">(555) 555-0404</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS + LOCATION -->
+  <section class="py-16 px-6 md:px-16 bg-white border-t border-ink/8">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-4">Location</p>
+        <div class="text-ink/40 text-sm leading-loose">740 Bloom Street, Unit B<br>East Side neighborhood</div>
+      </div>
+      <div>
+        <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-4">Hours</p>
+        <div class="text-ink/40 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[180px]"><span>Mon &ndash; Fri</span><span>9am &ndash; 7pm</span></div>
+          <div class="flex justify-between max-w-[180px]"><span>Saturday</span><span>9am &ndash; 5pm</span></div>
+          <div class="flex justify-between max-w-[180px]"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-4">Follow Along</p>
+        <div class="text-ink/40 text-sm space-y-1.5">
+          <div>(555) 555-0404</div>
+          <div>hello@studioivy.com</div>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-ink/30 hover:text-sage transition-colors text-xs tracking-widest uppercase font-medium">Instagram</a>
+            <span class="text-ink/10">/</span>
+            <a href="#" class="text-ink/30 hover:text-sage transition-colors text-xs tracking-widest uppercase font-medium">Google</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-sand border-t border-ink/8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-sage text-xs font-semibold tracking-widest uppercase mb-4">Demo by Automatically Everything</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Want a site like this<br>for your salon?</h2>
+        <p class="text-ink/40 text-lg max-w-md leading-relaxed">This is a demo. We design and build custom websites for salons, studios, and local businesses &mdash; fast, modern, and built to convert.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/" class="bg-sage text-white px-10 py-5 font-bold text-sm hover:bg-sage-dk transition-colors whitespace-nowrap text-center">Get in Touch &rarr;</a>
+        <a href="/" class="border border-ink/20 text-ink/60 px-10 py-5 font-bold text-sm hover:border-ink/50 hover:text-ink transition-colors whitespace-nowrap text-center">View All Demos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 px-6 md:px-16 bg-ink border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="font-bold tracking-tight text-white">Studio <span class="text-sage">Ivy</span></div>
+      <div class="text-white/15 text-xs">&copy; <span id="yr"></span> Studio Ivy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Render horizontal scroll strip from CONFIG.strip.
+    // To add images: add entries to CONFIG.strip above.
+    (function renderStrip() {
+      const container = document.getElementById('strip-container');
+      CONFIG.strip.forEach(function(item) {
+        const el = document.createElement('div');
+        el.className = 'flex-none w-[260px] md:w-[300px] snap-start group relative overflow-hidden ph cursor-pointer';
+        el.style.aspectRatio = '3/4';
+        el.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" ' +
+              'class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+              'loading="lazy">' +
+          '<div class="absolute inset-0 bg-ink/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ' +
+              'flex flex-col items-center justify-end pb-6 gap-3">' +
+            '<span class="text-white text-xs font-semibold uppercase tracking-widest">' + item.alt + '</span>' +
+            '<a href="#book" class="bg-white text-ink text-xs font-bold uppercase tracking-widest px-5 py-2 ' +
+                'hover:bg-sage hover:text-white transition-colors">Book This Look</a>' +
+          '</div>';
+        container.appendChild(el);
+      });
+    })();
+
+    // Render full gallery grid from CONFIG.gallery.
+    // To add images: add entries to CONFIG.gallery above — they fill in automatically.
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item) {
+        const el = document.createElement('div');
+        el.className = 'relative overflow-hidden ph aspect-square group cursor-pointer';
+        el.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" ' +
+              'class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+              'loading="lazy">' +
+          '<div class="absolute inset-0 bg-ink/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ' +
+              'flex items-end p-4">' +
+            '<span class="text-white text-xs font-semibold uppercase tracking-widest">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(el);
+      });
+    })();
+  </script>
+</body>
+</html>

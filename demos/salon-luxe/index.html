@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Elara &mdash; Luxury Hair Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            plum:       '#2D1B2E',
+            'plum-mid': '#3D2440',
+            cream:      '#FAF5EF',
+            'cream-dk': '#F0E8DC',
+            blush:      '#C8847A',
+            gold:       '#C9A46E',
+            'gold-dk':  '#A8844E',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:  ['Nunito Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Nunito Sans', sans-serif; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Placeholder stripe shown when images are missing */
+    .ph {
+      background: repeating-linear-gradient(
+        45deg, #e8dfd4, #e8dfd4 12px, #ddd4c7 12px, #ddd4c7 24px
+      );
+    }
+    .ph-dark {
+      background: repeating-linear-gradient(
+        45deg, #3a2a3c, #3a2a3c 12px, #33253b 12px, #33253b 24px
+      );
+    }
+  </style>
+</head>
+<body class="bg-cream text-plum">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  GALLERY CONFIG — edit this block to add/remove images.
+  Set featured:true to make an image span 2×2 in the grid.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      gallery: [
+        { src: '/assets/demos/salon-luxe/gallery-balayage.jpg',  alt: 'Soft balayage color treatment',    featured: true  },
+        { src: '/assets/demos/salon-luxe/gallery-cut.jpg',       alt: 'Precision cut and style',           featured: false },
+        { src: '/assets/demos/salon-luxe/gallery-blowout.jpg',   alt: 'Luxurious blowout finish',          featured: false },
+        { src: '/assets/demos/salon-luxe/gallery-color.jpg',     alt: 'Rich full-color treatment',         featured: false },
+        { src: '/assets/demos/salon-luxe/gallery-ombre.jpg',     alt: 'Seamless ombré transition',         featured: false },
+        { src: '/assets/demos/salon-luxe/gallery-updo.jpg',      alt: 'Elegant bridal updo',               featured: true  },
+        { src: '/assets/demos/salon-luxe/gallery-highlights.jpg',alt: 'Sun-kissed highlights',             featured: false },
+        { src: '/assets/demos/salon-luxe/gallery-interior.jpg',  alt: 'Salon interior detail',             featured: false },
+      ]
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-plum/10">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div>
+        <div class="font-serif text-xl tracking-[0.2em] text-plum uppercase">Maison Elara</div>
+        <div class="text-gold text-[9px] tracking-[0.35em] uppercase mt-0.5">Luxury Hair Studio</div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-[11px] tracking-widest uppercase">
+        <a href="#services" class="text-plum/50 hover:text-plum transition-colors">Services</a>
+        <a href="#gallery"  class="text-plum/50 hover:text-plum transition-colors">Gallery</a>
+        <a href="#team"     class="text-plum/50 hover:text-plum transition-colors">Stylists</a>
+        <a href="#book" class="bg-plum text-cream px-6 py-2.5 font-semibold tracking-widest hover:bg-plum-mid transition-colors">Book Now</a>
+      </div>
+      <button class="md:hidden text-plum/60 hover:text-plum" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-cream border-t border-plum/10 px-6 pb-6 pt-4 flex flex-col gap-4 text-[11px] tracking-widest uppercase">
+      <a href="#services" class="text-plum/60 hover:text-plum" onclick="this.closest('#mob-nav').classList.add('hidden')">Services</a>
+      <a href="#gallery"  class="text-plum/60 hover:text-plum" onclick="this.closest('#mob-nav').classList.add('hidden')">Gallery</a>
+      <a href="#team"     class="text-plum/60 hover:text-plum" onclick="this.closest('#mob-nav').classList.add('hidden')">Stylists</a>
+      <a href="#book" class="bg-plum text-cream px-4 py-3 font-semibold text-center tracking-widest">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-end overflow-hidden bg-plum">
+    <div class="absolute inset-0 ph-dark"></div>
+    <img src="/assets/demos/salon-luxe/hero.jpg" alt="Maison Elara salon" class="absolute inset-0 w-full h-full object-cover object-center">
+    <div class="absolute inset-0 bg-gradient-to-t from-plum/90 via-plum/40 to-plum/10"></div>
+
+    <div class="relative z-10 w-full px-8 md:px-16 lg:px-20 pb-16 md:pb-24">
+      <p class="text-gold text-[10px] tracking-[0.5em] uppercase mb-5">Precision &middot; Color &middot; Care</p>
+      <h1 class="font-serif text-cream text-6xl md:text-8xl lg:text-[7rem] font-light leading-[0.95] mb-6">
+        Where Hair<br>Becomes <em>Art.</em>
+      </h1>
+      <div class="w-16 h-px bg-gold mb-8"></div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#book"     class="bg-gold text-plum px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:bg-gold-dk transition-colors text-center">Book Your Visit</a>
+        <a href="#gallery"  class="border border-cream/40 text-cream px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:border-gold hover:text-gold transition-colors text-center">View Gallery</a>
+      </div>
+    </div>
+
+    <!-- Rating badge — desktop only -->
+    <div class="absolute top-28 right-8 md:right-16 bg-cream/90 backdrop-blur-sm px-5 py-4 text-center hidden md:block">
+      <div class="font-serif text-3xl font-bold text-plum">4.9</div>
+      <div class="text-blush text-xs tracking-widest mt-0.5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="text-plum/40 text-[10px] tracking-widest uppercase mt-1">250+ Reviews</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-6 md:px-16">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">What We Offer</p>
+          <h2 class="font-serif text-5xl md:text-6xl font-light">Services</h2>
+        </div>
+        <p class="text-plum/40 text-sm max-w-xs mt-4 md:mt-0 leading-relaxed">All services include a personalized consultation and complimentary scalp massage.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 divide-y divide-plum/10 border-y border-plum/10">
+        <div class="py-8 md:pr-16 group cursor-default">
+          <div class="flex justify-between items-start gap-6">
+            <div>
+              <h3 class="font-serif text-2xl group-hover:text-blush transition-colors duration-300">Signature Cut &amp; Style</h3>
+              <p class="text-plum/40 text-sm mt-2 leading-relaxed max-w-xs">Precision cut tailored to your face and lifestyle, finished with a blowout or style of your choice.</p>
+            </div>
+            <span class="font-serif text-2xl text-gold shrink-0">$95</span>
+          </div>
+        </div>
+        <div class="py-8 md:pl-16 md:border-l border-plum/10 group cursor-default">
+          <div class="flex justify-between items-start gap-6">
+            <div>
+              <h3 class="font-serif text-2xl group-hover:text-blush transition-colors duration-300">Balayage</h3>
+              <p class="text-plum/40 text-sm mt-2 leading-relaxed max-w-xs">Hand-painted color for a natural, sun-kissed effect that grows out beautifully.</p>
+            </div>
+            <span class="font-serif text-2xl text-gold shrink-0">from $220</span>
+          </div>
+        </div>
+        <div class="py-8 md:pr-16 group cursor-default">
+          <div class="flex justify-between items-start gap-6">
+            <div>
+              <h3 class="font-serif text-2xl group-hover:text-blush transition-colors duration-300">Full Color</h3>
+              <p class="text-plum/40 text-sm mt-2 leading-relaxed max-w-xs">Rich, even color root to tip using premium Olaplex-protected formulas.</p>
+            </div>
+            <span class="font-serif text-2xl text-gold shrink-0">from $165</span>
+          </div>
+        </div>
+        <div class="py-8 md:pl-16 md:border-l border-plum/10 group cursor-default">
+          <div class="flex justify-between items-start gap-6">
+            <div>
+              <h3 class="font-serif text-2xl group-hover:text-blush transition-colors duration-300">Highlights &amp; Gloss</h3>
+              <p class="text-plum/40 text-sm mt-2 leading-relaxed max-w-xs">Foil highlights finished with a shine-enhancing gloss treatment.</p>
+            </div>
+            <span class="font-serif text-2xl text-gold shrink-0">from $195</span>
+          </div>
+        </div>
+        <div class="py-8 md:pr-16 group cursor-default">
+          <div class="flex justify-between items-start gap-6">
+            <div>
+              <h3 class="font-serif text-2xl group-hover:text-blush transition-colors duration-300">Luxury Blowout</h3>
+              <p class="text-plum/40 text-sm mt-2 leading-relaxed max-w-xs">Shampoo, conditioning mask, blowout, and finish. The most indulgent hour of your week.</p>
+            </div>
+            <span class="font-serif text-2xl text-gold shrink-0">$75</span>
+          </div>
+        </div>
+        <div class="py-8 md:pl-16 md:border-l border-plum/10 group cursor-default">
+          <div class="flex justify-between items-start gap-6">
+            <div>
+              <h3 class="font-serif text-2xl group-hover:text-blush transition-colors duration-300">Bridal &amp; Event Styling</h3>
+              <p class="text-plum/40 text-sm mt-2 leading-relaxed max-w-xs">Updo, half-up, or flowing style for your most important moments. Trial run included.</p>
+            </div>
+            <span class="font-serif text-2xl text-gold shrink-0">from $180</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-plum">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">Our Work</p>
+          <h2 class="font-serif text-5xl md:text-6xl font-light text-cream">Gallery</h2>
+        </div>
+        <a href="#book" class="hidden md:block text-gold text-[11px] tracking-widest uppercase hover:underline underline-offset-4">Book a look &rarr;</a>
+      </div>
+
+      <!--
+        Grid is rendered from CONFIG.gallery above.
+        To add images: add an entry to the gallery array in CONFIG.
+        Set featured:true to make an image span 2 columns × 2 rows.
+      -->
+      <div
+        id="gallery-grid"
+        class="grid grid-cols-2 md:grid-cols-4 gap-2"
+        style="grid-auto-rows: 180px; grid-auto-flow: dense;"
+      ></div>
+
+      <p class="text-cream/20 text-[10px] tracking-widest uppercase mt-6 text-right">@maisonelara</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="py-24 px-6 md:px-16 bg-cream-dk">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">The Artists</p>
+        <h2 class="font-serif text-5xl font-light">Our Stylists</h2>
+        <div class="w-10 h-px bg-gold mx-auto mt-5"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="text-center">
+          <div class="aspect-[3/4] mb-6 overflow-hidden relative ph group">
+            <img src="/assets/demos/salon-luxe/team-elena.webp" alt="Elena Marchetti" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-plum/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <a href="#book" class="text-cream text-[10px] tracking-widest uppercase border border-cream/50 px-5 py-2 hover:bg-cream hover:text-plum transition-colors">Book with Elena</a>
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl">Elena Marchetti</h3>
+          <p class="text-gold text-[10px] tracking-widest uppercase mt-1 mb-3">Creative Director &middot; Color</p>
+          <p class="text-plum/50 text-sm leading-relaxed">15 years crafting color. Trained in Milan and New York. Specializes in balayage and transformative color work.</p>
+        </div>
+        <div class="text-center">
+          <div class="aspect-[3/4] mb-6 overflow-hidden relative ph group">
+            <img src="/assets/demos/salon-luxe/team-priya.webp" alt="Priya Nair" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-plum/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <a href="#book" class="text-cream text-[10px] tracking-widest uppercase border border-cream/50 px-5 py-2 hover:bg-cream hover:text-plum transition-colors">Book with Priya</a>
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl">Priya Nair</h3>
+          <p class="text-gold text-[10px] tracking-widest uppercase mt-1 mb-3">Senior Stylist &middot; Cuts</p>
+          <p class="text-plum/50 text-sm leading-relaxed">Precision cuts are Priya's language. From textured bobs to lived-in layers — she reads the hair and the person wearing it.</p>
+        </div>
+        <div class="text-center">
+          <div class="aspect-[3/4] mb-6 overflow-hidden relative ph group">
+            <img src="/assets/demos/salon-luxe/team-camille.jpg" alt="Camille Rousseau" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-plum/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <a href="#book" class="text-cream text-[10px] tracking-widest uppercase border border-cream/50 px-5 py-2 hover:bg-cream hover:text-plum transition-colors">Book with Camille</a>
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl">Camille Rousseau</h3>
+          <p class="text-gold text-[10px] tracking-widest uppercase mt-1 mb-3">Stylist &middot; Bridal &amp; Events</p>
+          <p class="text-plum/50 text-sm leading-relaxed">Bridal editorial background. Creates updos and event styles that hold up and photograph beautifully.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 md:px-16 bg-cream">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">Kind Words</p>
+        <h2 class="font-serif text-5xl font-light">What Our Guests Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="font-serif text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-plum/60 text-sm leading-relaxed mb-5">Elena took one look at my hair and knew exactly what I needed before I finished my sentence. The balayage is everything I didn't know how to ask for.</p>
+          <div class="text-gold text-[10px] tracking-widest uppercase">&mdash; Margaux L.</div>
+        </div>
+        <div>
+          <div class="font-serif text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-plum/60 text-sm leading-relaxed mb-5">I've never felt so pampered at a salon. The consultation, the scalp massage, the hot towel — they didn't miss a single detail. I'm a client for life.</p>
+          <div class="text-gold text-[10px] tracking-widest uppercase">&mdash; Dana K.</div>
+        </div>
+        <div>
+          <div class="font-serif text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-plum/60 text-sm leading-relaxed mb-5">Camille did my wedding hair. My whole bridal party was in awe. Not a single piece fell out during six hours of dancing. Absolute perfection.</p>
+          <div class="text-gold text-[10px] tracking-widest uppercase">&mdash; Sophie R., Bride</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK CTA -->
+  <section id="book" class="py-24 px-6 md:px-16 bg-blush">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-plum/60 text-[10px] tracking-[0.4em] uppercase mb-4">Reserve Your Chair</p>
+        <h2 class="font-serif text-5xl md:text-6xl font-light text-plum leading-tight mb-4">
+          Ready for<br>your moment?
+        </h2>
+        <p class="text-plum/60 text-sm leading-relaxed">Online booking 24/7 &middot; Walk-ins welcome based on availability</p>
+      </div>
+      <div class="flex flex-col gap-4 shrink-0">
+        <a href="#" class="bg-plum text-cream px-10 py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-plum-mid transition-colors text-center">Book Online</a>
+        <a href="tel:+15555550303" class="border-2 border-plum text-plum px-10 py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-plum hover:text-cream transition-colors text-center">(555) 555-0303</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS + LOCATION -->
+  <section class="py-16 px-6 md:px-16 bg-plum">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-4">Location</p>
+        <div class="text-cream/40 text-sm leading-loose">218 Wisteria Lane, Suite 4<br>The Arts District</div>
+      </div>
+      <div>
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-4">Hours</p>
+        <div class="text-cream/40 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[180px]"><span>Tue &ndash; Fri</span><span>10am &ndash; 7pm</span></div>
+          <div class="flex justify-between max-w-[180px]"><span>Saturday</span><span>9am &ndash; 6pm</span></div>
+          <div class="flex justify-between max-w-[180px]"><span>Sunday</span><span>10am &ndash; 4pm</span></div>
+          <div class="flex justify-between max-w-[180px]"><span>Monday</span><span>Closed</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-4">Connect</p>
+        <div class="text-cream/40 text-sm space-y-1.5">
+          <div>(555) 555-0303</div>
+          <div>hello@maisonelara.com</div>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-cream/30 hover:text-gold transition-colors text-[10px] tracking-widest uppercase">Instagram</a>
+            <span class="text-cream/10">/</span>
+            <a href="#" class="text-cream/30 hover:text-gold transition-colors text-[10px] tracking-widest uppercase">Google</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-cream border-t border-plum/10">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="inline-flex items-center gap-4 mb-8">
+        <div class="h-px w-10 bg-gold"></div>
+        <span class="text-gold text-[10px] tracking-[0.3em] uppercase">Demo by Automatically Everything</span>
+        <div class="h-px w-10 bg-gold"></div>
+      </div>
+      <h2 class="font-serif text-4xl md:text-5xl font-light mb-5">Love the look?<br>Let&rsquo;s build yours.</h2>
+      <p class="text-plum/50 leading-relaxed mb-10 max-w-lg mx-auto">This is a demo site. Automatically Everything designs and builds custom websites for salons and local businesses &mdash; built to match your style and bring in more bookings.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-block bg-plum text-cream px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-plum-mid transition-colors">Talk to Us About Your Site</a>
+        <a href="/" class="inline-block border border-plum text-plum px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-plum hover:text-cream transition-colors">View All Demo Sites</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 bg-plum border-t border-plum-mid text-center">
+    <div class="font-serif text-gold text-xl tracking-widest uppercase mb-2">Maison Elara</div>
+    <div class="text-cream/20 text-xs tracking-widest">218 Wisteria Lane &middot; The Arts District &middot; (555) 555-0303</div>
+    <div class="text-cream/10 text-xs mt-4">&copy; <span id="yr"></span> Maison Elara. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Render gallery from CONFIG.gallery.
+    // featured:true → spans 2 cols × 2 rows in the CSS grid.
+    // To add images: add a new object to the CONFIG.gallery array above.
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item) {
+        const cell = document.createElement('div');
+        const span = item.featured ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1';
+        cell.className = 'relative overflow-hidden ph-dark group cursor-pointer ' + span;
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" ' +
+              'class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+              'loading="lazy">' +
+          '<div class="absolute inset-0 bg-plum/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ' +
+              'flex items-end p-4 md:p-5">' +
+            '<span class="text-cream text-[10px] tracking-widest uppercase font-semibold">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

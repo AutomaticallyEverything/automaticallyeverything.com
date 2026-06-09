@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wren &amp; Wild &mdash; Fresh Flowers &amp; Floral Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            petal:   '#E8C4B8',
+            'petal-dk':'#D0A898',
+            rose:    '#C49080',
+            'rose-dk':'#A87060',
+            sage:    '#8FA888',
+            'sage-dk':'#6A8470',
+            ivory:   '#FAF6F2',
+            'ivory-dk':'#F0E8E0',
+            bark:    '#2A1A1A',
+            'bark-lt':'#3D2828',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:  ['Nunito Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Nunito Sans', sans-serif; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+    html { scroll-behavior: smooth; }
+    .ph { background: repeating-linear-gradient(45deg,#e0cac0,#e0cac0 12px,#d4beb4 12px,#d4beb4 24px); }
+    .ph-sage { background: repeating-linear-gradient(45deg,#7a9478,#7a9478 12px,#6e8870 12px,#6e8870 24px); }
+    .scroll-hide { scrollbar-width:none; -ms-overflow-style:none; }
+    .scroll-hide::-webkit-scrollbar { display:none; }
+  </style>
+</head>
+<body class="bg-ivory text-bark">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONFIG — edit to update arrangements and gallery.
+
+  arrangements: Featured bouquets/offerings shown as cards.
+                Add or remove freely.
+
+  gallery: Photos in the masonry gallery grid.
+           featured:true makes an item span 2 columns.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      arrangements: [
+        {
+          src:   '/assets/demos/florist-elegant/arr-seasonal.jpg',
+          name:  'Seasonal Bouquet',
+          price: 'from $65',
+          desc:  'Whatever is best at the market this week. Changes with the season, always beautiful.',
+          tag:   'Everyday',
+        },
+        {
+          src:   '/assets/demos/florist-elegant/arr-romance.jpg',
+          name:  'Romance',
+          price: 'from $95',
+          desc:  'Soft blush roses, garden roses, ranunculus, and trailing greenery. Made for moments.',
+          tag:   'Gift',
+        },
+        {
+          src:   '/assets/demos/florist-elegant/arr-bridal.jpg',
+          name:  'Bridal Bouquet',
+          price: 'from $185',
+          desc:  'Designed around you. Cascading, hand-tied, or structured — we\'ll build it to the brief.',
+          tag:   'Wedding',
+        },
+        {
+          src:   '/assets/demos/florist-elegant/arr-table.jpg',
+          name:  'Table Centrepiece',
+          price: 'from $120',
+          desc:  'For dinners, events, and celebrations. Low and lush or tall and dramatic.',
+          tag:   'Events',
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/florist-elegant/gallery-bouquet.jpg',   alt: 'Lush garden bouquet',          featured: true  },
+        { src: '/assets/demos/florist-elegant/gallery-roses.jpg',     alt: 'Blush rose arrangement',       featured: false },
+        { src: '/assets/demos/florist-elegant/gallery-workshop.jpg',  alt: 'Floristry workshop in progress',featured: false },
+        { src: '/assets/demos/florist-elegant/gallery-wedding.jpg',   alt: 'Bridal ceremony florals',      featured: false },
+        { src: '/assets/demos/florist-elegant/gallery-stems.jpg',     alt: 'Fresh stems at the studio',    featured: false },
+        { src: '/assets/demos/florist-elegant/gallery-detail.jpg',    alt: 'Petal detail close-up',        featured: true  },
+        { src: '/assets/demos/florist-elegant/gallery-event.jpg',     alt: 'Event table styling',          featured: false },
+        { src: '/assets/demos/florist-elegant/gallery-wrapping.jpg',  alt: 'Flowers being wrapped',        featured: false },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-ivory/95 backdrop-blur-sm border-b border-rose/20">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div>
+        <div class="font-serif text-bark text-xl tracking-[0.12em] italic">Wren &amp; Wild</div>
+        <div class="text-rose text-[9px] tracking-[0.4em] uppercase mt-0.5">Fresh Flowers &amp; Floral Design</div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-[11px] tracking-wider uppercase">
+        <a href="#arrangements" class="text-bark/50 hover:text-bark transition-colors">Shop</a>
+        <a href="#gallery"      class="text-bark/50 hover:text-bark transition-colors">Gallery</a>
+        <a href="#occasions"    class="text-bark/50 hover:text-bark transition-colors">Occasions</a>
+        <a href="#order" class="bg-bark text-ivory px-6 py-2.5 font-bold tracking-widest hover:bg-bark-lt transition-colors">Order Now</a>
+      </div>
+      <button class="md:hidden text-bark/50 hover:text-bark" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-ivory border-t border-rose/15 px-6 pb-6 pt-4 flex flex-col gap-4 text-[11px] tracking-widest uppercase">
+      <a href="#arrangements" class="text-bark/60 hover:text-bark" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Shop</a>
+      <a href="#gallery"      class="text-bark/60 hover:text-bark" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#occasions"    class="text-bark/60 hover:text-bark" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Occasions</a>
+      <a href="#order" class="bg-bark text-ivory px-4 py-3 font-bold text-center tracking-widest">Order Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-end overflow-hidden" style="background:#E8D8D0;">
+    <div class="absolute inset-0 ph"></div>
+    <img src="/assets/demos/florist-elegant/hero.jpg" alt="Wren & Wild florals" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-bark/70 via-bark/20 to-transparent"></div>
+
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 pb-16 md:pb-24">
+      <div class="inline-flex items-center gap-3 mb-6">
+        <div class="h-px w-8 bg-petal"></div>
+        <span class="text-petal text-[10px] tracking-[0.5em] uppercase">Fresh flowers &middot; Studio-made &middot; Local delivery</span>
+      </div>
+      <h1 class="font-serif text-ivory text-6xl md:text-8xl font-light leading-tight mb-5">
+        Flowers that<br>feel like <em>you.</em>
+      </h1>
+      <p class="text-ivory/60 text-lg max-w-md leading-relaxed mb-8">Seasonal arrangements, bridal florals, and event design. Every piece is made by hand in our studio.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#arrangements" class="bg-petal text-bark px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:bg-petal-dk transition-colors">Shop Flowers</a>
+        <a href="#order"        class="border border-ivory/40 text-ivory px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:border-petal hover:text-petal transition-colors">Custom Order</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARRANGEMENTS -->
+  <section id="arrangements" class="py-24 px-6 md:px-16 bg-ivory">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-rose text-[10px] tracking-[0.4em] uppercase mb-3">Ready to Order</p>
+        <h2 class="font-serif text-5xl md:text-6xl font-light">Our Arrangements</h2>
+        <div class="w-10 h-px bg-rose mx-auto mt-5"></div>
+      </div>
+      <!--
+        Arrangements rendered from CONFIG.arrangements above.
+        To add offerings: add entries to CONFIG.arrangements.
+      -->
+      <div id="arrangements-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-ivory-dk">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <p class="text-rose text-[10px] tracking-[0.4em] uppercase mb-3">The Work</p>
+          <h2 class="font-serif text-5xl font-light">Gallery</h2>
+        </div>
+        <a href="#order" class="hidden md:block text-rose text-[10px] tracking-widest uppercase font-semibold hover:underline underline-offset-4">Order a custom piece &rarr;</a>
+      </div>
+      <!--
+        Gallery grid — rendered from CONFIG.gallery.
+        featured:true items span 2 columns in the 4-col desktop grid.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2" style="grid-auto-flow:dense;"></div>
+    </div>
+  </section>
+
+  <!-- OCCASIONS -->
+  <section id="occasions" class="py-24 px-6 md:px-16 bg-petal">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-bark/50 text-[10px] tracking-[0.4em] uppercase mb-3">Every Occasion</p>
+        <h2 class="font-serif text-5xl font-light text-bark">We Design For</h2>
+        <div class="w-10 h-px bg-rose mx-auto mt-5"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-ivory/80 p-8 text-center">
+          <div class="text-3xl mb-4">💍</div>
+          <h3 class="font-serif text-2xl mb-3">Weddings</h3>
+          <p class="text-bark/60 text-sm leading-relaxed">Bridal bouquets, bridesmaids, ceremony florals, reception centrepieces. We handle the lot.</p>
+          <a href="#order" class="inline-block mt-5 text-[10px] tracking-widest uppercase text-rose font-bold hover:underline underline-offset-2">Enquire &rarr;</a>
+        </div>
+        <div class="bg-ivory/80 p-8 text-center">
+          <div class="text-3xl mb-4">🎁</div>
+          <h3 class="font-serif text-2xl mb-3">Gifts</h3>
+          <p class="text-bark/60 text-sm leading-relaxed">Birthdays, anniversaries, new homes, just because. Same-day local delivery available.</p>
+          <a href="#order" class="inline-block mt-5 text-[10px] tracking-widest uppercase text-rose font-bold hover:underline underline-offset-2">Order &rarr;</a>
+        </div>
+        <div class="bg-ivory/80 p-8 text-center">
+          <div class="text-3xl mb-4">🌿</div>
+          <h3 class="font-serif text-2xl mb-3">Events &amp; Hospitality</h3>
+          <p class="text-bark/60 text-sm leading-relaxed">Dinner parties, corporate events, hotel lobbies, pop-ups. Weekly arrangements for businesses too.</p>
+          <a href="#order" class="inline-block mt-5 text-[10px] tracking-widest uppercase text-rose font-bold hover:underline underline-offset-2">Get a Quote &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 md:px-16 bg-ivory">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-rose text-[10px] tracking-[0.4em] uppercase mb-3">Kind Words</p>
+        <h2 class="font-serif text-5xl font-light">What People Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="font-serif text-rose text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-bark/60 text-sm leading-relaxed mb-5">The bridal flowers were beyond anything I could have described. I showed a vague Pinterest board and what arrived was a thousand times better. I cried.</p>
+          <div class="text-rose text-[10px] tracking-widest uppercase">&mdash; Nadia B., Bride</div>
+        </div>
+        <div>
+          <div class="font-serif text-rose text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-bark/60 text-sm leading-relaxed mb-5">I've been ordering the seasonal weekly arrangement for six months. It makes the whole apartment feel different. Never once had a bad week.</p>
+          <div class="text-rose text-[10px] tracking-widest uppercase">&mdash; Clara K., Weekly Customer</div>
+        </div>
+        <div>
+          <div class="font-serif text-rose text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-bark/60 text-sm leading-relaxed mb-5">We use Wren &amp; Wild for all our hotel lobby arrangements. The quality is consistent, the team is easy to work with, and guests always ask about the flowers.</p>
+          <div class="text-rose text-[10px] tracking-widest uppercase">&mdash; Marcus H., Hotel Manager</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER CTA -->
+  <section id="order" class="py-24 px-6 md:px-16 bg-sage">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-ivory/60 text-[10px] tracking-[0.4em] uppercase mb-4">Order &amp; Enquiries</p>
+        <h2 class="font-serif text-5xl md:text-6xl font-light text-ivory leading-tight mb-4">Let&rsquo;s make<br>something beautiful.</h2>
+        <p class="text-ivory/60 leading-relaxed max-w-sm">Same-day delivery on orders before 11am &middot; Studio collection available &middot; Custom commissions by email</p>
+      </div>
+      <div class="flex flex-col gap-4 shrink-0">
+        <a href="tel:+15555551515" class="bg-ivory text-bark px-10 py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-ivory-dk transition-colors text-center">(555) 555-1515</a>
+        <a href="mailto:hello@wrenandwild.com" class="border-2 border-ivory text-ivory px-10 py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-ivory hover:text-bark transition-colors text-center">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO INFO -->
+  <section class="py-16 px-6 md:px-16 bg-bark border-t border-rose/20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-rose text-[10px] tracking-[0.4em] uppercase mb-4">Studio Location</p>
+        <div class="text-ivory/40 text-sm leading-loose">12 Garden Lane<br>The Flower District</div>
+      </div>
+      <div>
+        <p class="text-rose text-[10px] tracking-[0.4em] uppercase mb-4">Studio Hours</p>
+        <div class="text-ivory/40 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[200px]"><span>Mon &ndash; Sat</span><span>9am &ndash; 5pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Sunday</span><span>By arrangement</span></div>
+        </div>
+        <p class="text-ivory/20 text-xs mt-3">Walk-ins welcome during studio hours.</p>
+      </div>
+      <div>
+        <p class="text-rose text-[10px] tracking-[0.4em] uppercase mb-4">Contact</p>
+        <div class="text-ivory/40 text-sm space-y-1.5">
+          <div>(555) 555-1515</div>
+          <div>hello@wrenandwild.com</div>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-ivory/25 hover:text-rose transition-colors text-[10px] tracking-widest uppercase">Instagram</a>
+            <span class="text-ivory/10">/</span>
+            <a href="#" class="text-ivory/25 hover:text-rose transition-colors text-[10px] tracking-widest uppercase">Pinterest</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-ivory border-t border-rose/15">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="inline-flex items-center gap-4 mb-8">
+        <div class="h-px w-10 bg-rose"></div>
+        <span class="text-rose text-[10px] tracking-[0.3em] uppercase">Demo by Automatically Everything</span>
+        <div class="h-px w-10 bg-rose"></div>
+      </div>
+      <h2 class="font-serif text-4xl md:text-5xl font-light mb-5">Love the look?<br>Let&rsquo;s build yours.</h2>
+      <p class="text-bark/50 leading-relaxed mb-10 max-w-lg mx-auto">This is a demo. Automatically Everything builds custom websites for florists and local businesses — beautiful, fast, and built to bring in orders.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-block bg-bark text-ivory px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-bark-lt transition-colors">Talk to Us</a>
+        <a href="/"   class="inline-block border border-bark text-bark px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-bark hover:text-ivory transition-colors">View All Demo Sites</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 bg-bark text-center border-t border-rose/20">
+    <div class="font-serif text-rose text-xl italic mb-2">Wren &amp; Wild</div>
+    <div class="text-ivory/20 text-xs">12 Garden Lane &middot; (555) 555-1515 &middot; &copy; <span id="yr"></span></div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    (function renderArrangements() {
+      const grid = document.getElementById('arrangements-grid');
+      CONFIG.arrangements.forEach(function(item) {
+        const card = document.createElement('div');
+        card.className = 'group';
+        card.innerHTML =
+          '<div class="aspect-[3/4] mb-5 overflow-hidden ph relative">' +
+            '<img src="' + item.src + '" alt="' + item.name + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+            '<div class="absolute top-3 left-3 bg-ivory/90 backdrop-blur-sm px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest text-rose">' + item.tag + '</div>' +
+          '</div>' +
+          '<p class="text-rose text-[10px] tracking-widest uppercase mb-1">' + item.price + '</p>' +
+          '<h3 class="font-serif text-2xl font-light mb-1 group-hover:text-rose transition-colors">' + item.name + '</h3>' +
+          '<p class="text-bark/50 text-sm leading-relaxed">' + item.desc + '</p>';
+        grid.appendChild(card);
+      });
+    })();
+
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item) {
+        const cell = document.createElement('div');
+        const feat = item.featured;
+        cell.className = [
+          'relative overflow-hidden ph group cursor-pointer',
+          feat ? 'col-span-2 row-span-2' : 'col-span-1',
+        ].join(' ');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" style="min-height:180px;">' +
+          '<div class="absolute inset-0 bg-rose/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-ivory text-[10px] tracking-widest uppercase font-semibold">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

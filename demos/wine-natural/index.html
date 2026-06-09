@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Fruit &mdash; Natural Wine &amp; Bottle Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bone:    '#F8F4EE',
+            'bone-dk':'#EDE7DC',
+            ink:     '#111111',
+            'ink-lt':'#222222',
+            terra:   '#C07040',
+            'terra-dk':'#A05830',
+            grove:   '#2D4A3E',
+            'grove-lt':'#3D5E50',
+            rust:    '#8B3A1A',
+          },
+          fontFamily: {
+            mono:  ['Space Grotesk', 'Courier New', 'monospace'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .ph {
+      background: repeating-linear-gradient(
+        45deg, #ddd7cc, #ddd7cc 12px, #d4cec2 12px, #d4cec2 24px
+      );
+    }
+    .ph-grove {
+      background: repeating-linear-gradient(
+        45deg, #2a4438, #2a4438 12px, #243c32 12px, #243c32 24px
+      );
+    }
+    /* Hide scrollbar on horizontal strip */
+    .scroll-hide { scrollbar-width: none; -ms-overflow-style: none; }
+    .scroll-hide::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-bone text-ink">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONTENT CONFIG — edit this block to customize the shop.
+
+  featured:  The bottles in the "What We're Into" spotlight strip.
+             Each item renders as a card. Add or remove freely.
+
+  gallery:   Photos in the gallery grid. Add entries; they fill automatically.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      featured: [
+        {
+          src:      '/assets/demos/wine-natural/feat-1.jpg',
+          producer: 'Gut Oggau',
+          bottle:   'Winifred 2022',
+          origin:   'Burgenland, Austria',
+          vibe:     'Orange · Skin-contact · Low sulfur',
+          blurb:    'Quince, apricot skin, and something almost savory. Tastes like an afternoon you didn\'t plan.',
+          price:    '$38',
+        },
+        {
+          src:      '/assets/demos/wine-natural/feat-2.jpg',
+          producer: 'Domaine Léon Barral',
+          bottle:   'Valinière 2021',
+          origin:   'Languedoc, France',
+          vibe:     'Red · Biodynamic',
+          blurb:    'Wild herbs, dark cherry, a little earth. Comforting but interesting. Drinks well now or in five years.',
+          price:    '$42',
+        },
+        {
+          src:      '/assets/demos/wine-natural/feat-3.jpg',
+          producer: 'Occhipinti',
+          bottle:   'SP68 Bianco 2023',
+          origin:   'Sicily, Italy',
+          vibe:     'White · Organic · Unfined',
+          blurb:    'Sea air and citrus zest with a honeyed weight. Sicily in a glass.',
+          price:    '$34',
+        },
+        {
+          src:      '/assets/demos/wine-natural/feat-4.jpg',
+          producer: 'La Clarine Farm',
+          bottle:   'Sierra Jurassique 2022',
+          origin:   'Sierra Foothills, CA',
+          vibe:     'Red · Minimal intervention',
+          blurb:    'Light, perfumed, and totally electric. Garrigue, dried raspberry, mountain air.',
+          price:    '$36',
+        },
+        {
+          src:      '/assets/demos/wine-natural/feat-5.jpg',
+          producer: 'Matassa',
+          bottle:   'Cuvée Marguerite 2022',
+          origin:   'Roussillon, France',
+          vibe:     'Rosé · Natural',
+          blurb:    'Pale copper, wild strawberry, a hint of the garrigue. Exactly the kind of rosé you want in summer.',
+          price:    '$29',
+        },
+        {
+          src:      '/assets/demos/wine-natural/feat-6.jpg',
+          producer: 'Cornelissen',
+          bottle:   'Susucaru Rosso 2023',
+          origin:   'Mount Etna, Sicily',
+          vibe:     'Red · Nerello Mascalese · No SO2',
+          blurb:    'Volcanic minerality you can taste. Transparent red, fresh, utterly unique.',
+          price:    '$44',
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/wine-natural/gallery-1.jpg', alt: 'Natural wine bottles on shelf' },
+        { src: '/assets/demos/wine-natural/gallery-2.jpg', alt: 'Orange wine in glass' },
+        { src: '/assets/demos/wine-natural/gallery-3.jpg', alt: 'Label close-up' },
+        { src: '/assets/demos/wine-natural/gallery-4.jpg', alt: 'Shop interior, natural light' },
+        { src: '/assets/demos/wine-natural/gallery-5.jpg', alt: 'Wine tasting table' },
+        { src: '/assets/demos/wine-natural/gallery-6.jpg', alt: 'Outdoor bottle and glass' },
+        { src: '/assets/demos/wine-natural/gallery-7.jpg', alt: 'Vineyard field shot' },
+        { src: '/assets/demos/wine-natural/gallery-8.jpg', alt: 'Staff pick tag' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-bone/95 backdrop-blur-sm border-b border-ink/8">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-baseline gap-2">
+        <span style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl tracking-tight">Good Fruit</span>
+        <span class="text-terra text-xs font-medium tracking-widest uppercase hidden sm:inline">Wine Shop</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#what-were-into" class="text-ink/50 hover:text-ink transition-colors">What We&rsquo;re Into</a>
+        <a href="#gallery"        class="text-ink/50 hover:text-ink transition-colors">Gallery</a>
+        <a href="#about"          class="text-ink/50 hover:text-ink transition-colors">About</a>
+        <a href="#visit" class="bg-grove text-white px-5 py-2.5 text-sm font-semibold hover:bg-grove-lt transition-colors">Visit &rarr;</a>
+      </div>
+      <button class="md:hidden text-ink/60 hover:text-ink" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-bone border-t border-ink/8 px-6 pb-5 pt-4 flex flex-col gap-4 text-sm">
+      <a href="#what-were-into" class="text-ink/60 hover:text-ink font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">What We&rsquo;re Into</a>
+      <a href="#gallery"        class="text-ink/60 hover:text-ink font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#about"          class="text-ink/60 hover:text-ink font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">About</a>
+      <a href="#visit" class="bg-grove text-white px-4 py-3 font-semibold text-center">Visit &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- HERO — asymmetric split -->
+  <section class="min-h-screen grid md:grid-cols-[1fr_1fr] pt-[61px]">
+    <!-- Left: text -->
+    <div class="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 order-2 md:order-1">
+      <div class="inline-flex items-center gap-2 mb-8 w-fit">
+        <div class="w-2 h-2 rounded-full bg-terra"></div>
+        <span class="text-terra text-xs font-semibold tracking-widest uppercase">Natural Wine &middot; Minimal Intervention</span>
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif" class="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.0] tracking-tight mb-6">
+        Wine that<br>tastes like<br><span class="text-grove">somewhere.</span>
+      </h1>
+      <p class="text-ink/50 text-lg leading-relaxed max-w-sm mb-10">
+        We carry natural, biodynamic, and minimal-intervention wines from growers we trust. Nothing with an 800-word tech sheet.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#what-were-into" class="bg-ink text-white px-8 py-4 font-semibold text-sm hover:bg-ink-lt transition-colors">See What&rsquo;s New &rarr;</a>
+        <a href="#about"          class="border border-ink/20 text-ink/60 px-8 py-4 font-semibold text-sm hover:border-ink/60 hover:text-ink transition-colors">Our Philosophy</a>
+      </div>
+
+      <!-- Tag row -->
+      <div class="flex flex-wrap gap-2 mt-12">
+        <span class="bg-terra/10 text-terra text-xs font-medium px-3 py-1.5 rounded-full">Orange Wine</span>
+        <span class="bg-grove/10 text-grove text-xs font-medium px-3 py-1.5 rounded-full">Biodynamic</span>
+        <span class="bg-terra/10 text-terra text-xs font-medium px-3 py-1.5 rounded-full">Pét-Nat</span>
+        <span class="bg-grove/10 text-grove text-xs font-medium px-3 py-1.5 rounded-full">Low Sulfur</span>
+        <span class="bg-terra/10 text-terra text-xs font-medium px-3 py-1.5 rounded-full">Skin Contact</span>
+      </div>
+    </div>
+
+    <!-- Right: hero image -->
+    <div class="relative overflow-hidden min-h-[50vw] md:min-h-0 ph order-1 md:order-2">
+      <img src="/assets/demos/wine-natural/hero.jpg" alt="Good Fruit wine shop" class="w-full h-full object-cover object-center">
+      <!-- floating tag -->
+      <div class="absolute bottom-8 left-8 bg-bone/90 backdrop-blur-sm px-4 py-3 max-w-[220px] hidden md:block">
+        <p class="text-terra text-[9px] font-semibold tracking-widest uppercase mb-1">Now in stock</p>
+        <p class="font-medium text-sm leading-snug">New arrivals from Etna, Jura, and the Finger Lakes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE'RE INTO — horizontal scroll of featured bottles -->
+  <section id="what-were-into" class="py-20 bg-grove">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between px-6 md:px-16 mb-10">
+        <div>
+          <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-2">Staff Picks</p>
+          <h2 style="font-family:'Space Grotesk',sans-serif" class="text-4xl md:text-5xl font-bold tracking-tight text-white">What We&rsquo;re Into</h2>
+        </div>
+        <a href="#visit" class="hidden md:block text-white/40 text-sm font-medium hover:text-white transition-colors">All in store &rarr;</a>
+      </div>
+
+      <!--
+        Featured bottle strip — rendered from CONFIG.featured above.
+        To add bottles: add entries to CONFIG.featured.
+        Users scroll horizontally through the cards.
+      -->
+      <div id="featured-strip"
+           class="flex gap-4 overflow-x-auto scroll-hide px-6 md:px-16 pb-4 snap-x snap-mandatory"></div>
+
+      <p class="px-6 md:px-16 mt-4 text-white/20 text-xs">Scroll to see more &rarr;</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-bone-dk">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-3">The Shop</p>
+          <h2 style="font-family:'Space Grotesk',sans-serif" class="text-4xl md:text-5xl font-bold tracking-tight">Gallery</h2>
+        </div>
+      </div>
+
+      <!--
+        Gallery grid — rendered from CONFIG.gallery above.
+        To add images: add entries to CONFIG.gallery. They fill automatically.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2" style="grid-auto-flow: dense;"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT / PHILOSOPHY -->
+  <section id="about" class="py-24 px-6 md:px-16 bg-bone">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-4">What We Believe</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif" class="text-4xl md:text-5xl font-bold leading-tight mb-6 tracking-tight">
+          Wine is farming.<br>We sell what we'd drink.
+        </h2>
+        <div class="w-10 h-0.5 bg-terra mb-8"></div>
+        <p class="text-ink/60 leading-relaxed mb-5">Good Fruit started as a buying club between two friends who were bored of the same ten bottles at every shop in town. We wanted orange wine before it was cool and pét-nat before it was a meme.</p>
+        <p class="text-ink/60 leading-relaxed mb-5">Everything on the shelf is farmed without synthetic chemicals. Most is low or no added sulfur. All of it is from producers whose names we know and whose farms we've either visited or plan to.</p>
+        <p class="text-ink/60 leading-relaxed mb-8">We don't carry everything. We carry the good stuff, priced fairly. If you want Parker points and a black-label Napa Cab, we'll point you two blocks east. If you want something alive, stay.</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="bg-bone-dk px-5 py-4 text-center">
+            <div style="font-family:'Space Grotesk',sans-serif" class="text-3xl font-bold">200+</div>
+            <div class="text-ink/40 text-xs uppercase tracking-widest mt-1">Labels in Stock</div>
+          </div>
+          <div class="bg-bone-dk px-5 py-4 text-center">
+            <div style="font-family:'Space Grotesk',sans-serif" class="text-3xl font-bold">30+</div>
+            <div class="text-ink/40 text-xs uppercase tracking-widest mt-1">Producers</div>
+          </div>
+          <div class="bg-bone-dk px-5 py-4 text-center">
+            <div style="font-family:'Space Grotesk',sans-serif" class="text-3xl font-bold">0</div>
+            <div class="text-ink/40 text-xs uppercase tracking-widest mt-1">Parker Points</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/5] overflow-hidden ph">
+          <img src="/assets/demos/wine-natural/about.jpg" alt="Good Fruit shop interior" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-4 -right-4 bg-terra px-6 py-5 hidden md:block">
+          <p class="text-white text-[10px] tracking-widest uppercase font-semibold mb-1">Next tasting</p>
+          <p class="text-white/80 text-sm">Every other Thursday, 6pm</p>
+          <p class="text-white/50 text-xs mt-1">Free. Bring your own glass.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS / SERVICES -->
+  <section class="py-24 px-6 md:px-16 bg-ink">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-3">At the Shop</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif" class="text-4xl md:text-5xl font-bold tracking-tight text-white">How We Can Help</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-white/5">
+        <div class="bg-ink p-8 group hover:bg-ink-lt transition-colors">
+          <div class="w-8 h-8 rounded-sm bg-terra/20 flex items-center justify-center mb-6">
+            <span class="text-terra text-base">◈</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl text-white mb-3">Recommendations</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Tell us what you're eating or what mood you're in. We'll find something you won't find at the grocery store.</p>
+        </div>
+        <div class="bg-ink p-8 group hover:bg-ink-lt transition-colors">
+          <div class="w-8 h-8 rounded-sm bg-grove/30 flex items-center justify-center mb-6">
+            <span class="text-grove-lt text-base">◇</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl text-white mb-3">Gifting</h3>
+          <p class="text-white/40 text-sm leading-relaxed">We do single bottles, two-packs, and full cases. Tissue and kraft wrap included. Gift notes handwritten on request.</p>
+        </div>
+        <div class="bg-ink p-8 group hover:bg-ink-lt transition-colors">
+          <div class="w-8 h-8 rounded-sm bg-terra/20 flex items-center justify-center mb-6">
+            <span class="text-terra text-base">✦</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl text-white mb-3">Bi-weekly Tastings</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Every other Thursday evening. A producer or region, a handful of bottles, good conversation. Always free.</p>
+        </div>
+        <div class="bg-ink p-8 group hover:bg-ink-lt transition-colors">
+          <div class="w-8 h-8 rounded-sm bg-grove/30 flex items-center justify-center mb-6">
+            <span class="text-grove-lt text-base">≡</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl text-white mb-3">Mixed Cases</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Tell us a budget and a direction (summer whites, Rhône-ish reds, anything orange) and we'll build you a case.</p>
+        </div>
+        <div class="bg-ink p-8 group hover:bg-ink-lt transition-colors">
+          <div class="w-8 h-8 rounded-sm bg-terra/20 flex items-center justify-center mb-6">
+            <span class="text-terra text-base">↗</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl text-white mb-3">Local Delivery</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Free delivery within 4 miles on orders over $75. Call before noon for same-day.</p>
+        </div>
+        <div class="bg-ink p-8 group hover:bg-ink-lt transition-colors">
+          <div class="w-8 h-8 rounded-sm bg-grove/30 flex items-center justify-center mb-6">
+            <span class="text-grove-lt text-base">✉</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl text-white mb-3">The List</h3>
+          <p class="text-white/40 text-sm leading-relaxed">Monthly email: new arrivals, one producer profile, what we're drinking at home. Unsubscribe with one click.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" class="py-24 px-6 md:px-16 bg-terra">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+      <div>
+        <h2 style="font-family:'Space Grotesk',sans-serif" class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
+          Come in.<br>We&rsquo;ll open something.
+        </h2>
+        <p class="text-white/70 max-w-sm leading-relaxed">Walk in, browse, ask questions. We like talking about wine.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-8 shrink-0">
+        <div>
+          <p class="text-white/50 text-[10px] tracking-widest uppercase mb-3">Where</p>
+          <div class="text-white text-sm leading-relaxed">
+            88 Orchard Lane<br>
+            The Market District
+          </div>
+        </div>
+        <div>
+          <p class="text-white/50 text-[10px] tracking-widest uppercase mb-3">Hours</p>
+          <div class="text-white text-sm space-y-1">
+            <div class="flex justify-between gap-6"><span>Tue &ndash; Fri</span><span>12pm &ndash; 8pm</span></div>
+            <div class="flex justify-between gap-6"><span>Sat &ndash; Sun</span><span>11am &ndash; 7pm</span></div>
+            <div class="flex justify-between gap-6"><span>Monday</span><span>Closed</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="text-white/50 text-[10px] tracking-widest uppercase mb-3">Contact</p>
+          <div class="text-white text-sm space-y-1.5">
+            <div><a href="tel:+15555550606" class="hover:text-white/70 transition-colors">(555) 555-0606</a></div>
+            <div><a href="mailto:hello@goodfruitwine.com" class="hover:text-white/70 transition-colors">hello@goodfruitwine.com</a></div>
+            <a href="#" class="inline-block mt-2 text-[10px] tracking-widest uppercase font-semibold text-white/70 hover:text-white transition-colors">Instagram &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-bone border-t border-ink/8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-4">Demo by Automatically Everything</p>
+        <h2 style="font-family:'Space Grotesk',sans-serif" class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Want a site like this<br>for your shop?</h2>
+        <p class="text-ink/40 text-lg max-w-md leading-relaxed">This is a demo. We design and build custom websites for wine shops, bottle shops, and local businesses &mdash; fast, modern, and built to convert.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/" class="bg-grove text-white px-10 py-5 font-bold text-sm hover:bg-grove-lt transition-colors whitespace-nowrap text-center">Get in Touch &rarr;</a>
+        <a href="/" class="border border-ink/20 text-ink/60 px-10 py-5 font-bold text-sm hover:border-ink/50 hover:text-ink transition-colors whitespace-nowrap text-center">View All Demos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 px-6 md:px-16 bg-ink border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <div style="font-family:'Space Grotesk',sans-serif" class="font-bold text-white">Good Fruit <span class="text-terra">Wine</span></div>
+      <div class="text-white/15 text-xs">&copy; <span id="yr"></span> Good Fruit Wine &amp; Bottle Shop. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Render featured bottle strip from CONFIG.featured.
+    // To add bottles: add entries to CONFIG.featured above.
+    (function renderFeatured() {
+      const strip = document.getElementById('featured-strip');
+      CONFIG.featured.forEach(function(item) {
+        const card = document.createElement('div');
+        card.className = 'flex-none w-[260px] md:w-[280px] snap-start bg-grove-lt flex flex-col group';
+        card.innerHTML =
+          '<div class="h-[220px] overflow-hidden ph-grove shrink-0">' +
+            '<img src="' + item.src + '" alt="' + item.bottle + '" ' +
+                'class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+                'loading="lazy">' +
+          '</div>' +
+          '<div class="p-5 flex flex-col flex-1">' +
+            '<p class="text-terra text-[9px] font-semibold tracking-widest uppercase mb-1">' + item.vibe + '</p>' +
+            '<p class="text-white/50 text-xs mb-0.5">' + item.producer + '</p>' +
+            '<h4 style="font-family:\'Space Grotesk\',sans-serif" class="font-bold text-white text-base leading-snug mb-1">' + item.bottle + '</h4>' +
+            '<p class="text-white/40 text-xs mb-3">' + item.origin + '</p>' +
+            '<p class="text-white/60 text-xs leading-relaxed italic flex-1">' + item.blurb + '</p>' +
+            '<div class="flex items-center justify-between mt-4 pt-4 border-t border-white/10">' +
+              '<span style="font-family:\'Space Grotesk\',sans-serif" class="font-bold text-white text-lg">' + item.price + '</span>' +
+              '<a href="#visit" class="text-terra text-[10px] font-semibold uppercase tracking-widest hover:underline underline-offset-2">In store</a>' +
+            '</div>' +
+          '</div>';
+        strip.appendChild(card);
+      });
+    })();
+
+    // Render gallery grid from CONFIG.gallery.
+    // To add images: add entries to CONFIG.gallery above. They fill automatically.
+    // Items at index 0 and 4 are featured (col-span-2); rest are square.
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item, i) {
+        const isFeatured = (i === 0 || i === 4);
+        const cell = document.createElement('div');
+        cell.className = [
+          'relative overflow-hidden ph group cursor-pointer',
+          isFeatured ? 'col-span-2 aspect-[16/9]' : 'col-span-1 aspect-square',
+        ].join(' ');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" ' +
+              'class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+              'loading="lazy">' +
+          '<div class="absolute inset-0 bg-grove/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-white text-[10px] tracking-widest uppercase font-semibold">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

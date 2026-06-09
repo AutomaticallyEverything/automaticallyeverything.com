@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkwell Studio &mdash; Custom &amp; Illustrative Tattooing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment: '#FAF8F4',
+            'parch-dk': '#F0EDE6',
+            charcoal:  '#2A2A2A',
+            'char-lt': '#3A3A3A',
+            sage:      '#7A9E7E',
+            'sage-dk': '#5C7D60',
+            terra:     '#C07040',
+            blush:     '#E8B8A0',
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Space Grotesk', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .ph    { background: repeating-linear-gradient(45deg,#ddd8ce,#ddd8ce 12px,#d4cfc4 12px,#d4cfc4 24px); }
+    .ph-dark { background: repeating-linear-gradient(45deg,#303030,#303030 12px,#282828 12px,#282828 24px); }
+    .scroll-hide { scrollbar-width:none; -ms-overflow-style:none; }
+    .scroll-hide::-webkit-scrollbar { display:none; }
+  </style>
+</head>
+<body class="bg-parchment text-charcoal">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONFIG — edit to update artists and gallery.
+
+  artists: Each artist gets a card. portfolio images shown
+           in a scroll strip below their bio.
+
+  gallery: Main square gallery grid. Add freely.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      artists: [
+        {
+          name:      'Hana Sato',
+          photo:     '/assets/demos/tattoo-fresh/artist-hana.jpg',
+          specialty: 'Fine Line · Botanical · Minimalist',
+          bio:       'Hana draws with a light touch and a botanical obsession. Her work lives at the intersection of illustration and tattooing — things that feel handmade and personal.',
+          portfolio: [
+            { src: '/assets/demos/tattoo-fresh/hana-1.jpg', alt: 'Fine line fern' },
+            { src: '/assets/demos/tattoo-fresh/hana-2.jpg', alt: 'Minimalist moon' },
+            { src: '/assets/demos/tattoo-fresh/hana-3.jpg', alt: 'Botanical sleeve detail' },
+          ],
+        },
+        {
+          name:      'Leo Park',
+          photo:     '/assets/demos/tattoo-fresh/artist-leo.jpg',
+          specialty: 'Illustrative · Neo-Traditional · Color',
+          bio:       'Leo came up through graphic design and illustration before picking up a machine. His work is bold, readable, and full of character — the kind that people stop you on the street about.',
+          portfolio: [
+            { src: '/assets/demos/tattoo-fresh/leo-1.jpg', alt: 'Neo-trad animal' },
+            { src: '/assets/demos/tattoo-fresh/leo-2.jpg', alt: 'Color illustrative' },
+            { src: '/assets/demos/tattoo-fresh/leo-3.jpg', alt: 'Bold illustrative sleeve' },
+          ],
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/tattoo-fresh/gallery-1.jpg',  alt: 'Fine line botanical arm' },
+        { src: '/assets/demos/tattoo-fresh/gallery-2.jpg',  alt: 'Illustrative shoulder piece' },
+        { src: '/assets/demos/tattoo-fresh/gallery-3.jpg',  alt: 'Minimalist wrist' },
+        { src: '/assets/demos/tattoo-fresh/gallery-4.jpg',  alt: 'Watercolor style' },
+        { src: '/assets/demos/tattoo-fresh/gallery-5.jpg',  alt: 'Neo-trad chest' },
+        { src: '/assets/demos/tattoo-fresh/gallery-6.jpg',  alt: 'Fine line portrait' },
+        { src: '/assets/demos/tattoo-fresh/gallery-7.jpg',  alt: 'Botanical forearm' },
+        { src: '/assets/demos/tattoo-fresh/gallery-8.jpg',  alt: 'Color floral' },
+        { src: '/assets/demos/tattoo-fresh/gallery-9.jpg',  alt: 'Script placement' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-parchment/95 backdrop-blur-sm border-b border-charcoal/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-baseline gap-1.5">
+        <span class="font-bold text-xl">Inkwell</span>
+        <span class="text-terra font-bold text-xl">Studio</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#gallery"  class="text-charcoal/50 hover:text-charcoal transition-colors">Gallery</a>
+        <a href="#artists"  class="text-charcoal/50 hover:text-charcoal transition-colors">Artists</a>
+        <a href="#styles"   class="text-charcoal/50 hover:text-charcoal transition-colors">Styles</a>
+        <a href="#book" class="bg-charcoal text-parchment px-5 py-2.5 font-semibold text-sm hover:bg-char-lt transition-colors">Request a Consult</a>
+      </div>
+      <button class="md:hidden text-charcoal/50 hover:text-charcoal" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-parchment border-t border-charcoal/8 px-6 pb-5 pt-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#gallery"  class="text-charcoal/60 hover:text-charcoal" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#artists"  class="text-charcoal/60 hover:text-charcoal" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Artists</a>
+      <a href="#styles"   class="text-charcoal/60 hover:text-charcoal" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Styles</a>
+      <a href="#book" class="bg-charcoal text-parchment px-4 py-3 font-semibold text-center">Request a Consult</a>
+    </div>
+  </nav>
+
+  <!-- HERO — split layout -->
+  <section class="min-h-screen grid md:grid-cols-2 pt-[61px]">
+    <div class="flex flex-col justify-center px-8 md:px-14 lg:px-16 py-16 order-2 md:order-1">
+      <div class="inline-flex items-center gap-2 mb-8 w-fit">
+        <div class="w-2 h-2 rounded-full bg-sage"></div>
+        <span class="text-sage text-xs font-semibold tracking-widest uppercase">Custom &middot; Illustrative &middot; Approachable</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-5">
+        Tattoos that<br>mean something<br><span class="text-terra">to you.</span>
+      </h1>
+      <p class="text-charcoal/50 text-lg leading-relaxed max-w-sm mb-8">
+        A small studio with two artists who take the time to understand what you want — and make it better.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#gallery" class="bg-charcoal text-parchment px-8 py-4 font-semibold text-sm hover:bg-char-lt transition-colors">See the Work &rarr;</a>
+        <a href="#book"    class="border border-charcoal/20 text-charcoal/60 px-8 py-4 font-semibold text-sm hover:border-charcoal/50 hover:text-charcoal transition-colors">Request a Consult</a>
+      </div>
+      <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-charcoal/8">
+        <div class="text-center">
+          <div class="font-bold text-2xl">4.9★</div>
+          <div class="text-charcoal/40 text-xs uppercase tracking-widest mt-0.5">Google</div>
+        </div>
+        <div class="text-center">
+          <div class="font-bold text-2xl">2</div>
+          <div class="text-charcoal/40 text-xs uppercase tracking-widest mt-0.5">Artists</div>
+        </div>
+        <div class="text-center">
+          <div class="font-bold text-2xl">All ages</div>
+          <div class="text-charcoal/40 text-xs uppercase tracking-widest mt-0.5">18+ welcome</div>
+        </div>
+      </div>
+    </div>
+    <div class="relative overflow-hidden min-h-[50vw] md:min-h-0 ph-dark order-1 md:order-2">
+      <img src="/assets/demos/tattoo-fresh/hero.jpg" alt="Inkwell Studio" class="w-full h-full object-cover">
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-charcoal">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-3">Recent Work</p>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-parchment">Portfolio</h2>
+        </div>
+        <a href="#book" class="hidden md:block text-parchment/40 text-sm font-medium hover:text-parchment transition-colors">Request a piece &rarr;</a>
+      </div>
+      <!--
+        Gallery rendered from CONFIG.gallery. Uniform square grid.
+        To add images: add entries to CONFIG.gallery.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-2"></div>
+    </div>
+  </section>
+
+  <!-- ARTISTS -->
+  <section id="artists" class="py-24 px-6 md:px-16 bg-parch-dk">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-3">The Team</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Meet the Artists</h2>
+      </div>
+
+      <!--
+        Artists rendered from CONFIG.artists.
+        Each shows a photo, bio, specialty, and portfolio strip.
+      -->
+      <div id="artists-list" class="space-y-14"></div>
+    </div>
+  </section>
+
+  <!-- STYLES -->
+  <section id="styles" class="py-24 px-6 md:px-16 bg-parchment">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-3">What We Work In</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Styles</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-parch-dk p-7 hover:shadow-md transition-shadow group">
+          <div class="text-2xl mb-4">🌿</div>
+          <h3 class="font-bold text-lg mb-2 group-hover:text-sage transition-colors">Fine Line &amp; Botanical</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Delicate linework, florals, natural forms. Understated work that's intricate up close.</p>
+        </div>
+        <div class="bg-parch-dk p-7 hover:shadow-md transition-shadow group">
+          <div class="text-2xl mb-4">🎨</div>
+          <h3 class="font-bold text-lg mb-2 group-hover:text-terra transition-colors">Illustrative</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Hand-drawn, editorial, character-full work. If it could live in a sketchbook, Leo can put it on skin.</p>
+        </div>
+        <div class="bg-parch-dk p-7 hover:shadow-md transition-shadow group">
+          <div class="text-2xl mb-4">◇</div>
+          <h3 class="font-bold text-lg mb-2 group-hover:text-sage transition-colors">Minimalist</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Simple shapes, clean lines, intentional placement. Work that doesn't shout but always gets noticed.</p>
+        </div>
+        <div class="bg-parch-dk p-7 hover:shadow-md transition-shadow group">
+          <div class="text-2xl mb-4">✦</div>
+          <h3 class="font-bold text-lg mb-2 group-hover:text-terra transition-colors">Neo-Traditional</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Bold outlines and color, grounded in classic technique. Vivid and built to last.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 px-6 md:px-16 bg-parch-dk">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold tracking-tight mb-10">Good to Know</h2>
+      <div class="space-y-6">
+        <div class="border-b border-charcoal/10 pb-6">
+          <h3 class="font-semibold mb-2">Do you do walk-ins?</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Not typically. Everything starts with a short consultation so we can understand your idea, discuss placement, and make sure the design will work long-term.</p>
+        </div>
+        <div class="border-b border-charcoal/10 pb-6">
+          <h3 class="font-semibold mb-2">How do I request a design?</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Use the form below or email us with your idea, size, and placement. Include references if you have them — Pinterest boards, sketches, photos, whatever helps us understand the vibe.</p>
+        </div>
+        <div class="border-b border-charcoal/10 pb-6">
+          <h3 class="font-semibold mb-2">What&rsquo;s the deposit?</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">We take a $100 deposit to hold your booking date. This goes toward the final cost. Rescheduling with 48+ hours notice is no problem.</p>
+        </div>
+        <div class="pb-6">
+          <h3 class="font-semibold mb-2">How much does a tattoo cost?</h3>
+          <p class="text-charcoal/50 text-sm leading-relaxed">Our minimum is $150. Pricing depends on size, complexity, placement, and artist. We'll give you a clear quote during the consultation — no surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK CTA -->
+  <section id="book" class="py-24 px-6 md:px-16 bg-sage">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-4">
+          Got an idea?<br>Let&rsquo;s hear it.
+        </h2>
+        <p class="text-white/70 leading-relaxed max-w-sm">Tell us what you're thinking. The more detail, the better. We reply within 2 days.</p>
+      </div>
+      <div class="flex flex-col gap-4 shrink-0">
+        <a href="mailto:hello@inkwellstudio.com" class="bg-charcoal text-parchment px-10 py-5 font-bold text-sm hover:bg-char-lt transition-colors text-center">Email Us &rarr;</a>
+        <a href="tel:+15555551818" class="border-2 border-white text-white px-10 py-5 font-bold text-sm hover:bg-white hover:text-sage transition-colors text-center">(555) 555-1818</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="py-16 px-6 md:px-16 bg-parchment border-t border-charcoal/8">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-4">Location</p>
+        <div class="text-charcoal/50 text-sm leading-loose">48 Orchard Street<br>East Village</div>
+      </div>
+      <div>
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-4">Hours</p>
+        <div class="text-charcoal/50 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[200px]"><span>Mon &ndash; Sat</span><span>11am &ndash; 7pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-4">Contact</p>
+        <div class="text-charcoal/50 text-sm space-y-1.5">
+          <div>(555) 555-1818</div>
+          <div>hello@inkwellstudio.com</div>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-charcoal/30 hover:text-terra transition-colors text-xs font-semibold uppercase tracking-widest">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-parch-dk border-t border-charcoal/8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-4">Demo by Automatically Everything</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Want a site like this<br>for your studio?</h2>
+        <p class="text-charcoal/40 text-lg max-w-md leading-relaxed">This is a demo. We build custom websites for tattoo artists and local businesses — clean, portfolio-forward, and built to book consultations.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/" class="bg-charcoal text-parchment px-10 py-5 font-semibold text-sm hover:bg-char-lt transition-colors whitespace-nowrap text-center">Get in Touch &rarr;</a>
+        <a href="/"   class="border border-charcoal/20 text-charcoal/60 px-10 py-5 font-semibold text-sm hover:border-charcoal/50 hover:text-charcoal transition-colors whitespace-nowrap text-center">View All Demos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 px-6 md:px-16 bg-charcoal border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="font-bold text-parchment">Inkwell <span class="text-terra">Studio</span></div>
+      <div class="text-parchment/15 text-xs">&copy; <span id="yr"></span> Inkwell Studio. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item) {
+        const cell = document.createElement('div');
+        cell.className = 'relative overflow-hidden ph-dark aspect-square group cursor-pointer';
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+          '<div class="absolute inset-0 bg-charcoal/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-parchment text-xs font-semibold uppercase tracking-widest">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+
+    (function renderArtists() {
+      const list = document.getElementById('artists-list');
+      CONFIG.artists.forEach(function(artist) {
+        const block = document.createElement('div');
+        block.className = 'grid md:grid-cols-[300px_1fr] gap-10 items-start pb-14 border-b border-charcoal/8 last:border-0 last:pb-0';
+
+        const portItems = artist.portfolio.map(function(p) {
+          return '<div class="flex-none w-[160px] aspect-square overflow-hidden ph shrink-0 group-hover:opacity-80 transition-opacity">' +
+            '<img src="' + p.src + '" alt="' + p.alt + '" class="w-full h-full object-cover" loading="lazy">' +
+          '</div>';
+        }).join('');
+
+        block.innerHTML =
+          '<div>' +
+            '<div class="aspect-[3/4] mb-5 overflow-hidden ph">' +
+              '<img src="' + artist.photo + '" alt="' + artist.name + '" class="w-full h-full object-cover object-top" loading="lazy">' +
+            '</div>' +
+          '</div>' +
+          '<div>' +
+            '<p class="text-terra text-xs font-semibold tracking-widest uppercase mb-2">' + artist.specialty + '</p>' +
+            '<h3 class="text-3xl font-bold tracking-tight mb-4">' + artist.name + '</h3>' +
+            '<p class="text-charcoal/50 leading-relaxed mb-6 text-sm max-w-lg">' + artist.bio + '</p>' +
+            '<p class="text-charcoal/30 text-xs uppercase tracking-widest mb-3">Recent work</p>' +
+            '<div class="flex gap-3 overflow-x-auto scroll-hide pb-2">' + portItems + '</div>' +
+            '<a href="#book" class="inline-block mt-6 bg-charcoal text-parchment px-6 py-3 text-xs font-semibold uppercase tracking-widest hover:bg-char-lt transition-colors">Book with ' + artist.name.split(' ')[0] + ' &rarr;</a>' +
+          '</div>';
+        list.appendChild(block);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pawfect Grooming Studio &mdash; Professional Pet Grooming</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            teal:    '#1A9E9E',
+            'teal-lt':'#22B8B8',
+            'teal-dk':'#147878',
+            coral:   '#F5722A',
+            'coral-dk':'#D45E1E',
+            cloud:   '#FAFAF8',
+            'cloud-dk':'#F0EFEB',
+            ink:     '#1A1A1A',
+            'ink-lt':'#2E2E2E',
+            mist:    '#E8F5F5',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .ph { background: repeating-linear-gradient(45deg,#d4eeee,#d4eeee 12px,#c8e8e8 12px,#c8e8e8 24px); }
+    .ph-coral { background: repeating-linear-gradient(45deg,#f5c4a8,#f5c4a8 12px,#f0b898 12px,#f0b898 24px); }
+    .scroll-hide { scrollbar-width:none; -ms-overflow-style:none; }
+    .scroll-hide::-webkit-scrollbar { display:none; }
+  </style>
+</head>
+<body class="bg-cloud text-ink">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONFIG — edit to update services and gallery.
+  services: grooming packages with price + features.
+  gallery:  photos in the gallery grid.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      services: [
+        {
+          name:     'Bath & Brush',
+          emoji:    '🛁',
+          price:    'from $45',
+          duration: '60 min',
+          popular:  false,
+          features: ['Shampoo & condition', 'Blow-dry & brush out', 'Ear cleaning', 'Nail trim', 'Bandana or bow'],
+        },
+        {
+          name:     'Full Groom',
+          emoji:    '✂️',
+          price:    'from $75',
+          duration: '90–120 min',
+          popular:  true,
+          features: ['Everything in Bath & Brush', 'Full haircut to your spec', 'Teeth brushing', 'Paw balm treatment', 'Cologne spritz'],
+        },
+        {
+          name:     'Puppy\'s First Groom',
+          emoji:    '🐾',
+          price:    'from $55',
+          duration: '60 min',
+          popular:  false,
+          features: ['Gentle intro session', 'Bath & blow-dry', 'Basic trim', 'Lots of patience & treats', 'Take-home report card'],
+        },
+        {
+          name:     'Spa Add-Ons',
+          emoji:    '✨',
+          price:    'from $15',
+          duration: 'per add-on',
+          popular:  false,
+          features: ['Blueberry facial', 'Deep conditioning mask', 'Paw balm manicure', 'Teeth brushing', 'Deshedding treatment'],
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/pet-grooming-fresh/gallery-golden.jpg',   alt: 'Freshly groomed golden retriever' },
+        { src: '/assets/demos/pet-grooming-fresh/gallery-doodle.jpg',   alt: 'Goldendoodle after full groom' },
+        { src: '/assets/demos/pet-grooming-fresh/gallery-salon.jpg',    alt: 'Grooming studio interior' },
+        { src: '/assets/demos/pet-grooming-fresh/gallery-bath.jpg',     alt: 'Pup enjoying bath time' },
+        { src: '/assets/demos/pet-grooming-fresh/gallery-trim.jpg',     alt: 'Precision scissor trim' },
+        { src: '/assets/demos/pet-grooming-fresh/gallery-poodle.jpg',   alt: 'Classic poodle cut' },
+        { src: '/assets/demos/pet-grooming-fresh/gallery-tools.jpg',    alt: 'Professional grooming tools' },
+        { src: '/assets/demos/pet-grooming-fresh/gallery-before-after.jpg', alt: 'Before and after transformation' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cloud/95 backdrop-blur-sm border-b border-teal/15 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-base">🐾</div>
+        <div>
+          <div class="font-bold text-base leading-none">Pawfect</div>
+          <div class="text-teal text-[10px] font-semibold leading-none mt-0.5">Grooming Studio</div>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="#services"  class="text-ink/50 hover:text-ink transition-colors">Services</a>
+        <a href="#gallery"   class="text-ink/50 hover:text-ink transition-colors">Gallery</a>
+        <a href="#about"     class="text-ink/50 hover:text-ink transition-colors">About</a>
+        <a href="#book" class="bg-teal text-white px-5 py-2.5 rounded-full font-semibold hover:bg-teal-lt transition-colors">Book Now &rarr;</a>
+      </div>
+      <button class="md:hidden text-ink/50 hover:text-ink" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-cloud border-t border-teal/10 px-6 pb-5 pt-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#services"  class="text-ink/60 hover:text-teal" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Services</a>
+      <a href="#gallery"   class="text-ink/60 hover:text-teal" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#about"     class="text-ink/60 hover:text-teal" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">About</a>
+      <a href="#book" class="bg-teal text-white px-4 py-3 rounded-full font-semibold text-center">Book Now &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-screen grid md:grid-cols-2 pt-[69px]">
+    <div class="flex flex-col justify-center px-8 md:px-12 lg:px-16 py-16 order-2 md:order-1">
+      <div class="inline-flex items-center gap-2 mb-6 bg-mist text-teal rounded-full px-4 py-2 w-fit text-xs font-semibold">
+        <span>🐶</span> Now accepting new clients
+      </div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-5">
+        Your pet deserves<br>to feel <span class="text-teal">amazing.</span>
+      </h1>
+      <p class="text-ink/50 text-lg leading-relaxed max-w-sm mb-8">
+        Professional grooming for dogs of all breeds. Certified groomers, spa-quality products, and a tail wagging when they leave.
+      </p>
+      <div class="flex flex-wrap gap-3 mb-10">
+        <a href="#book"     class="bg-teal text-white px-8 py-4 rounded-full font-bold text-sm hover:bg-teal-lt transition-colors">Book a Groom &rarr;</a>
+        <a href="#services" class="border border-ink/15 text-ink/60 px-8 py-4 rounded-full font-bold text-sm hover:border-teal hover:text-teal transition-colors">See Prices</a>
+      </div>
+      <div class="flex flex-wrap gap-6 pt-8 border-t border-ink/8">
+        <div class="flex items-center gap-2">
+          <span class="text-coral text-xl">⭐</span>
+          <div>
+            <div class="font-bold text-sm">4.9 / 5</div>
+            <div class="text-ink/40 text-xs">300+ reviews</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-teal text-xl">✓</span>
+          <div>
+            <div class="font-bold text-sm">Certified &amp; insured</div>
+            <div class="text-ink/40 text-xs">All groomers</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-coral text-xl">🐾</span>
+          <div>
+            <div class="font-bold text-sm">Fear-free</div>
+            <div class="text-ink/40 text-xs">Positive only</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative overflow-hidden min-h-[50vw] md:min-h-0 ph order-1 md:order-2">
+      <img src="/assets/demos/pet-grooming-fresh/hero.jpg" alt="Happy groomed dog" class="w-full h-full object-cover object-center">
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-6 md:px-16 bg-mist">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-teal text-xs font-bold tracking-widest uppercase mb-3">Grooming Services</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">What We Offer</h2>
+        <p class="text-ink/40 mt-3 text-sm">Prices vary by breed and coat type. Free consultation for first-time clients.</p>
+      </div>
+      <!--
+        Services rendered from CONFIG.services.
+        To add or change packages: edit the services array above.
+        Set popular:true to highlight one in teal.
+      -->
+      <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-5"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-cloud">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-teal text-xs font-bold tracking-widest uppercase mb-3">Fresh Looks</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">The Glow-Ups</h2>
+      </div>
+      <!--
+        Gallery rendered from CONFIG.gallery.
+        To add photos: add entries to CONFIG.gallery. They fill automatically.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-6 md:px-16 bg-cloud-dk">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="aspect-[4/5] rounded-3xl overflow-hidden ph">
+          <img src="/assets/demos/pet-grooming-fresh/about.jpg" alt="Lead groomer with a pup" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="absolute -bottom-4 -right-4 bg-teal rounded-2xl px-5 py-4 shadow-lg hidden md:block text-white">
+          <div class="text-2xl mb-0.5">🐾</div>
+          <div class="font-bold text-sm">Fear-Free Certified</div>
+          <div class="text-white/70 text-xs">All our groomers</div>
+        </div>
+      </div>
+      <div>
+        <p class="text-teal text-xs font-bold tracking-widest uppercase mb-4">Our Story</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+          We treat every pet<br>like our own.
+        </h2>
+        <p class="text-ink/60 leading-relaxed mb-5">Pawfect opened in 2018 because we couldn't find a groomer who treated anxious dogs the way we wanted. So we trained, certified, and built the salon we were looking for.</p>
+        <p class="text-ink/60 leading-relaxed mb-10">All our groomers are Fear-Free certified, which means every visit is slow, positive, and treat-heavy. No cage dryers. No rushing. No stress.</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="bg-mist rounded-2xl px-5 py-4 text-center">
+            <div class="text-3xl font-extrabold text-teal">6+</div>
+            <div class="text-ink/40 text-xs uppercase tracking-widest mt-1">Years open</div>
+          </div>
+          <div class="bg-mist rounded-2xl px-5 py-4 text-center">
+            <div class="text-3xl font-extrabold text-coral">4.9★</div>
+            <div class="text-ink/40 text-xs uppercase tracking-widest mt-1">Google stars</div>
+          </div>
+          <div class="bg-mist rounded-2xl px-5 py-4 text-center">
+            <div class="text-3xl font-extrabold text-teal">100%</div>
+            <div class="text-ink/40 text-xs uppercase tracking-widest mt-1">Fear-free</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 md:px-16 bg-teal">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white">Happy Pups, Happy Parents</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-7 text-white">
+          <div class="text-coral text-sm mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-white/80 text-sm leading-relaxed mb-5">&ldquo;My rescue was terrified of grooming. The team here took their time — 45 minutes of just letting him sniff the tools. He came home wagging his tail. Genuinely shocked.&rdquo;</p>
+          <div class="text-white/60 text-xs font-bold uppercase tracking-wider">&mdash; Sarah T. &middot; Biscuit the Rescue Mix</div>
+        </div>
+        <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-7 text-white">
+          <div class="text-coral text-sm mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-white/80 text-sm leading-relaxed mb-5">&ldquo;I've tried four groomers and none of them did Mochi's doodle coat right. Pawfect nails it every time. The deshedding treatment alone is worth the trip.&rdquo;</p>
+          <div class="text-white/60 text-xs font-bold uppercase tracking-wider">&mdash; James R. &middot; Mochi the Goldendoodle</div>
+        </div>
+        <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-7 text-white">
+          <div class="text-coral text-sm mb-4">⭐⭐⭐⭐⭐</div>
+          <p class="text-white/80 text-sm leading-relaxed mb-5">&ldquo;The puppy's first groom package is genius. They sent me a little report card showing how Pepper did with each step. Already booked the next one.&rdquo;</p>
+          <div class="text-white/60 text-xs font-bold uppercase tracking-wider">&mdash; Mia K. &middot; Pepper the Cavapoo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK CTA -->
+  <section id="book" class="py-24 px-6 md:px-16 bg-cloud">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-teal text-xs font-bold tracking-widest uppercase mb-4">Book an Appointment</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight">
+          Ready to book<br>your pup in?
+        </h2>
+        <p class="text-ink/50 leading-relaxed max-w-sm">Online booking 24/7 &middot; Walk-ins welcome based on availability &middot; First visit? We&rsquo;d love to chat first.</p>
+      </div>
+      <div class="flex flex-col gap-4 shrink-0">
+        <a href="#" class="bg-teal text-white px-10 py-5 rounded-full font-bold text-sm hover:bg-teal-lt transition-colors text-center">Book Online &rarr;</a>
+        <a href="tel:+15555551111" class="border-2 border-teal text-teal px-10 py-5 rounded-full font-bold text-sm hover:bg-teal hover:text-white transition-colors text-center">(555) 555-1111</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="py-16 px-6 md:px-16 bg-cloud-dk border-t border-ink/8">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+      <div>
+        <p class="text-teal text-xs font-bold tracking-widest uppercase mb-4">Location</p>
+        <div class="text-ink/50 text-sm leading-loose">320 Maple Street<br>The Garden District</div>
+      </div>
+      <div>
+        <p class="text-teal text-xs font-bold tracking-widest uppercase mb-4">Hours</p>
+        <div class="text-ink/50 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[200px]"><span>Tue &ndash; Fri</span><span>9am &ndash; 6pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Saturday</span><span>8am &ndash; 5pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Sun &ndash; Mon</span><span>Closed</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-teal text-xs font-bold tracking-widest uppercase mb-4">Contact</p>
+        <div class="text-ink/50 text-sm space-y-1.5">
+          <div><a href="tel:+15555551111" class="hover:text-teal transition-colors">(555) 555-1111</a></div>
+          <div><a href="mailto:woof@pawfectgrooming.com" class="hover:text-teal transition-colors">woof@pawfectgrooming.com</a></div>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-ink/30 hover:text-teal transition-colors text-xs font-bold uppercase tracking-widest">Instagram</a>
+            <span class="text-ink/10">/</span>
+            <a href="#" class="text-ink/30 hover:text-teal transition-colors text-xs font-bold uppercase tracking-widest">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-cloud border-t border-ink/8">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-teal text-xs font-bold tracking-widest uppercase mb-4">Demo by Automatically Everything</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Want a site like this<br>for your pet business?</h2>
+        <p class="text-ink/40 text-lg max-w-md leading-relaxed">This is a demo. We design and build custom websites for pet groomers and local businesses &mdash; fast, mobile-ready, and built to fill your schedule.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/"  class="bg-teal text-white px-10 py-5 rounded-full font-bold text-sm hover:bg-teal-lt transition-colors whitespace-nowrap text-center">Get in Touch &rarr;</a>
+        <a href="/"    class="border border-ink/20 text-ink/60 px-10 py-5 rounded-full font-bold text-sm hover:border-ink/50 hover:text-ink transition-colors whitespace-nowrap text-center">View All Demos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 px-6 md:px-16 bg-teal-dk">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2 text-white font-bold">🐾 Pawfect Grooming Studio</div>
+      <div class="text-white/30 text-xs">320 Maple Street &middot; (555) 555-1111 &middot; &copy; <span id="yr"></span></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    (function renderServices() {
+      const grid = document.getElementById('services-grid');
+      CONFIG.services.forEach(function(svc) {
+        const card = document.createElement('div');
+        const pop = svc.popular;
+        card.className = 'flex flex-col p-7 rounded-2xl border-2 ' +
+          (pop ? 'bg-teal text-white border-teal shadow-xl shadow-teal/20' : 'bg-white border-ink/8 hover:border-teal transition-colors');
+        const items = svc.features.map(function(f) {
+          return '<li class="flex items-start gap-2 text-xs ' + (pop ? 'text-white/80' : 'text-ink/50') + '">' +
+            '<span class="' + (pop ? 'text-white' : 'text-teal') + ' mt-0.5 shrink-0">✓</span>' + f + '</li>';
+        }).join('');
+        card.innerHTML =
+          '<div class="text-3xl mb-4">' + svc.emoji + '</div>' +
+          '<h3 class="font-extrabold text-xl mb-1 ' + (pop ? 'text-white' : '') + '">' + svc.name + '</h3>' +
+          '<div class="flex items-center gap-2 mb-1"><span class="font-bold text-2xl ' + (pop ? 'text-white' : 'text-teal') + '">' + svc.price + '</span></div>' +
+          '<div class="text-xs ' + (pop ? 'text-white/60' : 'text-ink/30') + ' mb-5">' + svc.duration + '</div>' +
+          '<ul class="space-y-2 flex-1">' + items + '</ul>' +
+          '<a href="#book" class="mt-7 block py-3 text-center text-xs font-bold rounded-full transition-colors ' +
+            (pop ? 'bg-white text-teal hover:bg-cloud' : 'bg-teal text-white hover:bg-teal-lt') + '">Book This</a>';
+        grid.appendChild(card);
+      });
+    })();
+
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item, i) {
+        const cell = document.createElement('div');
+        cell.className = 'relative overflow-hidden ph rounded-2xl group cursor-pointer ' +
+          (i === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+          '<div class="absolute inset-0 bg-teal/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 rounded-2xl">' +
+            '<span class="text-white text-xs font-bold uppercase tracking-widest">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

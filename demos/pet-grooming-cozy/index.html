@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Muddy Paw &mdash; Neighborhood Pet Grooming</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bark:    '#3D2410',
+            'bark-lt':'#5C3A1E',
+            tan:     '#C89060',
+            'tan-lt':'#D8A878',
+            cream:   '#FBF7F0',
+            'cream-dk':'#F2EAD8',
+            grove:   '#3A5C3A',
+            'grove-lt':'#4A7040',
+            rust:    '#8B3A1A',
+          },
+          fontFamily: {
+            serif: ['Libre Baskerville', 'Georgia', 'serif'],
+            sans:  ['Nunito Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Nunito Sans', sans-serif; }
+    h1, h2, h3 { font-family: 'Libre Baskerville', serif; }
+    html { scroll-behavior: smooth; }
+    .ph { background: repeating-linear-gradient(45deg,#d4b898,#d4b898 12px,#c8a888 12px,#c8a888 24px); }
+    .ph-grove { background: repeating-linear-gradient(45deg,#3a5030,#3a5030 12px,#324830 12px,#324830 24px); }
+  </style>
+</head>
+<body class="bg-cream text-bark">
+
+  <script>
+    const CONFIG = {
+      services: [
+        {
+          name:    'Bath & Brush Out',
+          icon:    '🛁',
+          price:   'from $40',
+          time:    '~1 hr',
+          desc:    'Shampoo with our house botanical blend, blow-dry, brush, nail trim, and ear clean.',
+        },
+        {
+          name:    'The Full Groom',
+          icon:    '✂️',
+          price:   'from $70',
+          time:    '~2 hrs',
+          desc:    'Full bath + a haircut shaped to your dog\'s breed or your preference. Includes finish spritz.',
+        },
+        {
+          name:    'Tidy & Trim',
+          icon:    '🌿',
+          price:   'from $35',
+          time:    '~45 min',
+          desc:    'In-between grooms. Paws, face, and sanitary trim. Quick and easy.',
+        },
+        {
+          name:    'Senior Groom',
+          icon:    '💛',
+          price:   'from $55',
+          time:    '~1.5 hrs',
+          desc:    'Slower pace, extra breaks, and a gentle touch for older dogs who need a little more patience.',
+        },
+        {
+          name:    'Cats, Too',
+          icon:    '🐱',
+          price:   'from $65',
+          time:    '~1.5 hrs',
+          desc:    'Lion cuts, sanitary trims, bath, and nail clip. By appointment only — one cat per day.',
+        },
+        {
+          name:    'Add-Ons',
+          icon:    '✨',
+          price:   'from $10',
+          time:    'per service',
+          desc:    'Teeth brushing, blueberry facial, paw balm, deshedding treatment. Ask when booking.',
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/pet-grooming-cozy/gallery-shopfront.jpg', alt: 'The Muddy Paw shopfront' },
+        { src: '/assets/demos/pet-grooming-cozy/gallery-cozy.jpg',      alt: 'Cozy grooming station' },
+        { src: '/assets/demos/pet-grooming-cozy/gallery-pup1.jpg',      alt: 'Freshly groomed terrier' },
+        { src: '/assets/demos/pet-grooming-cozy/gallery-pup2.jpg',      alt: 'Happy lab after bath' },
+        { src: '/assets/demos/pet-grooming-cozy/gallery-pup3.jpg',      alt: 'Fluffy after full groom' },
+        { src: '/assets/demos/pet-grooming-cozy/gallery-cat.jpg',       alt: 'Cat lion cut result' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-bark/96 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <div class="font-serif text-tan text-xl tracking-wide">The Muddy Paw</div>
+        <div class="text-tan/50 text-[9px] tracking-[0.35em] uppercase mt-0.5">Neighborhood Pet Grooming</div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-[11px] tracking-wider uppercase">
+        <a href="#services" class="text-cream/50 hover:text-tan transition-colors">Services</a>
+        <a href="#gallery"  class="text-cream/50 hover:text-tan transition-colors">Gallery</a>
+        <a href="#about"    class="text-cream/50 hover:text-tan transition-colors">About</a>
+        <a href="#book" class="border border-tan text-tan px-5 py-2.5 font-bold hover:bg-tan hover:text-bark transition-colors">Book Now</a>
+      </div>
+      <button class="md:hidden text-tan" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-bark-lt border-t border-tan/20 px-6 pb-6 pt-4 flex flex-col gap-4 text-[11px] tracking-widest uppercase">
+      <a href="#services" class="text-cream/60 hover:text-tan" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Services</a>
+      <a href="#gallery"  class="text-cream/60 hover:text-tan" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#about"    class="text-cream/60 hover:text-tan" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">About</a>
+      <a href="#book" class="border border-tan text-tan px-4 py-3 font-bold text-center">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-end overflow-hidden bg-bark">
+    <div class="absolute inset-0 ph-grove"></div>
+    <img src="/assets/demos/pet-grooming-cozy/hero.jpg" alt="The Muddy Paw grooming salon" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-bark/90 via-bark/40 to-bark/10"></div>
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 pb-16 md:pb-24">
+      <div class="inline-flex items-center gap-3 mb-6">
+        <div class="h-px w-8 bg-tan"></div>
+        <span class="text-tan text-[10px] tracking-[0.5em] uppercase">Est. 2016 &middot; Neighborhood Grooming</span>
+      </div>
+      <h1 class="font-serif text-cream text-5xl md:text-7xl font-bold leading-tight mb-5">
+        Clean pups.<br>Happy dogs.<br><span class="text-tan italic">Every time.</span>
+      </h1>
+      <p class="text-cream/50 text-lg max-w-md leading-relaxed mb-8">A small, calm grooming studio where your dog actually wants to come back. No assembly lines, no rushing, no strangers.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#book"     class="bg-tan text-bark px-8 py-4 font-bold text-[11px] tracking-widest uppercase hover:bg-tan-lt transition-colors">Book an Appointment</a>
+        <a href="#services" class="border border-cream/30 text-cream/60 px-8 py-4 font-bold text-[11px] tracking-widest uppercase hover:border-tan hover:text-tan transition-colors">View Services</a>
+      </div>
+    </div>
+    <div class="absolute top-28 right-8 md:right-16 bg-cream/90 backdrop-blur-sm px-5 py-4 hidden md:block">
+      <div class="font-serif text-bark font-bold text-xl">4.9 ⭐</div>
+      <div class="text-bark/40 text-[10px] tracking-widest uppercase mt-0.5">250+ reviews</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-6 md:px-16 bg-cream-dk">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-tan text-[10px] tracking-[0.4em] uppercase mb-3">What We Do</p>
+        <h2 class="font-serif text-5xl font-bold">Services &amp; Pricing</h2>
+        <div class="w-10 h-px bg-tan mx-auto mt-5"></div>
+        <p class="text-bark/40 mt-4 text-sm">Prices vary by breed size and coat condition. Free quote for first-timers.</p>
+      </div>
+      <div id="services-grid" class="grid md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-cream">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-tan text-[10px] tracking-[0.4em] uppercase mb-3">The Work</p>
+        <h2 class="font-serif text-5xl font-bold">Before &amp; After</h2>
+        <div class="w-10 h-px bg-tan mx-auto mt-5"></div>
+      </div>
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-6 md:px-16 bg-grove">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="aspect-[4/5] overflow-hidden ph">
+          <img src="/assets/demos/pet-grooming-cozy/about.jpg" alt="Rachel with a happy dog" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="absolute top-4 left-4 w-10 h-10 border-t-2 border-l-2 border-tan pointer-events-none"></div>
+        <div class="absolute bottom-4 right-4 w-10 h-10 border-b-2 border-r-2 border-tan pointer-events-none"></div>
+      </div>
+      <div>
+        <p class="text-tan text-[10px] tracking-[0.4em] uppercase mb-4">Our Story</p>
+        <h2 class="font-serif text-4xl font-bold text-cream leading-tight mb-6">
+          Just Rachel<br>and a quiet room.
+        </h2>
+        <div class="w-10 h-px bg-tan mb-7"></div>
+        <p class="text-cream/60 leading-relaxed mb-5">Rachel spent eight years at a high-volume chain salon before she stopped and asked herself: would I bring my dog here? The answer was no.</p>
+        <p class="text-cream/60 leading-relaxed mb-5">The Muddy Paw opened in 2016 as a one-dog-at-a-time studio. Same principle still. One groomer, one dog, full attention.</p>
+        <p class="text-cream/60 leading-relaxed mb-10">She's Fear-Free certified and takes four continuing education courses a year. The scissors are sharp, the towels are warm, and the treats are always on the counter.</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="bg-cream/10 rounded-lg px-5 py-4 text-center">
+            <div class="font-serif text-tan text-3xl font-bold">8+</div>
+            <div class="text-cream/40 text-xs uppercase tracking-widest mt-1">Years open</div>
+          </div>
+          <div class="bg-cream/10 rounded-lg px-5 py-4 text-center">
+            <div class="font-serif text-tan text-3xl font-bold">1:1</div>
+            <div class="text-cream/40 text-xs uppercase tracking-widest mt-1">Dog at a time</div>
+          </div>
+          <div class="bg-cream/10 rounded-lg px-5 py-4 text-center">
+            <div class="font-serif text-tan text-3xl font-bold">4.9</div>
+            <div class="text-cream/40 text-xs uppercase tracking-widest mt-1">Star rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 md:px-16 bg-cream-dk">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-tan text-[10px] tracking-[0.4em] uppercase mb-3">From the Humans</p>
+        <h2 class="font-serif text-5xl font-bold">What They Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="font-serif text-tan text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-bark/60 text-sm leading-relaxed mb-5">Ruby comes home calm and happy. No shaking, no cowering. That's been true every single visit in four years. Rachel is a miracle worker.</p>
+          <div class="text-tan text-[10px] tracking-widest uppercase">&mdash; Tom B. &middot; Ruby the Rescue</div>
+        </div>
+        <div>
+          <div class="font-serif text-tan text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-bark/60 text-sm leading-relaxed mb-5">I asked about my elderly lab's arthritic hips. Rachel had already looked up techniques for older dogs before I even came in. That's the level of care here.</p>
+          <div class="text-tan text-[10px] tracking-widest uppercase">&mdash; Linda H. &middot; Chester the Lab</div>
+        </div>
+        <div>
+          <div class="font-serif text-tan text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-bark/60 text-sm leading-relaxed mb-5">We drive 45 minutes each way. Never considered switching. When you find someone who really cares about your dog, you don't let go of that.</p>
+          <div class="text-tan text-[10px] tracking-widest uppercase">&mdash; Priya M. &middot; Archie the Schnauzer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book" class="py-24 px-6 md:px-16 bg-tan">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-bark leading-tight mb-4">Ready to book<br>your dog in?</h2>
+        <p class="text-bark/60 leading-relaxed max-w-sm">By appointment only. Call, text, or email — Rachel handles all bookings personally.</p>
+      </div>
+      <div class="flex flex-col gap-4 shrink-0">
+        <a href="tel:+15555551212" class="bg-bark text-cream px-10 py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-bark-lt transition-colors text-center">(555) 555-1212</a>
+        <a href="mailto:rachel@muddypawgrooming.com" class="border-2 border-bark text-bark px-10 py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-bark hover:text-cream transition-colors text-center">Email Rachel</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="py-16 px-6 md:px-16 bg-bark border-t border-tan/20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-tan text-[10px] tracking-[0.4em] uppercase mb-4">Location</p>
+        <div class="text-cream/40 text-sm leading-loose">88 Elm Street<br>Riverside neighborhood</div>
+      </div>
+      <div>
+        <p class="text-tan text-[10px] tracking-[0.4em] uppercase mb-4">Hours</p>
+        <div class="text-cream/40 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[200px]"><span>Mon &ndash; Fri</span><span>9am &ndash; 5pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Saturday</span><span>9am &ndash; 3pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-tan text-[10px] tracking-[0.4em] uppercase mb-4">Contact</p>
+        <div class="text-cream/40 text-sm space-y-1.5">
+          <div>(555) 555-1212</div>
+          <div>rachel@muddypawgrooming.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-cream border-t border-bark/10">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="inline-flex items-center gap-4 mb-8">
+        <div class="h-px w-10 bg-tan"></div>
+        <span class="text-tan text-[10px] tracking-[0.3em] uppercase">Demo by Automatically Everything</span>
+        <div class="h-px w-10 bg-tan"></div>
+      </div>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold mb-5">Love the look?<br>Let&rsquo;s build yours.</h2>
+      <p class="text-bark/50 leading-relaxed mb-10 max-w-lg mx-auto">This is a demo. Automatically Everything builds custom websites for pet groomers and local businesses &mdash; built to match your style and keep your books full.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-block bg-bark text-cream px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-bark-lt transition-colors">Talk to Us</a>
+        <a href="/" class="inline-block border border-bark text-bark px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-bark hover:text-cream transition-colors">View All Demo Sites</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 bg-bark text-center border-t border-tan/20">
+    <div class="font-serif text-tan text-xl mb-2">The Muddy Paw</div>
+    <div class="text-cream/20 text-xs">88 Elm Street &middot; (555) 555-1212 &middot; &copy; <span id="yr"></span></div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    (function renderServices() {
+      const grid = document.getElementById('services-grid');
+      CONFIG.services.forEach(function(svc) {
+        const card = document.createElement('div');
+        card.className = 'bg-cream border border-bark/8 hover:border-tan transition-colors duration-300 p-7 group';
+        card.innerHTML =
+          '<div class="text-2xl mb-4">' + svc.icon + '</div>' +
+          '<h3 class="font-serif text-xl font-bold mb-1 group-hover:text-rust transition-colors">' + svc.name + '</h3>' +
+          '<div class="flex items-center justify-between mb-3"><span class="font-bold text-tan text-lg">' + svc.price + '</span><span class="text-bark/30 text-xs">' + svc.time + '</span></div>' +
+          '<p class="text-bark/50 text-sm leading-relaxed">' + svc.desc + '</p>';
+        grid.appendChild(card);
+      });
+    })();
+
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item, i) {
+        const cell = document.createElement('div');
+        cell.className = 'relative overflow-hidden ph group cursor-pointer ' + (i === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+          '<div class="absolute inset-0 bg-bark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-cream text-[10px] tracking-widest uppercase font-semibold">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

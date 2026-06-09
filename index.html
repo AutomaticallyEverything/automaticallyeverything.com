@@ -1,1010 +1,916 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Automatically Everything</title>
-    <!--Meta For No Index-->
+    <title>Automatically Everything — Custom Websites for Local Businesses</title>
     <meta name="robots" content="Noimageindex"/>
-
-    <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-
-    <!-- Stylesheets -->
-    <link href="/style/712937ca6097f87667d145e625f10a792ba0afd87aa1c59051339308880efcf9-output.css" rel="stylesheet" />
-
-    <!--Favicon-->
+    <link href="/style/e2f79518f395021c83b5653660e690c2aecbef1493d75a9a0d64004f75d39efe-output.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon" />
-    <link rel="icon" href="/assets/images/favicon.svg" type="image/x-icon" />
-  </head>
-  <body>
-    <header class="fixed w-full z-50">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', sans-serif; }
+      .font-display { font-family: 'Space Grotesk', sans-serif; }
+    </style>
     
-      <nav class="w-full bg-white border-b border-gray-200 py-2.5 dark:bg-gray-900 dark:border-gray-700">
-        <div
-          class="flex flex-wrap items-center justify-between max-w-screen-xl px-6 lg:px-8 mx-auto"
-        >
-          <a href="/" class="flex items-center">
-            <span
-              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
-              >AutomaticallyEverything</span>
-          </a>
-          <div class="flex items-center lg:order-2">
-            <button
-              data-collapse-toggle="mobile-menu-2"
-              type="button"
-              class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="mobile-menu-2"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              <svg
-                class="hidden w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div
-            class="hidden w-full lg:flex lg:w-auto lg:order-1"
-            id="mobile-menu-2"
-          >
-            <ul class="flex flex-col divide-y divide-blue-100 border-t border-blue-100 lg:divide-y-0 lg:border-0 lg:flex-row lg:space-x-8 font-medium">
-            
-              <li>
-              
-                <a
-                  href="/"
-                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white lg:font-semibold"
-                  >Home</a
-                >
-              
-              </li>
-            
-              <li>
-              
-                <a
-                  href="/examples"
-                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white"
-                  >Projects And Ideas</a
-                >
-              
-              </li>
-            
-              <li>
-              
-                <a
-                  href="/contact"
-                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white"
-                  >Contact Us</a
-                >
-              
-              </li>
-            
-            </ul>
-          </div>
-        </div>
-      </nav>
-      
-    </header>
-    
-    <section class="bg-slate-900">
-      <div
-        class="grid max-w-screen-xl px-4 pt-20 pb-12 mx-auto lg:gap-8 xl:gap-0 lg:py-24 lg:grid-cols-12 lg:pt-32"
-      >
-        <div class="mr-auto place-self-center lg:col-span-7">
-          <h1
-            class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl text-white"
-          >
-          The website guys for small businesses.
-          </h1>
-          <p
-            class="max-w-2xl mb-8 font-light text-slate-300 lg:mb-10 md:text-lg lg:text-xl"
-          >
-          We started this to help family and friends who kept getting quoted hundreds of dollars a month for a simple website. Now we do it for everyone. $30/month, custom site, unlimited updates, and a real person to call.
-          </p>
-          <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-            
-            
-            <a
-              href="/examples"
-              class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-semibold text-white bg-blue-600 rounded-lg sm:w-auto hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-800"
-            >
-              See how it works
-            </a>
-            
-            
-            
-            <a
-              href="/contact"
-              class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-slate-200 bg-transparent border border-slate-500 rounded-lg sm:w-auto hover:bg-slate-800 hover:border-slate-400 focus:outline-none focus:ring-4 focus:ring-slate-700"
-            >
-              Talk to us
-            </a>
-            
-            
-          </div>
-        </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-          <img src="./assets/images/person.jpg" alt="" />
-        </div>
-      </div>
-    </section>
+<style>
+  .demo-preview {
+    background-color: var(--brand);
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 12px,
+      transparent 12px,
+      transparent 24px
+    );
+    transition: transform 0.4s ease;
+  }
+  .demo-card:hover .demo-preview { transform: scale(1.02); }
+  .demo-preview img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .filter-pill.active { background: #1A1A1A; color: #ffffff; }
+  .demo-card { transition: box-shadow 0.25s ease, transform 0.25s ease; }
+  .demo-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.12); transform: translateY(-2px); }
+</style>
 
-    <section class="bg-gray-50 dark:bg-gray-800">
-      <div
-        class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6"
-      >
-        <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-          <div
-            class="text-gray-500 sm:text-lg dark:text-gray-400"
-          >
-            <h2
-              class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
-            >
-              Built for the people who were getting ripped off
-            </h2>
-            <p class="mb-8 font-light lg:text-xl">
-              We kept watching people we know get quoted $400, $500, even $600 a month for websites that should cost a fraction of that. Most just wanted something that looked professional, worked on a phone, and fit their brand so we starting building exactly that for friends and family, then for everyone.
-            </p>
-            <ul
-              role="list"
-              class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700"
-            >
-              
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >Unlimited changes. Yes, really. Just message us and we&#39;ll take care of it.</span
-                >
-              </li>
-              
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >No ad banners, no &#39;Made with Wix&#39; badges, no fine print.</span
-                >
-              </li>
-              
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >Built by a human specifically for your business. This isn&#39;t a frustrating website builder you have to learn then use yourself.</span
-                >
-              </li>
-              
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >Someone to call when you have a question or an idea.</span
-                >
-              </li>
-              
-            </ul>
+  </head>
+  <body class="bg-[#F3F1ED] text-stone-800">
+
+    <header class="sticky top-0 z-50 bg-[#F3F1ED]/95 backdrop-blur-sm border-b border-stone-200/60">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+
+        <a href="/" class="flex items-center gap-2.5 shrink-0">
+          <div class="w-7 h-7 bg-stone-800 flex items-center justify-center">
+            <span class="font-display text-white text-xs font-bold leading-none">AE</span>
+          </div>
+          <span class="font-display font-semibold text-sm hidden sm:block">Automatically Everything</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          
             
-            <p class="mb-8 font-light lg:text-xl">
-              Same price as a DIY website builder. Way less work.
-            </p>
+              <a href="/" class="text-stone-500 hover:text-stone-900 transition-colors">Home</a>
             
-          </div>
-          <img
-            class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
-            src="./assets/images/lightbulb.jpg"
-            alt=""
-          />
-        </div>
-        <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-          <img
-            class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
-            src="./assets/images/dosomethinggreat.jpg"
-            alt=""
-          />
-          <div
-            class="text-gray-500 sm:text-lg dark:text-gray-400"
-          >
-            <h2
-              class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
-            >
-              Everything included. Nothing to figure out
-            </h2>
-            <p class="mb-8 font-light lg:text-xl">
-              No annual contracts, no upsells, no surprise invoices. You pay $30 a month and we handle the rest. If you ever want a change, just reach out and  we&#39;ll get it done.
-            </p>
-            <ul
-              role="list"
-              class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700"
-            >
+          
             
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >Unlimited changes, one at a time. You prioritize; we build.</span
-                >
-              </li>
-              
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >Hosted on reliable infrastructure that stays up.</span
-                >
-              </li>
-              
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >Contact forms, maps, photo galleries, or whatever your site needs.</span
-                >
-              </li>
-              
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >Your own domain, set up and connected.</span
-                >
-              </li>
-              
-              <li class="flex space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-blue-500 dark:text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span
-                  class="text-base font-medium leading-tight text-gray-900 dark:text-white"
-                  >You own everything; we&#39;ll hand over the source code any time you ask.</span
-                >
-              </li>
-              
-            </ul>
+              <a href="/about/" class="text-stone-500 hover:text-stone-900 transition-colors">About</a>
             
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="bg-white dark:bg-gray-900">
-      <div
-        class="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6"
-      >
-        <div class="col-span-2 mb-8">
-          <p class="text-lg font-medium text-blue-600 dark:text-blue-500">
-            Why it works
-          </p>
-          <h2
-            class="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl dark:text-white"
-          >
-            Like having a web developer in the family
-          </h2>
-          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-            We handle everything so you never have to think about your website again.
-          </p>
-          <div
-            class="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700"
-          >
-          </div>
-        </div>
-        <div
-          class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0"
-        >
-          <div>
-            <svg
-              id="icon-shuffle"
-              class="w-10 h-10 mb-2 text-blue-600 md:w-12 md:h-12 dark:text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M24 22h-3.172l-5-5 5-5h3.172v5l7-7-7-7v5h-4c-0.53 0-1.039 0.211-1.414 0.586l-5.586 5.586-5.586-5.586c-0.375-0.375-0.884-0.586-1.414-0.586h-6v4h5.172l5 5-5 5h-5.172v4h6c0.53 0 1.039-0.211 1.414-0.586l5.586-5.586 5.586 5.586c0.375 0.375 0.884 0.586 1.414 0.586h4v5l7-7-7-7v5z"></path>
-            </svg>
-            <h3 class="mb-2 text-2xl font-bold dark:text-white">
-              Already Have a Site?
-            </h3>
-            <p class="font-light text-gray-500 dark:text-gray-400">
-              We can take what you&#39;ve got and run with it, even if it is trapped behind your old agency. We can rebuild it or just take over hosting and updates.
-            </p>
-          </div>
-          <div>
-            <svg
-              id="icon-user-tie"
-              class="w-10 h-10 mb-2 text-blue-600 md:w-12 md:h-12 dark:text-blue-500"
-              fill="currentColor"
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-                <path d="M10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6z"></path>
-            </svg>
-            <h3 class="mb-2 text-2xl font-bold dark:text-white">
-              Real Humans
-            </h3>
-            <p class="font-light text-gray-500 dark:text-gray-400">
-              Professional web developers based in the US. When you reach out, you hear back from a real person who can actually update your site - never a chatbot or an automated ticket system.
-            </p>
-          </div>
-          <div>
-            <svg
-                class="w-10 h-10 mb-2 text-blue-600 md:w-12 md:h-12 dark:text-blue-500"
-                id="icon-earth"
-                fill="currentColor"
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 30c-1.967 0-3.84-0.407-5.538-1.139l7.286-8.197c0.163-0.183 0.253-0.419 0.253-0.664v-3c0-0.552-0.448-1-1-1-3.531 0-7.256-3.671-7.293-3.707-0.188-0.188-0.442-0.293-0.707-0.293h-4c-0.552 0-1 0.448-1 1v6c0 0.379 0.214 0.725 0.553 0.894l3.447 1.724v5.871c-3.627-2.53-6-6.732-6-11.489 0-2.147 0.484-4.181 1.348-6h3.652c0.265 0 0.52-0.105 0.707-0.293l4-4c0.188-0.188 0.293-0.442 0.293-0.707v-2.419c1.268-0.377 2.61-0.581 4-0.581 2.2 0 4.281 0.508 6.134 1.412-0.13 0.109-0.256 0.224-0.376 0.345-1.133 1.133-1.757 2.64-1.757 4.243s0.624 3.109 1.757 4.243c1.139 1.139 2.663 1.758 4.239 1.758 0.099 0 0.198-0.002 0.297-0.007 0.432 1.619 1.211 5.833-0.263 11.635-0.014 0.055-0.022 0.109-0.026 0.163-2.541 2.596-6.084 4.208-10.004 4.208z"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                ></path>
-            </svg>
-            <h3 class="mb-2 text-2xl font-bold dark:text-white">
-              Always Reachable
-            </h3>
-            <p class="font-light text-gray-500 dark:text-gray-400">
-              A real phone number and email address. Call or message us with questions, updates, or ideas.
-            </p>
-          </div>
-          <div>
-            <svg
-              class="w-10 h-10 mb-2 text-blue-600 md:w-12 md:h-12 dark:text-blue-500"
-              fill="currentColor"
-                id="icon-grin"
-                viewBox="0 0 32 32"
-                >
-                <path d="M16 32c8.837 0 16-7.163 16-16s-7.163-16-16-16-16 7.163-16 16 7.163 16 16 16zM16 3c7.18 0 13 5.82 13 13s-5.82 13-13 13-13-5.82-13-13 5.82-13 13-13zM6 16v2c0 4.4 3.6 8 8 8h4c4.4 0 8-3.6 8-8v-2h-20zM12 23.656c-0.829-0.296-1.591-0.776-2.236-1.42-1.138-1.138-1.764-2.642-1.764-4.236h4v5.656zM18 24h-4v-6h4v6zM22.236 22.236c-0.645 0.645-1.407 1.125-2.236 1.42v-5.656h4c0 1.594-0.627 3.098-1.764 4.236zM7.042 12c0 0 0 0 0 0 0.305 0 0.566-0.22 0.616-0.522 0.192-1.146 1.177-1.978 2.341-1.978s2.149 0.832 2.341 1.978c0.050 0.301 0.311 0.522 0.616 0.522s0.566-0.22 0.616-0.521c0.034-0.201 0.051-0.404 0.051-0.604 0-1.999-1.626-3.625-3.625-3.625s-3.625 1.626-3.625 3.625c0 0.199 0.017 0.402 0.051 0.604 0.051 0.301 0.311 0.521 0.616 0.521zM19.042 12c0 0 0 0 0 0 0.305 0 0.566-0.22 0.616-0.522 0.192-1.146 1.177-1.978 2.341-1.978s2.149 0.832 2.341 1.978c0.050 0.301 0.311 0.522 0.616 0.522s0.566-0.22 0.616-0.521c0.034-0.201 0.051-0.404 0.051-0.604 0-1.999-1.626-3.625-3.625-3.625s-3.625 1.626-3.625 3.625c0 0.199 0.017 0.402 0.051 0.604 0.051 0.301 0.311 0.521 0.617 0.521z"></path>
-            </svg>
-            <h3 class="mb-2 text-2xl font-bold dark:text-white">Guaranteed</h3>
-            <p class="font-light text-gray-500 dark:text-gray-400">
-              You&#39;ll love your experience or we&#39;ll help you move to something better.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="bg-gray-50 dark:bg-gray-800">
-      <div
-        class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-24 lg:px-6"
-      >
-        <figure class="max-w-screen-md mx-auto">
-          <svg
-            class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
-            viewBox="0 0 24 27"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-              fill="currentColor"
-            />
+          
+            
+              <a href="/examples/" class="text-stone-500 hover:text-stone-900 transition-colors">Projects And Ideas</a>
+            
+          
+            
+              <a href="/reviews/" class="text-stone-500 hover:text-stone-900 transition-colors">Reviews</a>
+            
+          
+            
+              <a href="/contact/" class="bg-stone-800 text-white px-4 py-2 hover:bg-stone-700 transition-colors whitespace-nowrap">
+                Contact Us &rarr;
+              </a>
+            
+          
+        </nav>
+
+        <button id="mobile-menu-btn" class="md:hidden text-stone-600 hover:text-stone-900">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
-          <blockquote>
-            
-                <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white mb-2">
-                "
-                    I create websites for a living and kept watching friends and family get unreasonably high quotes for their simple business websites. It was driving me crazy so I got involved and started building custom sites and hosting them at reasonable prices.
-                
-                </p>
-            
-                <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white mb-2">
-                
-                    That&#39;s still all this is — professional engineers making sure small businesses have what they need without getting ripped off.
-                "
-                </p>
-            
-          </blockquote>
-          <figcaption class="flex items-center justify-center mt-6 space-x-3">
-          
-            <div
-              class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700"
-            >
-              <div class="pr-3 font-medium text-gray-900 dark:text-white">
-                Collin Green
-              </div>
-              <div
-                class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400"
-              >
-                Founder, AutomaticallyEverything
-              </div>
-            </div>
-          </figcaption>
-        </figure>
+        </button>
       </div>
-    </section>
-    <section class="bg-white dark:bg-gray-900">
-      <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-6">
-        <div class="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
-          <h2
-            class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
-          >
-            Simple pricing. No surprises.
-          </h2>
-          <p
-            class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400"
-          >
-          One plan, one price. Unlimited changes, hosted and maintained, someone to call.
-          </p>
-        </div>
-        <div class="flex flex-wrap justify-center gap-6 xl:gap-10">
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 px-6 py-5 flex flex-col gap-4 text-sm font-medium">
         
-          <div
-            class="flex flex-col max-w-md w-full p-6 text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
-          >
-            <h3 class="mb-4 text-2xl font-semibold">The Website</h3>
-            <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-              Everything you need. Nothing you don&#39;t.
-            </p>
-            <div class="flex items-baseline justify-center my-8">
-              <span class="mr-2 text-5xl font-extrabold">$30</span>
-              <span class="text-gray-500 dark:text-gray-400">/month</span>
-            </div>
-            <ul role="list" class="mb-8 space-y-4 text-left">
-            
-              <li class="flex items-center space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span>Unlimited changes - just message us</span>
-              </li>
-              
-              <li class="flex items-center space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span>Hosted, maintained, and kept up to date</span>
-              </li>
-              
-              <li class="flex items-center space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span>Contact forms, maps, photos, and more</span>
-              </li>
-              
-              <li class="flex items-center space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span>No ad banners or &#39;Made with Wix&#39; badge</span>
-              </li>
-              
-              <li class="flex items-center space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span>A real person to call or email</span>
-              </li>
-              
-              <li class="flex items-center space-x-3">
-                <svg
-                  class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                <span>One-time site design: $250 (skip this if you have an existing site)</span>
-              </li>
-              
-            </ul>
-            <a
-              href="/contact"
-              class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-blue-900"
-              >Get Started</a
-            >
-          </div>
           
-        </div>
-        <p class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-          Need more than a simple website? We do custom work too — just ask. <a href="/contact" class="text-blue-600 hover:underline dark:text-blue-400">Get in touch.</a>
+            <a href="/" class="text-stone-600 hover:text-stone-900 transition-colors">Home</a>
+          
+        
+          
+            <a href="/about/" class="text-stone-600 hover:text-stone-900 transition-colors">About</a>
+          
+        
+          
+            <a href="/examples/" class="text-stone-600 hover:text-stone-900 transition-colors">Projects And Ideas</a>
+          
+        
+          
+            <a href="/reviews/" class="text-stone-600 hover:text-stone-900 transition-colors">Reviews</a>
+          
+        
+          
+            <a href="/contact/" class="bg-stone-800 text-white py-3 text-center hover:bg-stone-700 transition-colors">
+              Contact Us &rarr;
+            </a>
+          
+        
+      </div>
+    </header>
+
+    
+
+  <!-- HERO -->
+  <section class="pb-8 pt-12 px-6 border-b border-stone-200/60">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold tracking-[0.3em] uppercase text-stone-400 mb-4">Automatically Everything</p>
+        <h1 class="font-display text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-5">
+          The website guys for<br>small businesses.
+        </h1>
+        <p class="text-stone-500 text-lg leading-relaxed">
+          Fully managed professional websites without the fuss. $30/month. Unlimited changes. A real person to call.
         </p>
       </div>
-    </section>
-    <section class="bg-white dark:bg-gray-900">
-      <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6">
-        <h2
-          class="mb-6 text-3xl font-extrabold tracking-tight text-center text-gray-900 lg:mb-8 lg:text-3xl dark:text-white"
-        >
-          Frequently Asked Questions
-        </h2>
-        <div class="max-w-screen-md mx-auto">
-          <div
-            id="accordion-flush"
-            data-accordion="collapse"
-            data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-            data-inactive-classes="text-gray-500 dark:text-gray-400"
-          >
-          
-            <h3 id="accordion-flush-heading-1">
-              <button
-                type="button"
-                class="flex items-center justify-between w-full py-5 font-medium text-left border-b border-gray-200 dark:border-gray-700 text-gray-900 bg-white dark:bg-gray-900 dark:text-white"
-                data-accordion-target="#accordion-flush-body-1"
-                aria-expanded="true"
-                aria-controls="accordion-flush-body-1"
-              >
-                <span>What does &#39;Unlimited Changes&#39; actually mean?</span>
-                <svg
-                  data-accordion-icon=""
-                  class="w-6 h-6 shrink-0 rotate-180"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h3>
-            <div
-              id="accordion-flush-body-1"
-              class=""
-              aria-labelledby="accordion-flush-heading-1"
-            >
-              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                
-                <p class="mb-2 text-gray-500 dark:text-gray-400">Updating your website should be easy instead of stressful, so we offer unlimited changes. Request as many as you need and we&#39;ll work through them one at a time. You prioritize and we build it.</p>
-                
-                <p class="text-gray-500 dark:text-gray-400">This can include more than just copy changes - think about what would save you time or bring you more customers. Updated photos, new pages, contact forms, seasonal promotions, etc. Whatever you need, just message us.</p>
-                
-              </div>
-            </div>
-          
-            <h3 id="accordion-flush-heading-2">
-              <button
-                type="button"
-                class="flex items-center justify-between w-full py-5 font-medium text-left border-b border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
-                data-accordion-target="#accordion-flush-body-2"
-                aria-expanded="false"
-                aria-controls="accordion-flush-body-2"
-              >
-                <span>Do you need my domain to host my website?</span>
-                <svg
-                  data-accordion-icon=""
-                  class="w-6 h-6 shrink-0 "
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h3>
-            <div
-              id="accordion-flush-body-2"
-              class="hidden"
-              aria-labelledby="accordion-flush-heading-2"
-            >
-              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                
-                <p class="mb-2 text-gray-500 dark:text-gray-400">No but it makes things easier. If we can point your domain to our servers we can host everything seamlessly. This is the normal setup and what we recommend.</p>
-                
-                <p class="mb-2 text-gray-500 dark:text-gray-400">If you can&#39;t point your domain at us, we can still work together. We can embed things we build together (forms, menus, galleries) into your existing site. There are some limitations but reach out and ask; we&#39;re pretty good at making things work.</p>
-                
-                <p class="text-gray-500 dark:text-gray-400">Either way, you always retain full ownership of your domain.</p>
-                
-              </div>
-            </div>
-          
-            <h3 id="accordion-flush-heading-3">
-              <button
-                type="button"
-                class="flex items-center justify-between w-full py-5 font-medium text-left border-b border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
-                data-accordion-target="#accordion-flush-body-3"
-                aria-expanded="false"
-                aria-controls="accordion-flush-body-3"
-              >
-                <span>Can you do...?</span>
-                <svg
-                  data-accordion-icon=""
-                  class="w-6 h-6 shrink-0 "
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h3>
-            <div
-              id="accordion-flush-body-3"
-              class="hidden"
-              aria-labelledby="accordion-flush-heading-3"
-            >
-              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                
-                <p class="mb-2 text-gray-500 dark:text-gray-400">Probably! No matter what you&#39;re thinking, we want to hear about it. We have years of experience integrating with third-party services and building custom tools like contact forms, booking systems, photo galleries, Google Maps, online menus, you name it.</p>
-                
-                <p class="text-gray-500 dark:text-gray-400">Reach out and start a conversation.</p>
-                
-              </div>
-            </div>
-          
-            <h3 id="accordion-flush-heading-4">
-              <button
-                type="button"
-                class="flex items-center justify-between w-full py-5 font-medium text-left border-b border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
-                data-accordion-target="#accordion-flush-body-4"
-                aria-expanded="false"
-                aria-controls="accordion-flush-body-4"
-              >
-                <span>What if I already have a website?</span>
-                <svg
-                  data-accordion-icon=""
-                  class="w-6 h-6 shrink-0 "
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h3>
-            <div
-              id="accordion-flush-body-4"
-              class="hidden"
-              aria-labelledby="accordion-flush-heading-4"
-            >
-              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                
-                <p class="text-gray-500 dark:text-gray-400">Great! We can work with that. We&#39;ll take what&#39;s already on the web and rebuild it properly, or just take over hosting and updates from wherever it lives now. You don&#39;t even need access to the original source files.</p>
-                
-              </div>
-            </div>
-          
-            <h3 id="accordion-flush-heading-5">
-              <button
-                type="button"
-                class="flex items-center justify-between w-full py-5 font-medium text-left border-b border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
-                data-accordion-target="#accordion-flush-body-5"
-                aria-expanded="false"
-                aria-controls="accordion-flush-body-5"
-              >
-                <span>What if I want to leave?</span>
-                <svg
-                  data-accordion-icon=""
-                  class="w-6 h-6 shrink-0 "
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h3>
-            <div
-              id="accordion-flush-body-5"
-              class="hidden"
-              aria-labelledby="accordion-flush-heading-5"
-            >
-              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                
-                <p class="text-gray-500 dark:text-gray-400">We&#39;ll be sad to see you go but we get it. We&#39;ll give you the full HTML source code for your website whenever you ask, and we&#39;ll help you migrate to another provider if that&#39;s what you need.</p>
-                
-              </div>
-            </div>
-          
-            <h3 id="accordion-flush-heading-6">
-              <button
-                type="button"
-                class="flex items-center justify-between w-full py-5 font-medium text-left border-b border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
-                data-accordion-target="#accordion-flush-body-6"
-                aria-expanded="false"
-                aria-controls="accordion-flush-body-6"
-              >
-                <span>Do you design new websites from scratch?</span>
-                <svg
-                  data-accordion-icon=""
-                  class="w-6 h-6 shrink-0 "
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h3>
-            <div
-              id="accordion-flush-body-6"
-              class="hidden"
-              aria-labelledby="accordion-flush-heading-6"
-            >
-              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                
-                <p class="mb-2 text-gray-500 dark:text-gray-400">Yes! we have a large library of examples and proven patterns that let us build a custom site for any kind of business. It will look professional, fit your industry, and work well on every device. Most of our customers are happy with this and never need anything else.</p>
-                
-                <p class="text-gray-500 dark:text-gray-400">If you have a specific vision or want something truly one-of-a-kind, the honest answer is that you should hire a designer (our focus is making sure your site stays online affordably). But once your designer hands us their output, we&#39;ll build and host it for the same $30/month. You get the custom look without paying an agency to maintain it forever.</p>
-                
-              </div>
-            </div>
-          
-            <h3 id="accordion-flush-heading-7">
-              <button
-                type="button"
-                class="flex items-center justify-between w-full py-5 font-medium text-left border-b border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400"
-                data-accordion-target="#accordion-flush-body-7"
-                aria-expanded="false"
-                aria-controls="accordion-flush-body-7"
-              >
-                <span>What&#39;s the catch?</span>
-                <svg
-                  data-accordion-icon=""
-                  class="w-6 h-6 shrink-0 "
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-            </h3>
-            <div
-              id="accordion-flush-body-7"
-              class="hidden"
-              aria-labelledby="accordion-flush-heading-7"
-            >
-              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                
-                <p class="mb-2 text-gray-500 dark:text-gray-400">There is no catch. We built the website service we wanted our families to have access to but didn&#39;t exist. You should be able to have a great looking site for your business and a person you can actually reach out to about it without breaking the bank.</p>
-                
-                <p class="text-gray-500 dark:text-gray-400">Our sweet spot is small businesses that just need an online presence. If you need a ton of custom development work we&#39;ll send you to a web agency but if you just need a stress free way to have your business online then we don&#39;t think there is a better deal out there and we&#39;d love to have you on the platform.</p>
-                
-              </div>
-            </div>
-          
+
+      <div class="gap-8 mt-10 pt-8 border-t border-stone-200/60">
+        <div class="flex flex-wrap items-center gap-8">
+          <div>
+            <div class="font-display text-3xl font-bold">20</div>
+            <div class="text-stone-400 text-xs uppercase tracking-widest mt-0.5">Example sites</div>
+          </div>
+          <div class="h-8 w-px bg-stone-300 hidden sm:block"></div>
+          <div>
+            <div class="font-display text-3xl font-bold">10</div>
+            <div class="text-stone-400 text-xs uppercase tracking-widest mt-0.5">Business niches</div>
+          </div>
+          <div class="h-8 w-px bg-stone-300 hidden sm:block"></div>
+          <div>
+            <div class="font-display text-3xl font-bold">$30</div>
+            <div class="text-stone-400 text-xs uppercase tracking-widest mt-0.5">Per month</div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="bg-gray-50 dark:bg-gray-800">
-      <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
-        <div class="max-w-screen-sm mx-auto text-center">
-          <h2
-            class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white"
-          >
-            Not sure if this is right for you?
-          </h2>
-          <p
-            class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg"
-          >
-            That&#39;s totally fair. Book a free 15-minute call and we&#39;ll answer your questions honestly — even if the answer is that we&#39;re not the right fit.
+
+        <div>
+          <p class="text-stone-500 text-md leading-relaxed mt-4">
+          Below are real example sites from our library. Browse to find a style that fits, then <a href="/contact/" class="text-stone-600 underline hover:text-stone-900">get in touch</a>.
           </p>
-          <a
-            href="https://calendly.com/collin-green/automaticallywhatever-intro-call"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-            >Book a Free Call</a
-          >
         </div>
+    </div>
+    </div>
+  </section>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FILTER + GRID ═══════════════════════════ -->
+  <section class="py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Filter pills -->
+      <div class="flex flex-wrap gap-2 mb-10">
+        <button class="filter-pill active text-sm font-semibold px-4 py-2 rounded-full border border-stone-800 transition-colors"
+                data-niche="all">All Niches</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="barbershop">Barbershops</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="salon">Salons</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="wine-shop">Wine Shops</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="car-wash">Car Washes</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="auto-detailing">Auto Detailing</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="pet-grooming">Pet Grooming</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="coffee-shop">Coffee Shops</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="florist">Florists</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="tattoo">Tattoo Studios</button>
+        <button class="filter-pill text-sm font-semibold px-4 py-2 rounded-full border border-stone-300 text-stone-500 hover:border-stone-500 hover:text-stone-700 transition-colors bg-white"
+                data-niche="yoga">Yoga &amp; Pilates</button>
       </div>
-    </section>
+
+      <!-- Demo grid -->
+      <div id="demo-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- BARBER CLASSIC -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="barbershop">
+          <a href="/demos/barber-classic/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#2C2C2C;">
+              <img src="/assets/demos/barber-classic/hero-interior.png"
+                   alt="Old Blade Barbershop preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Playfair Display',Georgia,serif; color:#C9A84C;"
+                     class="text-3xl font-black italic leading-tight text-center opacity-80">Old Blade</div>
+                <div style="color:#C9A84C;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-50">Barbershop</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#2C2C2C; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C9A84C;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#F5F0E8;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Barbershop</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-amber-50 text-amber-700 px-2.5 py-1">Heritage</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Old Blade Barbershop</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Warm cream &amp; gold, Playfair Display serif, est. storytelling, classic hot-towel atmosphere.</p>
+            <a href="/demos/barber-classic/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- BARBER MODERN -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="barbershop">
+          <a href="/demos/barber-modern/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#0A0A0A;">
+              <img src="/assets/demos/barber-modern/hero-barber.jpg"
+                   alt="The Cut Lab preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Space Grotesk',sans-serif; color:#F8F8F8;"
+                     class="text-3xl font-black uppercase tracking-tight text-center opacity-80">THE CUT LAB<span style="color:#0066FF">.</span></div>
+                <div style="color:#0066FF;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-70">Precision Barbershop</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#0A0A0A; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#0066FF;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#F8F8F8; border:1px solid #ddd;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Barbershop</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-blue-50 text-blue-700 px-2.5 py-1">Modern</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">The Cut Lab</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Dark editorial, electric blue, Space Grotesk bold, service menu + team + gallery.</p>
+            <a href="/demos/barber-modern/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- SALON LUXE -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="salon">
+          <a href="/demos/salon-luxe/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#2D1B2E;">
+              <img src="/assets/demos/salon-luxe/hero.jpg"
+                   alt="Maison Elara preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif; color:#FAF5EF;"
+                     class="text-3xl font-light uppercase tracking-[0.25em] text-center opacity-80">Maison Elara</div>
+                <div style="color:#C9A46E;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-70">Luxury Hair Studio</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#2D1B2E; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C9A46E;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C8847A;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Salon</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-purple-50 text-purple-700 px-2.5 py-1">Luxury</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Maison Elara</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Deep plum &amp; gold, Cormorant serif, featured gallery grid, "Book with [name]" stylist hover.</p>
+            <a href="/demos/salon-luxe/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- SALON BRIGHT -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="salon">
+          <a href="/demos/salon-bright/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#7A9E7E;">
+              <img src="/assets/demos/salon-bright/hero.jpg"
+                   alt="Studio Ivy preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'DM Sans',Inter,sans-serif; color:#1A1A1A;"
+                     class="text-3xl font-bold tracking-tight text-center opacity-90">Studio <span style="color:#7A9E7E;">Ivy</span></div>
+                <div style="color:#C96A3A;" class="text-xs tracking-[0.35em] uppercase mt-2 font-semibold opacity-70">Hair &amp; Color Studio</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#7A9E7E;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C96A3A;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#1A1A1A;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Salon</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 px-2.5 py-1">Modern</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Studio Ivy</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Airy sage &amp; terracotta, split hero, scrolling "Currently Loving" strip, square gallery grid.</p>
+            <a href="/demos/salon-bright/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- WINE CELLAR -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="wine-shop">
+          <a href="/demos/wine-cellar/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#4A0E0E;">
+              <img src="/assets/demos/wine-cellar/hero.jpg"
+                   alt="The Old Vine preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif; color:#F2EBD9;"
+                     class="text-3xl font-bold uppercase tracking-[0.2em] text-center opacity-80">The Old Vine</div>
+                <div style="color:#C5A35A;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-70">Wine &amp; Spirits</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#4A0E0E; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C5A35A;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#F2EBD9; border:1px solid #ddd;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Wine Shop</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-amber-50 text-amber-700 px-2.5 py-1">Classic</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">The Old Vine</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Burgundy &amp; parchment, serif warmth, config-driven weekly picks with tasting notes.</p>
+            <a href="/demos/wine-cellar/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- WINE NATURAL -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="wine-shop">
+          <a href="/demos/wine-natural/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#2D4A3E;">
+              <img src="/assets/demos/wine-natural/hero.jpg"
+                   alt="Good Fruit Wine preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Space Grotesk',sans-serif; color:#F8F4EE;"
+                     class="text-3xl font-bold tracking-tight text-center opacity-90">Good Fruit <span style="color:#C07040;">Wine</span></div>
+                <div style="color:#C07040;" class="text-xs tracking-[0.35em] uppercase mt-2 opacity-70">Natural Wine &amp; Bottle Shop</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#2D4A3E; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C07040;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#F8F4EE; border:1px solid #ddd;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Wine Shop</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 px-2.5 py-1">Editorial</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Good Fruit Wine</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Forest green &amp; terracotta, natural wine culture, scrolling bottle strip with tasting notes.</p>
+            <a href="/demos/wine-natural/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- CARWASH EXPRESS -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="car-wash">
+          <a href="/demos/carwash-express/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#050F1E;">
+              <img src="/assets/demos/carwash-express/hero.jpg"
+                   alt="Surge Auto Wash preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Barlow Condensed',Impact,sans-serif; color:#F0F4FF; font-size:2.5rem; font-weight:900; letter-spacing:-0.02em; line-height:1; text-align:center; opacity:0.85;">
+                  SURGE<span style="color:#0055FF;">.</span>
+                </div>
+                <div style="color:#0055FF;" class="text-xs tracking-[0.3em] uppercase mt-2 font-semibold opacity-70">Auto Wash</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#050F1E; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#0055FF;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#00C8FF;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Car Wash</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-blue-50 text-blue-700 px-2.5 py-1">Bold</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Surge Auto Wash</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Dark navy &amp; electric blue, Barlow Condensed, config-driven pricing tiers, monthly club.</p>
+            <a href="/demos/carwash-express/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- CARWASH NEIGHBORHOOD -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="car-wash">
+          <a href="/demos/carwash-neighborhood/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#3B9BD4;">
+              <img src="/assets/demos/carwash-neighborhood/hero.jpg"
+                   alt="Sunnyside Car Wash preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Nunito',system-ui,sans-serif; color:#ffffff; font-weight:900; font-size:1.8rem; text-align:center; opacity:0.9;">
+                  Sunnyside <span style="color:#F5C518;">Car Wash</span>
+                </div>
+                <div style="color:#F5C518;" class="text-xs tracking-[0.3em] uppercase mt-2 font-bold opacity-80">Since 1994</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#3B9BD4;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#F5C518;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#FFFFFF; border:1px solid #ddd;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Car Wash</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-yellow-50 text-yellow-700 px-2.5 py-1">Friendly</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Sunnyside Car Wash</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Sky blue &amp; sunshine yellow, Nunito rounded feel, loyalty punch card, family-owned story.</p>
+            <a href="/demos/carwash-neighborhood/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- DETAILING PREMIUM -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="auto-detailing">
+          <a href="/demos/detailing-premium/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#0D0D0D;">
+              <img src="/assets/demos/detailing-premium/hero.jpg"
+                   alt="Obsidian Detail Studio preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div class="absolute top-0 left-0 right-0 h-0.5" style="background:#C0180C;"></div>
+                <div style="font-family:'Raleway',system-ui,sans-serif; color:#F2F2F2; font-weight:900; font-size:2rem; text-transform:uppercase; letter-spacing:0.1em; text-align:center; opacity:0.85;">
+                  OBSIDIAN<span style="color:#C0180C;">.</span>
+                </div>
+                <div style="color:#8C8C8C;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-60">Detail Studio</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#0D0D0D; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C0180C;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#8C8C8C;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Auto Detailing</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-red-50 text-red-700 px-2.5 py-1">Luxury</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Obsidian Detail Studio</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Near-black &amp; red, Raleway, 4-tier service menu, side-by-side before/after portfolio pairs.</p>
+            <a href="/demos/detailing-premium/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- DETAILING BOLD -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="auto-detailing">
+          <a href="/demos/detailing-bold/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#0A0A0A;">
+              <img src="/assets/demos/detailing-bold/hero.jpg"
+                   alt="Apex Detail Co. preview"
+                   onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div class="absolute top-0 left-0 bottom-0 w-1" style="background:#00E676;"></div>
+                <div style="font-family:'Oswald',Impact,sans-serif; color:#F0F0F0; font-weight:700; font-size:2.2rem; text-transform:uppercase; letter-spacing:0.05em; text-align:center; opacity:0.9;">
+                  APEX <span style="color:#00E676;">DETAIL</span>
+                </div>
+                <div style="color:#00E676;" class="text-xs tracking-[0.3em] uppercase mt-2 opacity-70">Drag-to-reveal results</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#0A0A0A; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#00E676;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#3A3A3A;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Auto Detailing</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 px-2.5 py-1">Bold</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Apex Detail Co.</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Black &amp; neon lime, Oswald, drag-to-reveal before/after sliders, enthusiast energy.</p>
+            <a href="/demos/detailing-bold/"
+               class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">
+              View Demo <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PET GROOMING FRESH -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="pet-grooming">
+          <a href="/demos/pet-grooming-fresh/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#1A9E9E;">
+              <img src="/assets/demos/pet-grooming-fresh/hero.jpg" alt="Pawfect Grooming Studio preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div class="text-4xl mb-2 opacity-80">🐾</div>
+                <div style="font-family:'Poppins',sans-serif; color:#FAFAF8;" class="text-2xl font-extrabold text-center opacity-85">Pawfect <span style="color:#F5722A;">Grooming</span></div>
+                <div style="color:#F5722A;" class="text-xs tracking-[0.35em] uppercase mt-1 opacity-60">Pet Grooming Studio</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#1A9E9E;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#F5722A;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#FAFAF8; border:1px solid #ddd;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Pet Grooming</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-teal-50 text-teal-700 px-2.5 py-1">Modern</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Pawfect Grooming Studio</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Teal &amp; coral, Poppins, fear-free trust signals, config-driven service cards, round CTAs.</p>
+            <a href="/demos/pet-grooming-fresh/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- PET GROOMING COZY -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="pet-grooming">
+          <a href="/demos/pet-grooming-cozy/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#3D2410;">
+              <img src="/assets/demos/pet-grooming-cozy/hero.jpg" alt="The Muddy Paw preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Libre Baskerville',Georgia,serif; color:#D4A878;" class="text-3xl font-bold text-center italic opacity-80">The Muddy Paw</div>
+                <div style="color:#C89060;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-60">Neighborhood Grooming</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#3D2410; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C89060;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#3A5C3A;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Pet Grooming</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-amber-50 text-amber-700 px-2.5 py-1">Cozy</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">The Muddy Paw</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Warm bark &amp; tan, serif headline, one-dog-at-a-time story, dark hero, classic card services.</p>
+            <a href="/demos/pet-grooming-cozy/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- COFFEE MODERN -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="coffee-shop">
+          <a href="/demos/coffee-modern/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#F8F5F0;">
+              <img src="/assets/demos/coffee-modern/hero.jpg" alt="Slow Pour preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none" style="background:rgba(248,245,240,0.6);">
+                <div style="font-family:'Libre Baskerville',Georgia,serif; color:#2A1A0A;" class="text-3xl font-bold italic text-center opacity-85">Slow Pour</div>
+                <div style="color:#C07040;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-70">Specialty Coffee</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#2A1A0A;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C07040;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#7A9E7E;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Coffee Shop</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 px-2.5 py-1">Minimal</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Slow Pour</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Warm cream &amp; espresso, Libre Baskerville serif, config-driven menu by category, open indicator.</p>
+            <a href="/demos/coffee-modern/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- COFFEE BOLD -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="coffee-shop">
+          <a href="/demos/coffee-bold/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#0F0A05;">
+              <img src="/assets/demos/coffee-bold/hero.jpg" alt="Black Kettle Coffee preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Oswald',Impact,sans-serif; color:#F5EDD8; font-size:2rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; text-align:center; opacity:0.85;">
+                  Black <span style="color:#C8832A;">Kettle</span>
+                </div>
+                <div style="color:#C8832A;" class="text-xs tracking-[0.3em] uppercase mt-2 opacity-70">Roastery &amp; Café</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#0F0A05; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C8832A;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#F5EDD8; border:1px solid #ddd;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Coffee Shop</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-yellow-50 text-yellow-700 px-2.5 py-1">Bold</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Black Kettle Coffee</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Near-black &amp; amber, Oswald bold, dark hero, config-driven menu + events list, roastery story.</p>
+            <a href="/demos/coffee-bold/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- FLORIST ELEGANT -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="florist">
+          <a href="/demos/florist-elegant/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#D0A898;">
+              <img src="/assets/demos/florist-elegant/hero.jpg" alt="Wren & Wild preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none" style="background:rgba(208,168,152,0.6);">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif; color:#2A1A1A;" class="text-3xl font-light italic text-center opacity-80">Wren &amp; Wild</div>
+                <div style="color:#2A1A1A;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-50">Fresh Flowers &amp; Floral Design</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#E8C4B8;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#8FA888;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#2A1A1A;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Florist</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-rose-50 text-rose-600 px-2.5 py-1">Elegant</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Wren &amp; Wild</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Blush petal &amp; sage, Cormorant serif, config-driven arrangements + featured gallery grid, occasions section.</p>
+            <a href="/demos/florist-elegant/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- FLORIST MODERN -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="florist">
+          <a href="/demos/florist-modern/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#2D4A3E;">
+              <img src="/assets/demos/florist-modern/hero.jpg" alt="Bloom Supply preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div style="font-family:'Space Grotesk',sans-serif; color:#F8F4EE;" class="text-2xl font-bold text-center opacity-90">
+                  Bloom <span style="color:#C07040;">Supply</span>
+                </div>
+                <div style="color:#C07040;" class="text-xs tracking-[0.35em] uppercase mt-2 opacity-70">Flowers &amp; Botanicals</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#2D4A3E; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C07040;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#F8F4EE; border:1px solid #ddd;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Florist</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 px-2.5 py-1">Modern</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Bloom Supply</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Forest green &amp; terracotta, Space Grotesk, scrolling shop strip, uniform square gallery grid.</p>
+            <a href="/demos/florist-modern/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- TATTOO DARK -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="tattoo">
+          <a href="/demos/tattoo-dark/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#080808;">
+              <img src="/assets/demos/tattoo-dark/hero.jpg" alt="Iron Moth Tattoo preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div class="absolute top-0 left-0 right-0 h-0.5 bg-red-600"></div>
+                <div style="font-family:'Barlow Condensed',Impact,sans-serif; color:#F0F0F0; font-size:2.2rem; font-weight:900; text-transform:uppercase; letter-spacing:0.05em; text-align:center; opacity:0.85;">Iron Moth<span style="color:#CC2020;">.</span></div>
+                <div style="color:#909090;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-60">Custom Tattoo Studio</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#080808; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#CC2020;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#909090;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Tattoo Studio</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-red-50 text-red-700 px-2.5 py-1">Dark</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Iron Moth Tattoo</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Near-black &amp; red, Barlow Condensed, per-artist portfolio strips, appointment-only ethos.</p>
+            <a href="/demos/tattoo-dark/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- TATTOO FRESH -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="tattoo">
+          <a href="/demos/tattoo-fresh/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#FAF8F4;">
+              <img src="/assets/demos/tattoo-fresh/hero.jpg" alt="Inkwell Studio preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none" style="background:rgba(250,248,244,0.6);">
+                <div style="font-family:'Space Grotesk',sans-serif; color:#2A2A2A;" class="text-2xl font-bold text-center opacity-90">Inkwell <span style="color:#C07040;">Studio</span></div>
+                <div style="color:#C07040;" class="text-xs tracking-[0.35em] uppercase mt-2 opacity-70">Custom &amp; Illustrative</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#2A2A2A;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C07040;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#7A9E7E;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Tattoo Studio</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 px-2.5 py-1">Fresh</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Inkwell Studio</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Warm parchment &amp; terracotta, artist portrait + portfolio grid, styles section, FAQ.</p>
+            <a href="/demos/tattoo-fresh/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- YOGA CALM -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="yoga">
+          <a href="/demos/yoga-calm/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#D4C4A8;">
+              <img src="/assets/demos/yoga-calm/hero.jpg" alt="Still Ground Studio preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none" style="background:rgba(212,196,168,0.6);">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif; color:#2A2018;" class="text-3xl font-light italic text-center opacity-85">Still Ground</div>
+                <div style="color:#8FA888;" class="text-xs tracking-[0.4em] uppercase mt-2 opacity-70">Yoga &amp; Movement Studio</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#8FA888;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#C8A870;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#FAF7F2; border:1px solid #ddd;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Yoga &amp; Pilates</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 px-2.5 py-1">Calm</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Still Ground</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Warm linen &amp; sage, Cormorant serif, filterable weekly schedule, instructor cards, membership tiers.</p>
+            <a href="/demos/yoga-calm/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- YOGA BOLD -->
+        <article class="demo-card bg-white overflow-hidden" data-niche="yoga">
+          <a href="/demos/yoga-bold/" class="block">
+            <div class="relative aspect-[4/3] overflow-hidden demo-preview" style="--brand:#0A0A0A;">
+              <img src="/assets/demos/yoga-bold/hero.jpg" alt="Form Studio preview" onerror="this.style.display='none'">
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none">
+                <div class="absolute top-0 left-0 right-0 h-0.5 bg-yellow-500"></div>
+                <div style="font-family:'Space Grotesk',sans-serif; color:#F5F2EC; font-size:2rem; font-weight:700; text-align:center; opacity:0.9;">FORM<span style="color:#D4A83A;"> STUDIO</span></div>
+                <div style="color:#D4A83A;" class="text-xs tracking-[0.3em] uppercase mt-2 opacity-70">Yoga &amp; Pilates</div>
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-1.5">
+                <span class="w-3 h-3 rounded-full" style="background:#0A0A0A; border:1px solid rgba(255,255,255,0.2)"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#D4A83A;"></span>
+                <span class="w-3 h-3 rounded-full" style="background:#2D4A3E;"></span>
+              </div>
+            </div>
+          </a>
+          <div class="p-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-stone-100 text-stone-500 px-2.5 py-1">Yoga &amp; Pilates</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest bg-yellow-50 text-yellow-700 px-2.5 py-1">Bold</span>
+            </div>
+            <h2 style="font-family:'Space Grotesk',sans-serif" class="font-bold text-xl mb-1">Form Studio</h2>
+            <p class="text-stone-500 text-sm leading-relaxed mb-4">Black &amp; gold, filterable schedule with ⚡ low-spot alerts, class type grid, reformer Pilates.</p>
+            <a href="/demos/yoga-bold/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-stone-800 hover:gap-3 transition-all duration-200">View Demo <span>&rarr;</span></a>
+          </div>
+        </article>
+
+      </div><!-- /demo-grid -->
+
+      <!-- Empty state for filtered zero results (shouldn't happen but just in case) -->
+      <p id="no-results" class="hidden text-center text-stone-400 py-16 text-sm">No demos in this category yet — more coming soon.</p>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ COMING SOON ═══════════════════════════ -->
+  <section class="py-12 px-6 border-t border-stone-300/60">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <p class="text-xs font-semibold tracking-[0.3em] uppercase text-stone-400 mb-2">More on the way</p>
+        <p class="text-stone-600 text-sm leading-relaxed max-w-lg">
+          Coming soon: nail salons, massage &amp; spas, restaurants, music schools, escape rooms, and more.
+          Don&rsquo;t see your niche? <a href="/contact/" class="font-semibold text-stone-800 underline underline-offset-2 hover:no-underline">Tell us what you need.</a>
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 shrink-0">
+        <span class="text-xs text-stone-400 px-3 py-1.5 border border-stone-200 bg-white">Nail Salons</span>
+        <span class="text-xs text-stone-400 px-3 py-1.5 border border-stone-200 bg-white">Massage &amp; Spas</span>
+        <span class="text-xs text-stone-400 px-3 py-1.5 border border-stone-200 bg-white">Restaurants</span>
+        <span class="text-xs text-stone-400 px-3 py-1.5 border border-stone-200 bg-white">Music Schools</span>
+        <span class="text-xs text-stone-400 px-3 py-1.5 border border-stone-200 bg-white">+ more</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ BOTTOM CTA ═══════════════════════════ -->
+  <section class="py-20 px-6 bg-stone-800 text-white">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div class="max-w-lg">
+        <h2 style="font-family:'Space Grotesk',sans-serif"
+            class="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">
+          Found something you like?<br>Let&rsquo;s build yours.
+        </h2>
+        <p class="text-white/50 leading-relaxed">
+          $30/month. Unlimited changes. A real person to call. Tell us which demo caught your eye and we&rsquo;ll start from there.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/"
+           class="bg-white text-stone-800 px-8 py-5 font-bold text-sm hover:bg-stone-100 transition-colors text-center">
+          Get in Touch &rarr;
+        </a>
+        <a href="https://calendly.com/collin-green/automaticallywhatever-intro-call"
+           class="border border-white/25 text-white/70 px-8 py-5 font-bold text-sm hover:border-white/60 hover:text-white transition-colors text-center">
+          Book a Free Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
 
     
-    <footer class="bg-white dark:bg-gray-800">
-      <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
-        <div class="text-center">
-          <a
-            href="#"
-            class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
-          >
-            <img
-              src="./images/logo.svg"
-              class="h-6 mr-3 sm:h-9"
-              alt=""
-            />
-            AutomaticallyEverything
-          </a>
-          <span
-            class="block text-sm text-center text-gray-500 dark:text-gray-400"
-            >© <span id="copyright-year">2024</span> AutomaticallyEverything. All Rights Reserved.
-          </span>
-          <span class="block text-xs text-center text-gray-500 dark:text-gray-400">
-          
-    Photos by 
-    <a href="https://unsplash.com/@avirichards">Avi Richards</a> and
-    <a href="https://unsplash.com/@clarktibbs">Clark Tibbs</a>
-
-          </span>
-        </div>
+<footer class="bg-stone-900 py-8 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2.5">
+      <div class="w-6 h-6 bg-stone-600 flex items-center justify-center">
+        <span class="font-display text-white text-[10px] font-bold leading-none">AE</span>
       </div>
-    </footer>
+      <span class="font-display text-white/60 text-sm">Automatically Everything</span>
+    </div>
+    <div class="text-white/30 text-xs">&copy; <span id="copyright-year"></span> Automatically Everything. All rights reserved.</div>
+  </div>
+  <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+</footer>
 
-    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-    <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+
+    
+<script>
+  var pills = document.querySelectorAll('.filter-pill');
+  var cards = document.querySelectorAll('#demo-grid article');
+  var noResult = document.getElementById('no-results');
+
+  function applyFilter(niche) {
+    var visible = 0;
+    cards.forEach(function(card) {
+      var show = niche === 'all' || card.dataset.niche === niche;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    noResult.classList.toggle('hidden', visible > 0);
+  }
+
+  pills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      pills.forEach(function(p) {
+        p.classList.remove('active');
+        p.classList.add('bg-white');
+      });
+      this.classList.add('active');
+      this.classList.remove('bg-white');
+      applyFilter(this.dataset.niche);
+    });
+  });
+</script>
+
+
+    <script>
+      document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+    </script>
   </body>
 </html>

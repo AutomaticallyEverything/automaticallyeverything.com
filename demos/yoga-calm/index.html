@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Still Ground &mdash; Yoga &amp; Movement Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen:   '#FAF7F2',
+            'linen-dk':'#F0EBE0',
+            sage:    '#8FA888',
+            'sage-dk':'#6A8470',
+            sand:    '#D4C4A8',
+            'sand-dk':'#BCA888',
+            clay:    '#2A2018',
+            'clay-lt':'#3D3028',
+            warm:    '#C8A870',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:  ['Nunito Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Nunito Sans', sans-serif; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+    html { scroll-behavior: smooth; }
+    .ph { background: repeating-linear-gradient(45deg,#d4ccc0,#d4ccc0 12px,#c8c0b4 12px,#c8c0b4 24px); }
+    .ph-sage { background: repeating-linear-gradient(45deg,#7a9078,#7a9078 12px,#6e8470 12px,#6e8470 24px); }
+    .scroll-hide { scrollbar-width:none; -ms-overflow-style:none; }
+    .scroll-hide::-webkit-scrollbar { display:none; }
+  </style>
+</head>
+<body class="bg-linen text-clay">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONFIG — edit to update schedule and gallery.
+
+  schedule: Classes shown on the weekly schedule strip.
+            day: 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'
+
+  instructors: Instructor cards. Add freely.
+
+  gallery: Photos in the gallery grid. Add freely.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      schedule: [
+        { day: 'Mon', time: '7:00am', name: 'Morning Flow',       instructor: 'Maya',   level: 'All levels', spots: 6 },
+        { day: 'Mon', time: '12:00pm',name: 'Lunchtime Restore',  instructor: 'Sam',    level: 'Beginner', spots: 8 },
+        { day: 'Mon', time: '6:00pm', name: 'Evening Vinyasa',    instructor: 'Maya',   level: 'Intermediate', spots: 3 },
+        { day: 'Tue', time: '7:00am', name: 'Sunrise Pilates',    instructor: 'Jordan', level: 'All levels', spots: 10 },
+        { day: 'Tue', time: '9:30am', name: 'Slow Flow',          instructor: 'Sam',    level: 'All levels', spots: 12 },
+        { day: 'Tue', time: '6:00pm', name: 'Core &amp; Restore', instructor: 'Jordan', level: 'All levels', spots: 5 },
+        { day: 'Wed', time: '7:00am', name: 'Morning Flow',       instructor: 'Maya',   level: 'All levels', spots: 4 },
+        { day: 'Wed', time: '6:30pm', name: 'Power Vinyasa',      instructor: 'Maya',   level: 'Advanced', spots: 2 },
+        { day: 'Thu', time: '9:30am', name: 'Gentle Yoga',        instructor: 'Sam',    level: 'Beginner', spots: 14 },
+        { day: 'Thu', time: '6:00pm', name: 'Pilates Fundamentals',instructor:'Jordan', level: 'Beginner', spots: 9 },
+        { day: 'Fri', time: '7:00am', name: 'Morning Flow',       instructor: 'Maya',   level: 'All levels', spots: 7 },
+        { day: 'Fri', time: '12:00pm',name: 'Midday Reset',       instructor: 'Sam',    level: 'All levels', spots: 11 },
+        { day: 'Sat', time: '9:00am', name: 'Weekend Slow Flow',  instructor: 'Sam',    level: 'All levels', spots: 16 },
+        { day: 'Sat', time: '10:30am',name: 'Mat Pilates',        instructor: 'Jordan', level: 'All levels', spots: 8 },
+        { day: 'Sun', time: '9:00am', name: 'Sunday Restore',     instructor: 'Maya',   level: 'All levels', spots: 15 },
+        { day: 'Sun', time: '11:00am',name: 'Meditation &amp; Breath',instructor:'Sam', level: 'All levels', spots: 20 },
+      ],
+
+      instructors: [
+        {
+          src:     '/assets/demos/yoga-calm/instructor-maya.jpg',
+          name:    'Maya Chen',
+          role:    'Founder · Vinyasa &amp; Yin',
+          bio:     '200-hr RYT trained in Bali, 300-hr in New York. Maya built Still Ground around the idea that movement should feel like a conversation, not a performance.',
+          classes: 'Morning Flow · Evening Vinyasa · Power Vinyasa · Sunday Restore',
+        },
+        {
+          src:     '/assets/demos/yoga-calm/instructor-sam.jpg',
+          name:    'Sam Rivera',
+          role:    'Senior Instructor · Gentle &amp; Restorative',
+          bio:     'A former physiotherapist who came to yoga for his own healing. Sam\'s classes are slow, anatomically precise, and accessible to anyone. He specializes in beginners and people recovering from injury.',
+          classes: 'Slow Flow · Gentle Yoga · Lunchtime Restore · Midday Reset · Meditation',
+        },
+        {
+          src:     '/assets/demos/yoga-calm/instructor-jordan.jpg',
+          name:    'Jordan Marsh',
+          role:    'Pilates Instructor',
+          bio:     'Certified STOTT Pilates instructor with a background in dance. Jordan\'s mat and reformer classes build deep core strength with a movement vocabulary that carries into everyday life.',
+          classes: 'Sunrise Pilates · Pilates Fundamentals · Mat Pilates · Core &amp; Restore',
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/yoga-calm/gallery-studio.jpg',   alt: 'Studio interior, morning light' },
+        { src: '/assets/demos/yoga-calm/gallery-flow.jpg',     alt: 'Morning flow class' },
+        { src: '/assets/demos/yoga-calm/gallery-pilates.jpg',  alt: 'Pilates session' },
+        { src: '/assets/demos/yoga-calm/gallery-detail.jpg',   alt: 'Studio detail — mats and props' },
+        { src: '/assets/demos/yoga-calm/gallery-outside.jpg',  alt: 'Outdoor practice' },
+        { src: '/assets/demos/yoga-calm/gallery-restore.jpg',  alt: 'Restorative pose' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-linen/95 backdrop-blur-sm border-b border-sage/20">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div>
+        <div class="font-serif text-clay text-xl tracking-[0.1em] italic">Still Ground</div>
+        <div class="text-sage text-[9px] tracking-[0.4em] uppercase mt-0.5">Yoga &amp; Movement Studio</div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-[11px] tracking-wider uppercase">
+        <a href="#schedule"    class="text-clay/50 hover:text-clay transition-colors">Schedule</a>
+        <a href="#instructors" class="text-clay/50 hover:text-clay transition-colors">Instructors</a>
+        <a href="#gallery"     class="text-clay/50 hover:text-clay transition-colors">Gallery</a>
+        <a href="#membership" class="bg-sage text-white px-5 py-2.5 font-bold tracking-widest hover:bg-sage-dk transition-colors">Join Us</a>
+      </div>
+      <button class="md:hidden text-clay/50 hover:text-clay" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-linen border-t border-sage/15 px-6 pb-6 pt-4 flex flex-col gap-4 text-[11px] tracking-widest uppercase">
+      <a href="#schedule"    class="text-clay/60 hover:text-clay" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Schedule</a>
+      <a href="#instructors" class="text-clay/60 hover:text-clay" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Instructors</a>
+      <a href="#gallery"     class="text-clay/60 hover:text-clay" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#membership" class="bg-sage text-white px-4 py-3 font-bold text-center tracking-widest">Join Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-end overflow-hidden" style="background:#D4C8B4;">
+    <div class="absolute inset-0 ph"></div>
+    <img src="/assets/demos/yoga-calm/hero.jpg" alt="Still Ground studio" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-clay/70 via-clay/30 to-transparent"></div>
+
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 pb-16 md:pb-24">
+      <div class="inline-flex items-center gap-4 mb-6">
+        <div class="h-px w-8 bg-sand"></div>
+        <span class="text-sand text-[10px] tracking-[0.5em] uppercase">Yoga &middot; Pilates &middot; Meditation</span>
+      </div>
+      <h1 class="font-serif text-linen text-6xl md:text-8xl font-light leading-tight mb-5">
+        Find your<br>still ground.
+      </h1>
+      <p class="text-linen/60 text-lg max-w-md leading-relaxed mb-8">A calm, welcoming studio for all bodies and all levels. We believe movement should feel good — not punishing.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#schedule"   class="bg-sage text-white px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:bg-sage-dk transition-colors">View Schedule</a>
+        <a href="#membership" class="border border-linen/40 text-linen px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:border-sand hover:text-sand transition-colors">Membership Options</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="py-24 px-6 md:px-16 bg-linen">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-sage text-[10px] tracking-[0.4em] uppercase mb-3">This Week</p>
+        <h2 class="font-serif text-5xl md:text-6xl font-light">Class Schedule</h2>
+        <div class="w-10 h-px bg-sage mx-auto mt-5"></div>
+        <p class="text-clay/40 mt-4 text-sm">All classes bookable online or by phone. Drop-ins welcome when space is available.</p>
+      </div>
+
+      <!--
+        Schedule filter + list rendered from CONFIG.schedule.
+        Click a day pill to filter. Add classes by adding entries to CONFIG.schedule.
+      -->
+      <div class="flex flex-wrap gap-2 justify-center mb-8" id="day-filters">
+        <button class="day-pill text-xs font-semibold px-4 py-2 rounded-full border bg-clay text-linen border-clay" data-day="all">All Days</button>
+      </div>
+      <div id="schedule-list" class="divide-y divide-clay/8 border-y border-clay/8"></div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTORS -->
+  <section id="instructors" class="py-24 px-6 md:px-16 bg-linen-dk">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-sage text-[10px] tracking-[0.4em] uppercase mb-3">The Teachers</p>
+        <h2 class="font-serif text-5xl font-light">Instructors</h2>
+        <div class="w-10 h-px bg-sage mx-auto mt-5"></div>
+      </div>
+      <div id="instructors-grid" class="grid md:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-sage">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-5xl font-light text-linen">The Studio</h2>
+        <div class="w-10 h-px bg-linen/40 mx-auto mt-5"></div>
+      </div>
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section id="membership" class="py-24 px-6 md:px-16 bg-linen">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-sage text-[10px] tracking-[0.4em] uppercase mb-3">How to Join</p>
+        <h2 class="font-serif text-5xl font-light">Memberships &amp; Passes</h2>
+        <div class="w-10 h-px bg-sage mx-auto mt-5"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="border border-clay/10 p-8 hover:border-sage transition-colors group">
+          <p class="text-sage text-[10px] tracking-widest uppercase mb-4">Drop-In</p>
+          <h3 class="font-serif text-3xl font-light mb-2">$22 <span class="text-clay/30 text-base">/ class</span></h3>
+          <p class="text-clay/50 text-sm leading-relaxed mb-6">No commitment, no expiry. Ideal for visitors or if you like to keep things flexible.</p>
+          <a href="#" class="inline-block border border-sage text-sage px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-sage hover:text-white transition-colors">Book a Class</a>
+        </div>
+        <div class="bg-sage p-8 border border-sage">
+          <p class="text-linen/60 text-[10px] tracking-widest uppercase mb-4">★ Most Popular</p>
+          <h3 class="font-serif text-3xl font-light text-linen mb-2">$99 <span class="text-linen/40 text-base">/ month</span></h3>
+          <p class="text-linen/70 text-sm leading-relaxed mb-6">Unlimited classes. One flat fee. The best value if you're coming two or more times a week.</p>
+          <a href="#" class="inline-block bg-linen text-sage px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-linen-dk transition-colors">Join Monthly</a>
+        </div>
+        <div class="border border-clay/10 p-8 hover:border-sage transition-colors group">
+          <p class="text-sage text-[10px] tracking-widest uppercase mb-4">Class Pack</p>
+          <h3 class="font-serif text-3xl font-light mb-2">$180 <span class="text-clay/30 text-base">/ 10 classes</span></h3>
+          <p class="text-clay/50 text-sm leading-relaxed mb-6">Valid for 3 months. Good if you want commitment without the monthly subscription.</p>
+          <a href="#" class="inline-block border border-sage text-sage px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-sage hover:text-white transition-colors">Buy a Pack</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 md:px-16 bg-linen-dk">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="font-serif text-5xl font-light">What Students Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div><div class="font-serif text-sage text-5xl leading-none mb-4">&ldquo;</div><p class="text-clay/60 text-sm leading-relaxed mb-4">I've been to a lot of yoga studios. Still Ground is the first one that felt genuinely welcoming to someone who isn't already flexible or fit. Sam especially — he explains everything.</p><div class="text-warm text-[10px] tracking-widest uppercase">&mdash; Rosie T., 8 months</div></div>
+        <div><div class="font-serif text-sage text-5xl leading-none mb-4">&ldquo;</div><p class="text-clay/60 text-sm leading-relaxed mb-4">Maya's morning flow is the best part of my week. I started six months ago not being able to touch my toes. The improvement has been astonishing and it's not even the point — I just feel better.</p><div class="text-warm text-[10px] tracking-widest uppercase">&mdash; Patrick L., 6 months</div></div>
+        <div><div class="font-serif text-sage text-5xl leading-none mb-4">&ldquo;</div><p class="text-clay/60 text-sm leading-relaxed mb-4">Jordan's Pilates fundamentals fixed a back problem I've had for three years. I've spent a lot of money on physio. Twelve Pilates sessions and I feel better than I have in a decade.</p><div class="text-warm text-[10px] tracking-widest uppercase">&mdash; Claire M., 3 months</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="py-16 px-6 md:px-16 bg-clay border-t border-linen/5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+      <div><p class="text-sage text-[10px] tracking-[0.4em] uppercase mb-4">Location</p><div class="text-linen/40 text-sm leading-loose">14 Garden Street<br>The West Village</div></div>
+      <div><p class="text-sage text-[10px] tracking-[0.4em] uppercase mb-4">Hours</p><div class="text-linen/40 text-sm space-y-1.5"><div class="flex justify-between max-w-[200px]"><span>Mon &ndash; Fri</span><span>6:30am &ndash; 8pm</span></div><div class="flex justify-between max-w-[200px]"><span>Sat &ndash; Sun</span><span>8am &ndash; 5pm</span></div></div></div>
+      <div><p class="text-sage text-[10px] tracking-[0.4em] uppercase mb-4">Contact</p><div class="text-linen/40 text-sm space-y-1.5"><div>(555) 555-1919</div><div>hello@stillgroundstudio.com</div></div></div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-linen border-t border-sage/15">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="inline-flex items-center gap-4 mb-8"><div class="h-px w-10 bg-sage"></div><span class="text-sage text-[10px] tracking-[0.3em] uppercase">Demo by Automatically Everything</span><div class="h-px w-10 bg-sage"></div></div>
+      <h2 class="font-serif text-4xl md:text-5xl font-light mb-5">Love the look?<br>Let&rsquo;s build yours.</h2>
+      <p class="text-clay/50 leading-relaxed mb-10 max-w-lg mx-auto">This is a demo. Automatically Everything builds custom websites for yoga studios and wellness businesses — calm, clear, and built to fill classes.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-block bg-sage text-white px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-sage-dk transition-colors">Talk to Us</a>
+        <a href="/"   class="inline-block border border-clay/20 text-clay/60 px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:border-clay/50 hover:text-clay transition-colors">View All Demo Sites</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 bg-clay text-center border-t border-linen/5">
+    <div class="font-serif text-sage text-xl italic mb-2">Still Ground</div>
+    <div class="text-linen/20 text-xs">&copy; <span id="yr"></span> Still Ground Studio. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Build day filter pills and schedule rows
+    (function renderSchedule() {
+      const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+      const filtersEl = document.getElementById('day-filters');
+      const listEl    = document.getElementById('schedule-list');
+
+      // Build pills
+      days.forEach(function(d) {
+        const btn = document.createElement('button');
+        btn.className = 'day-pill text-xs font-semibold px-4 py-2 rounded-full border border-clay/20 text-clay/50 hover:border-clay/50 hover:text-clay bg-white transition-colors';
+        btn.dataset.day = d;
+        btn.textContent = d;
+        filtersEl.appendChild(btn);
+      });
+
+      // Build rows
+      CONFIG.schedule.forEach(function(cls) {
+        const spotsLow = cls.spots <= 4;
+        const row = document.createElement('div');
+        row.className = 'schedule-row flex flex-wrap items-center justify-between gap-3 py-4';
+        row.dataset.day = cls.day;
+        row.innerHTML =
+          '<div class="flex items-center gap-4 flex-1 min-w-0">' +
+            '<div class="text-sage font-semibold text-sm w-8 shrink-0">' + cls.day + '</div>' +
+            '<div class="text-clay/40 text-sm w-16 shrink-0">' + cls.time + '</div>' +
+            '<div class="min-w-0">' +
+              '<div class="font-semibold text-sm truncate">' + cls.name + '</div>' +
+              '<div class="text-clay/40 text-xs">' + cls.instructor + ' &middot; ' + cls.level + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="flex items-center gap-3 shrink-0">' +
+            '<span class="text-xs ' + (spotsLow ? 'text-red-500 font-semibold' : 'text-clay/30') + '">' +
+              (spotsLow ? '⚡ ' + cls.spots + ' spots left' : cls.spots + ' spots') +
+            '</span>' +
+            '<a href="#membership" class="bg-sage text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 hover:bg-sage-dk transition-colors">Book</a>' +
+          '</div>';
+        listEl.appendChild(row);
+      });
+
+      // Filter logic
+      let active = 'all';
+      document.querySelectorAll('.day-pill').forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          active = this.dataset.day;
+          document.querySelectorAll('.day-pill').forEach(function(p) {
+            p.className = p.dataset.day === active
+              ? 'day-pill text-xs font-semibold px-4 py-2 rounded-full border bg-clay text-linen border-clay'
+              : 'day-pill text-xs font-semibold px-4 py-2 rounded-full border border-clay/20 text-clay/50 hover:border-clay/50 hover:text-clay bg-white transition-colors';
+          });
+          document.querySelectorAll('.schedule-row').forEach(function(r) {
+            r.style.display = (active === 'all' || r.dataset.day === active) ? '' : 'none';
+          });
+        });
+      });
+    })();
+
+    // Render instructors
+    (function renderInstructors() {
+      const grid = document.getElementById('instructors-grid');
+      CONFIG.instructors.forEach(function(inst) {
+        const card = document.createElement('div');
+        card.className = 'text-center group';
+        card.innerHTML =
+          '<div class="aspect-[3/4] mb-5 overflow-hidden ph">' +
+            '<img src="' + inst.src + '" alt="' + inst.name + '" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+          '</div>' +
+          '<h3 class="font-serif text-2xl group-hover:text-sage transition-colors">' + inst.name + '</h3>' +
+          '<p class="text-sage text-[10px] tracking-widest uppercase mt-1 mb-3">' + inst.role + '</p>' +
+          '<p class="text-clay/50 text-sm leading-relaxed mb-3">' + inst.bio + '</p>' +
+          '<p class="text-clay/30 text-xs italic">' + inst.classes + '</p>';
+        grid.appendChild(card);
+      });
+    })();
+
+    // Render gallery
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item, i) {
+        const cell = document.createElement('div');
+        cell.className = 'relative overflow-hidden ph group cursor-pointer ' + (i === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+          '<div class="absolute inset-0 bg-clay/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-linen text-[10px] tracking-widest uppercase font-semibold">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

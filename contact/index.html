@@ -1,186 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Automatically Everything</title>
-    <!--Meta For No Index-->
     <meta name="robots" content="Noimageindex"/>
-
-    <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-
-    <!-- Stylesheets -->
-    <link href="/style/712937ca6097f87667d145e625f10a792ba0afd87aa1c59051339308880efcf9-output.css" rel="stylesheet" />
-
-    <!--Favicon-->
+    <link href="/style/e2f79518f395021c83b5653660e690c2aecbef1493d75a9a0d64004f75d39efe-output.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon" />
-    <link rel="icon" href="/assets/images/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', sans-serif; }
+      .font-display { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+    
   </head>
-  <body>
-    <header class="fixed w-full z-50">
-    
-      <nav class="w-full bg-white border-b border-gray-200 py-2.5 dark:bg-gray-900 dark:border-gray-700">
-        <div
-          class="flex flex-wrap items-center justify-between max-w-screen-xl px-6 lg:px-8 mx-auto"
-        >
-          <a href="/" class="flex items-center">
-            <span
-              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
-              >AutomaticallyEverything</span>
-          </a>
-          <div class="flex items-center lg:order-2">
-            <button
-              data-collapse-toggle="mobile-menu-2"
-              type="button"
-              class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="mobile-menu-2"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              <svg
-                class="hidden w-6 h-6"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
+  <body class="bg-[#F3F1ED] text-stone-800">
+
+    <header class="sticky top-0 z-50 bg-[#F3F1ED]/95 backdrop-blur-sm border-b border-stone-200/60">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+
+        <a href="/" class="flex items-center gap-2.5 shrink-0">
+          <div class="w-7 h-7 bg-stone-800 flex items-center justify-center">
+            <span class="font-display text-white text-xs font-bold leading-none">AE</span>
           </div>
-          <div
-            class="hidden w-full lg:flex lg:w-auto lg:order-1"
-            id="mobile-menu-2"
-          >
-            <ul class="flex flex-col divide-y divide-blue-100 border-t border-blue-100 lg:divide-y-0 lg:border-0 lg:flex-row lg:space-x-8 font-medium">
+          <span class="font-display font-semibold text-sm hidden sm:block">Automatically Everything</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          
             
-              <li>
-              
-                <a
-                  href="/"
-                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white "
-                  >Home</a
-                >
-              
-              </li>
+              <a href="/" class="text-stone-500 hover:text-stone-900 transition-colors">Home</a>
             
-              <li>
-              
-                <a
-                  href="/examples"
-                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white"
-                  >Projects And Ideas</a
-                >
-              
-              </li>
+          
             
-              <li>
-              
-                <a
-                  href="/contact"
-                  class="block py-3 px-6 text-gray-700 hover:text-blue-600 lg:px-0 lg:py-0 lg:text-blue-700 dark:text-white"
-                  >Contact Us</a
-                >
-              
-              </li>
+              <a href="/about/" class="text-stone-500 hover:text-stone-900 transition-colors">About</a>
             
-            </ul>
-          </div>
-        </div>
-      </nav>
-      
+          
+            
+              <a href="/examples/" class="text-stone-500 hover:text-stone-900 transition-colors">Projects And Ideas</a>
+            
+          
+            
+              <a href="/reviews/" class="text-stone-500 hover:text-stone-900 transition-colors">Reviews</a>
+            
+          
+            
+              <a href="/contact/" class="bg-stone-800 text-white px-4 py-2 hover:bg-stone-700 transition-colors whitespace-nowrap">
+                Contact Us &rarr;
+              </a>
+            
+          
+        </nav>
+
+        <button id="mobile-menu-btn" class="md:hidden text-stone-600 hover:text-stone-900">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-stone-200 px-6 py-5 flex flex-col gap-4 text-sm font-medium">
+        
+          
+            <a href="/" class="text-stone-600 hover:text-stone-900 transition-colors">Home</a>
+          
+        
+          
+            <a href="/about/" class="text-stone-600 hover:text-stone-900 transition-colors">About</a>
+          
+        
+          
+            <a href="/examples/" class="text-stone-600 hover:text-stone-900 transition-colors">Projects And Ideas</a>
+          
+        
+          
+            <a href="/reviews/" class="text-stone-600 hover:text-stone-900 transition-colors">Reviews</a>
+          
+        
+          
+            <a href="/contact/" class="bg-stone-800 text-white py-3 text-center hover:bg-stone-700 transition-colors">
+              Contact Us &rarr;
+            </a>
+          
+        
+      </div>
     </header>
-    
-
-<div class="bg-white dark:bg-gray-900 px-6 py-24 sm:py-32 lg:px-8 pt-20">
-  <div class="mx-auto max-w-2xl sm:text-center">
-    <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Contact Us</h2>
-    <p class="mt-2 text-lg leading-8 text-gray-600 dark:text-gray-100">
-    We would love to hear from you! Pick your favorite method and reach out. Please include as much
-    relevant info as possible so we can help you more effectively.
-  </div>
-  <div class="mx-auto mt-20 max-w-lg space-y-16">
-    <div class="flex gap-x-6">
-      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600">
-        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-        </svg>
-      </div>
-      <div>
-        <h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">
-        Email
-        </h3>
-        <p class="mt-2 leading-7 text-gray-600 dark:text-gray-100">Email is the preferred method for contacting us. We'll get back to you as soon as we can, usually within a couple hours but
-        often much faster.</p>
-        <p class="mt-4">
-          <a href="mailto:support@automaticallyeverything.com" class="text-sm font-semibold leading-6 text-indigo-600">Click to Email<span aria-hidden="true">&rarr;</span></a>
-        </p>
-      </div>
-    </div>
-    <div class="flex gap-x-6">
-      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-600">
-        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-        </svg>
-      </div>
-      <div>
-        <h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Schedule a Phone/Video Call</h3>
-        <p class="mt-2 leading-7 text-gray-600 dark:text-gray-100">Some things are better done in real time - follow this link to schedule a phone call or video chat. Talk to you soon!</p>
-        <p class="mt-4">
-          <a href="https://calendly.com/collin-green/automaticallywhatever-intro-call" class="text-sm font-semibold leading-6 text-indigo-600">Schedule Conversation<span aria-hidden="true">&rarr;</span></a>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 
     
-    <footer class="bg-white dark:bg-gray-800">
-      <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
-        <div class="text-center">
-          <a
-            href="#"
-            class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
-          >
-            <img
-              src="./images/logo.svg"
-              class="h-6 mr-3 sm:h-9"
-              alt=""
-            />
-            AutomaticallyEverything
-          </a>
-          <span
-            class="block text-sm text-center text-gray-500 dark:text-gray-400"
-            >© <span id="copyright-year">2024</span> AutomaticallyEverything. All Rights Reserved.
-          </span>
-          <span class="block text-xs text-center text-gray-500 dark:text-gray-400">
-          
-          
-          </span>
+
+  <section class="pt-16 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+
+      <div class="border-b border-stone-200/60 pb-12 mb-16">
+        <p class="text-xs font-semibold tracking-[0.3em] uppercase text-stone-400 mb-4">Automatically Everything</p>
+        <h1 class="font-display text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-5">Contact Us</h1>
+        <p class="text-stone-500 text-lg leading-relaxed max-w-lg">
+          We&rsquo;d love to hear from you. Pick your preferred method and reach out &mdash; the more context you can share, the faster we can help.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+
+        <div class="flex gap-6 border-b border-stone-200/60 pb-12">
+          <div class="w-10 h-10 bg-stone-900 flex items-center justify-center shrink-0">
+            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold mb-2">Email</h3>
+            <p class="text-stone-500 leading-relaxed mb-4">
+              Email is our preferred method. We&rsquo;ll get back to you as soon as we can, usually within a couple hours but often much faster.
+            </p>
+            <a href="mailto:support@automaticallyeverything.com" class="text-sm font-semibold text-stone-800 hover:text-stone-600 transition-colors">
+              Click to Email &rarr;
+            </a>
+          </div>
         </div>
-      </div>
-    </footer>
 
-    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-    <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+        <div class="flex gap-6">
+          <div class="w-10 h-10 bg-stone-900 flex items-center justify-center shrink-0">
+            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-bold mb-2">Schedule a Call</h3>
+            <p class="text-stone-500 leading-relaxed mb-4">
+              Some things are better done in real time &mdash; book a phone call or video chat and we&rsquo;ll talk it through.
+            </p>
+            <a href="https://calendly.com/collin-green/automaticallywhatever-intro-call" class="text-sm font-semibold text-stone-800 hover:text-stone-600 transition-colors">
+              Schedule a Conversation &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+    
+<footer class="bg-stone-900 py-8 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2.5">
+      <div class="w-6 h-6 bg-stone-600 flex items-center justify-center">
+        <span class="font-display text-white text-[10px] font-bold leading-none">AE</span>
+      </div>
+      <span class="font-display text-white/60 text-sm">Automatically Everything</span>
+    </div>
+    <div class="text-white/30 text-xs">&copy; <span id="copyright-year"></span> Automatically Everything. All rights reserved.</div>
+  </div>
+  <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+</footer>
+
+
+    
+
+    <script>
+      document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+    </script>
   </body>
 </html>

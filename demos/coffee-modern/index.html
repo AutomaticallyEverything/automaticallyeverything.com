@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slow Pour &mdash; Specialty Coffee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: '#2A1A0A',
+            'esp-lt': '#3D2810',
+            cream:    '#F8F5F0',
+            'cream-dk':'#EEE8DE',
+            terra:    '#C07040',
+            'terra-dk':'#A05830',
+            sage:     '#7A9E7E',
+            'sage-dk':'#5C7D60',
+            warm:     '#E8DDD0',
+          },
+          fontFamily: {
+            serif: ['Libre Baskerville', 'Georgia', 'serif'],
+            sans:  ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .ph { background: repeating-linear-gradient(45deg,#d4c8b8,#d4c8b8 12px,#c8bca8 12px,#c8bca8 24px); }
+    .ph-dk { background: repeating-linear-gradient(45deg,#3a2810,#3a2810 12px,#322210 12px,#322212 24px); }
+    .scroll-hide { scrollbar-width:none; -ms-overflow-style:none; }
+    .scroll-hide::-webkit-scrollbar { display:none; }
+  </style>
+</head>
+<body class="bg-cream text-espresso">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONFIG — edit to update menu and gallery.
+  menu: drinks and food with prices.
+         Set category: 'espresso' | 'filter' | 'food'
+  gallery: photos in the gallery strip + grid.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      menu: [
+        { name: 'Espresso',          price: '$4',   category: 'espresso', desc: 'Single origin. Rotating every 6 weeks.' },
+        { name: 'Cortado',           price: '$5',   category: 'espresso', desc: 'Equal parts espresso and warm milk.' },
+        { name: 'Flat White',        price: '$5.50',category: 'espresso', desc: 'Double ristretto with microfoam.' },
+        { name: 'Cappuccino',        price: '$5.50',category: 'espresso', desc: 'Third espresso, third milk, third foam.' },
+        { name: 'Latte',             price: '$6',   category: 'espresso', desc: 'Smooth, balanced, and easy to drink.' },
+        { name: 'Pour Over',         price: '$6',   category: 'filter',   desc: '20-min brew. Worth every second.' },
+        { name: 'Cold Brew',         price: '$5',   category: 'filter',   desc: '18-hour steep. Served over ice.' },
+        { name: 'Filter of the Day', price: '$4',   category: 'filter',   desc: 'Ask us what\'s on. Changes daily.' },
+        { name: 'Avocado Toast',     price: '$11',  category: 'food',     desc: 'Sourdough, avo, everything bagel spice.' },
+        { name: 'Pastry Board',      price: '$9',   category: 'food',     desc: 'Two rotating pastries from the local bakery.' },
+        { name: 'Granola Bowl',      price: '$8',   category: 'food',     desc: 'House granola, yogurt, seasonal fruit.' },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/coffee-modern/gallery-latte.jpg',   alt: 'Latte art close-up' },
+        { src: '/assets/demos/coffee-modern/gallery-pour.jpg',    alt: 'Pour over in progress' },
+        { src: '/assets/demos/coffee-modern/gallery-space.jpg',   alt: 'Café interior' },
+        { src: '/assets/demos/coffee-modern/gallery-window.jpg',  alt: 'Window seat with coffee' },
+        { src: '/assets/demos/coffee-modern/gallery-beans.jpg',   alt: 'Single origin beans' },
+        { src: '/assets/demos/coffee-modern/gallery-counter.jpg', alt: 'Barista at the counter' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-espresso/10">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div>
+        <div class="font-serif text-espresso text-xl italic">Slow Pour</div>
+        <div class="text-terra text-[9px] tracking-[0.4em] uppercase mt-0.5">Specialty Coffee</div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#menu"     class="text-espresso/50 hover:text-espresso transition-colors">Menu</a>
+        <a href="#gallery"  class="text-espresso/50 hover:text-espresso transition-colors">Gallery</a>
+        <a href="#about"    class="text-espresso/50 hover:text-espresso transition-colors">About</a>
+        <a href="#visit" class="bg-espresso text-cream px-5 py-2.5 text-sm font-semibold hover:bg-esp-lt transition-colors">Find Us &rarr;</a>
+      </div>
+      <button class="md:hidden text-espresso/60 hover:text-espresso" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-cream border-t border-espresso/8 px-6 pb-5 pt-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#menu"     class="text-espresso/60 hover:text-espresso" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Menu</a>
+      <a href="#gallery"  class="text-espresso/60 hover:text-espresso" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#about"    class="text-espresso/60 hover:text-espresso" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">About</a>
+      <a href="#visit" class="bg-espresso text-cream px-4 py-3 font-semibold text-center">Find Us &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-screen grid md:grid-cols-2 pt-[73px]">
+    <div class="flex flex-col justify-center px-8 md:px-14 lg:px-16 py-16 order-2 md:order-1">
+      <p class="text-terra text-xs font-semibold tracking-[0.35em] uppercase mb-6">Good coffee. Quiet space.</p>
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+        Coffee worth<br>slowing down<br><em>for.</em>
+      </h1>
+      <div class="w-12 h-px bg-terra mb-6"></div>
+      <p class="text-espresso/50 text-lg leading-relaxed max-w-sm mb-10">
+        Single origin espresso and filter coffee, sourced from small farms and brewed with care. Open seven days.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#menu"  class="bg-espresso text-cream px-8 py-4 font-semibold text-sm hover:bg-esp-lt transition-colors">See the Menu &rarr;</a>
+        <a href="#visit" class="border border-espresso/20 text-espresso/60 px-8 py-4 font-semibold text-sm hover:border-espresso/50 hover:text-espresso transition-colors">Find Us</a>
+      </div>
+      <!-- open badge -->
+      <div class="flex items-center gap-3 mt-10 pt-8 border-t border-espresso/8">
+        <span class="w-2 h-2 rounded-full bg-sage animate-pulse"></span>
+        <span class="text-sage text-sm font-semibold">Open today &middot; 7am &ndash; 5pm</span>
+      </div>
+    </div>
+    <div class="relative overflow-hidden min-h-[50vw] md:min-h-0 ph order-1 md:order-2">
+      <img src="/assets/demos/coffee-modern/hero.jpg" alt="Slow Pour café interior" class="w-full h-full object-cover">
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="py-24 px-6 md:px-16 bg-espresso">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-14">
+        <div>
+          <p class="text-terra text-xs font-semibold tracking-[0.35em] uppercase mb-3">What We Serve</p>
+          <h2 class="font-serif text-5xl md:text-6xl font-bold text-cream">Menu</h2>
+        </div>
+        <p class="text-cream/20 text-xs hidden md:block">All milk alternatives available &middot; Oat +50¢</p>
+      </div>
+
+      <!--
+        Menu rendered from CONFIG.menu above.
+        To add drinks or food: add entries to CONFIG.menu.
+        category: 'espresso' | 'filter' | 'food'
+      -->
+      <div class="space-y-10">
+        <div>
+          <p class="text-terra text-[10px] tracking-[0.4em] uppercase mb-5 pb-3 border-b border-cream/10">Espresso</p>
+          <div id="menu-espresso" class="divide-y divide-cream/8"></div>
+        </div>
+        <div>
+          <p class="text-terra text-[10px] tracking-[0.4em] uppercase mb-5 pb-3 border-b border-cream/10">Filter</p>
+          <div id="menu-filter" class="divide-y divide-cream/8"></div>
+        </div>
+        <div>
+          <p class="text-terra text-[10px] tracking-[0.4em] uppercase mb-5 pb-3 border-b border-cream/10">Food</p>
+          <div id="menu-food" class="divide-y divide-cream/8"></div>
+        </div>
+      </div>
+      <p class="text-cream/20 text-xs mt-8">Menu changes seasonally. Decaf espresso always available on request.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-cream-dk">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-terra text-xs font-semibold tracking-[0.35em] uppercase mb-3">The Space</p>
+          <h2 class="font-serif text-5xl font-bold">Gallery</h2>
+        </div>
+      </div>
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-6 md:px-16 bg-warm">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-terra text-xs font-semibold tracking-[0.35em] uppercase mb-4">Who We Are</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold leading-tight mb-6">
+          Coffee that<br>comes from<br><em>somewhere.</em>
+        </h2>
+        <div class="w-10 h-px bg-terra mb-7"></div>
+        <p class="text-espresso/60 leading-relaxed mb-5">We visit the farms we buy from. Every espresso on our menu has a producer's name attached to it. Not because it sounds good — because we actually went there.</p>
+        <p class="text-espresso/60 leading-relaxed mb-5">Slow Pour opened in 2019 in a converted corner building. We don't do wi-fi passwords, loyalty apps, or seasonal unicorn lattes. Just very good coffee and a place to sit.</p>
+        <div class="flex gap-8 mt-8 pt-8 border-t border-espresso/10">
+          <div>
+            <div class="font-serif text-3xl font-bold text-terra">5+</div>
+            <div class="text-espresso/40 text-xs uppercase tracking-widest mt-1">Origins this season</div>
+          </div>
+          <div>
+            <div class="font-serif text-3xl font-bold text-terra">7</div>
+            <div class="text-espresso/40 text-xs uppercase tracking-widest mt-1">Days a week</div>
+          </div>
+          <div>
+            <div class="font-serif text-3xl font-bold text-terra">4.9</div>
+            <div class="text-espresso/40 text-xs uppercase tracking-widest mt-1">Google stars</div>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/5] overflow-hidden ph">
+          <img src="/assets/demos/coffee-modern/about.jpg" alt="Barista at work" class="w-full h-full object-cover object-top">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT / HOURS -->
+  <section id="visit" class="py-20 px-6 md:px-16 bg-espresso">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-terra text-[10px] tracking-[0.4em] uppercase mb-4">Location</p>
+        <div class="text-cream/40 text-sm leading-loose">44 Oak Street<br>The East Village</div>
+      </div>
+      <div>
+        <p class="text-terra text-[10px] tracking-[0.4em] uppercase mb-4">Hours</p>
+        <div class="text-cream/40 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[200px]"><span>Mon &ndash; Fri</span><span>7am &ndash; 5pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Sat &ndash; Sun</span><span>8am &ndash; 4pm</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-terra text-[10px] tracking-[0.4em] uppercase mb-4">Contact</p>
+        <div class="text-cream/40 text-sm space-y-1.5">
+          <div>(555) 555-1313</div>
+          <div>hello@slowpourcoffee.com</div>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-cream/25 hover:text-terra transition-colors text-xs uppercase tracking-widest">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-cream border-t border-espresso/10">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-terra text-xs font-semibold tracking-widest uppercase mb-4">Demo by Automatically Everything</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">Want a site like this<br>for your café?</h2>
+        <p class="text-espresso/40 text-lg max-w-md leading-relaxed">This is a demo. We build custom websites for coffee shops and local businesses — clean, fast, and built to bring people through the door.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/" class="bg-espresso text-cream px-10 py-5 font-semibold text-sm hover:bg-esp-lt transition-colors whitespace-nowrap text-center">Get in Touch &rarr;</a>
+        <a href="/"   class="border border-espresso/20 text-espresso/60 px-10 py-5 font-semibold text-sm hover:border-espresso/50 hover:text-espresso transition-colors whitespace-nowrap text-center">View All Demos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 px-6 md:px-16 bg-espresso border-t border-cream/5">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <span class="font-serif text-terra italic text-lg">Slow Pour</span>
+      <div class="text-cream/15 text-xs">&copy; <span id="yr"></span> Slow Pour. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    (function renderMenu() {
+      const containers = { espresso: document.getElementById('menu-espresso'), filter: document.getElementById('menu-filter'), food: document.getElementById('menu-food') };
+      CONFIG.menu.forEach(function(item) {
+        const row = document.createElement('div');
+        row.className = 'flex items-start justify-between py-4 gap-4';
+        row.innerHTML =
+          '<div class="flex-1">' +
+            '<div class="text-cream font-medium">' + item.name + '</div>' +
+            '<div class="text-cream/30 text-xs mt-0.5">' + item.desc + '</div>' +
+          '</div>' +
+          '<div class="text-terra font-semibold shrink-0">' + item.price + '</div>';
+        if (containers[item.category]) containers[item.category].appendChild(row);
+      });
+    })();
+
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item, i) {
+        const cell = document.createElement('div');
+        cell.className = 'relative overflow-hidden ph group cursor-pointer ' + (i === 0 ? 'col-span-2 aspect-[16/9]' : 'aspect-square');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+          '<div class="absolute inset-0 bg-espresso/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-cream text-[10px] tracking-widest uppercase font-medium">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

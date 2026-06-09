@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Old Vine &mdash; Wine &amp; Spirits</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burg:     '#4A0E0E',
+            'burg-dk':'#350A0A',
+            parch:    '#F2EBD9',
+            'parch-dk':'#E8DFC8',
+            gold:     '#C5A35A',
+            'gold-dk':'#A8884A',
+            cork:     '#8B6340',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans:  ['Lato', 'Helvetica', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+    html { scroll-behavior: smooth; }
+    .ph {
+      background: repeating-linear-gradient(
+        45deg, #c8b89a, #c8b89a 12px, #bfad90 12px, #bfad90 24px
+      );
+    }
+    .ph-dark {
+      background: repeating-linear-gradient(
+        45deg, #4a1a1a, #4a1a1a 12px, #401515 12px, #401515 24px
+      );
+    }
+    /* Hide scrollbar on horizontal strip */
+    .scroll-hide { scrollbar-width: none; -ms-overflow-style: none; }
+    .scroll-hide::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-parch text-burg">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONTENT CONFIG — edit this block to customize the shop.
+
+  picks:   Featured bottles shown in the "This Week" section.
+           Add or remove objects; they render as cards automatically.
+
+  gallery: Photos shown in the gallery grid.
+           Add entries; they fill the grid automatically.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      picks: [
+        {
+          src:    '/assets/demos/wine-cellar/pick-1.jpg',
+          name:   'Château Margaux 2018',
+          region: 'Bordeaux, France',
+          type:   'Red · Cabernet Blend',
+          price:  '$68',
+          note:   'Dark fruit, cedar, and a finish that lingers long after the glass is empty.',
+        },
+        {
+          src:    '/assets/demos/wine-cellar/pick-2.jpg',
+          name:   'Domaine Leflaive Puligny',
+          region: 'Burgundy, France',
+          type:   'White · Chardonnay',
+          price:  '$52',
+          note:   'Minerality and citrus blossom, with a creamy mid-palate that belies its elegance.',
+        },
+        {
+          src:    '/assets/demos/wine-cellar/pick-3.jpg',
+          name:   'Penfolds Grange 2017',
+          region: 'Barossa Valley, Australia',
+          type:   'Red · Shiraz',
+          price:  '$74',
+          note:   'Rich, powerful, and unmistakably Australian. A cellar staple for good reason.',
+        },
+        {
+          src:    '/assets/demos/wine-cellar/pick-4.jpg',
+          name:   'Cloudy Bay Sauvignon Blanc',
+          region: 'Marlborough, NZ',
+          type:   'White · Sauvignon Blanc',
+          price:  '$28',
+          note:   'The benchmark for the style. Passionfruit, lime zest, and a razor-clean finish.',
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/wine-cellar/gallery-cellar.jpg',   alt: 'Stone wine cellar' },
+        { src: '/assets/demos/wine-cellar/gallery-bottles.jpg',  alt: 'Curated bottle display' },
+        { src: '/assets/demos/wine-cellar/gallery-tasting.jpg',  alt: 'Wine tasting event' },
+        { src: '/assets/demos/wine-cellar/gallery-glass.jpg',    alt: 'Red wine in glass' },
+        { src: '/assets/demos/wine-cellar/gallery-board.jpg',    alt: 'Cheese and charcuterie board' },
+        { src: '/assets/demos/wine-cellar/gallery-shop.jpg',     alt: 'Shop interior' },
+        { src: '/assets/demos/wine-cellar/gallery-labels.jpg',   alt: 'Vintage label detail' },
+        { src: '/assets/demos/wine-cellar/gallery-pour.jpg',     alt: 'Sommelier pouring wine' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-burg/95 backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <div class="font-serif text-gold text-xl tracking-[0.15em] uppercase">The Old Vine</div>
+        <div class="text-gold/50 text-[9px] tracking-[0.35em] uppercase mt-0.5">Wine &middot; Spirits &middot; Est. 1978</div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-[11px] tracking-widest uppercase">
+        <a href="#picks"   class="text-parch/50 hover:text-gold transition-colors">This Week</a>
+        <a href="#gallery" class="text-parch/50 hover:text-gold transition-colors">Gallery</a>
+        <a href="#about"   class="text-parch/50 hover:text-gold transition-colors">About</a>
+        <a href="#visit"   class="border border-gold text-gold px-5 py-2 font-bold tracking-widest hover:bg-gold hover:text-burg transition-colors">Visit Us</a>
+      </div>
+      <button class="md:hidden text-gold" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-burg-dk border-t border-gold/20 px-6 pb-6 pt-4 flex flex-col gap-4 text-[11px] tracking-widest uppercase">
+      <a href="#picks"   class="text-parch/60 hover:text-gold" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">This Week</a>
+      <a href="#gallery" class="text-parch/60 hover:text-gold" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#about"   class="text-parch/60 hover:text-gold" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">About</a>
+      <a href="#visit" class="border border-gold text-gold px-4 py-3 font-bold text-center tracking-widest">Visit Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-burg-dk">
+    <div class="absolute inset-0 ph-dark"></div>
+    <img src="/assets/demos/wine-cellar/hero.jpg" alt="The Old Vine wine shop" class="absolute inset-0 w-full h-full object-cover object-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-burg/70 via-burg/50 to-burg/80"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-3xl">
+      <div class="inline-flex items-center gap-4 mb-8">
+        <div class="h-px w-12 bg-gold"></div>
+        <span class="text-gold text-[10px] tracking-[0.5em] uppercase">Est. 1978 &middot; Family Owned</span>
+        <div class="h-px w-12 bg-gold"></div>
+      </div>
+      <h1 class="font-serif text-parch text-6xl md:text-8xl font-bold leading-none mb-3">The Old Vine</h1>
+      <p class="font-serif text-gold text-2xl md:text-3xl italic font-light mb-8">Wine &amp; Spirits</p>
+      <div class="w-16 h-px bg-gold mx-auto mb-8"></div>
+      <p class="text-parch/60 text-lg leading-relaxed mb-10 max-w-lg mx-auto">
+        A curated selection of wines, spirits, and stories from around the world. Serving the neighborhood since 1978.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#picks" class="bg-gold text-burg px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:bg-gold-dk transition-colors">This Week's Picks</a>
+        <a href="#visit" class="border border-parch/40 text-parch px-8 py-4 text-[11px] font-bold tracking-widest uppercase hover:border-gold hover:text-gold transition-colors">Find Us</a>
+      </div>
+    </div>
+
+    <!-- scroll cue -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-5 h-5 text-gold/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="bg-gold py-3.5 overflow-hidden">
+    <div class="flex gap-10 text-burg text-[10px] font-bold tracking-[0.25em] uppercase whitespace-nowrap">
+      <span>Red &middot; White &middot; Sparkling</span><span>&middot;</span>
+      <span>Rare Spirits</span><span>&middot;</span>
+      <span>Local Delivery</span><span>&middot;</span>
+      <span>Gift Wrapping</span><span>&middot;</span>
+      <span>Tasting Events</span><span>&middot;</span>
+      <span>Expert Recommendations</span><span>&middot;</span>
+      <span>Red &middot; White &middot; Sparkling</span><span>&middot;</span>
+      <span>Rare Spirits</span><span>&middot;</span>
+      <span>Local Delivery</span><span>&middot;</span>
+      <span>Gift Wrapping</span>
+    </div>
+  </div>
+
+  <!-- THIS WEEK'S PICKS -->
+  <section id="picks" class="py-24 px-6 md:px-16 bg-parch">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">Staff Selections</p>
+        <h2 class="font-serif text-5xl md:text-6xl font-light">This Week&rsquo;s Picks</h2>
+        <div class="w-10 h-px bg-gold mx-auto mt-5"></div>
+      </div>
+
+      <!--
+        Picks rendered from CONFIG.picks above.
+        To add or change featured bottles: edit the picks array.
+      -->
+      <div id="picks-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-burg">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">The Shop &amp; Cellar</p>
+          <h2 class="font-serif text-5xl md:text-6xl font-light text-parch">Gallery</h2>
+        </div>
+      </div>
+
+      <!--
+        Gallery rendered from CONFIG.gallery above.
+        To add images: add entries to CONFIG.gallery. They fill automatically.
+        First item spans 2 columns as a featured image.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2" style="grid-auto-flow: dense;"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-6 md:px-16 bg-parch-dk">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="aspect-[4/5] overflow-hidden ph">
+          <img src="/assets/demos/wine-cellar/about.jpg" alt="The Old Vine interior" class="w-full h-full object-cover">
+        </div>
+        <!-- corner accents -->
+        <div class="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-gold pointer-events-none"></div>
+        <div class="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-gold pointer-events-none"></div>
+      </div>
+      <div>
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-4">Our Story</p>
+        <h2 class="font-serif text-5xl font-light leading-tight mb-6">Four Decades<br>of Good Taste</h2>
+        <div class="w-10 h-px bg-gold mb-8"></div>
+        <p class="text-burg/60 leading-relaxed mb-5">The Old Vine opened in 1978 when Vincent Moreau arrived from Lyon with a single suitcase and a list of producers his grandfather had trusted for forty years.</p>
+        <p class="text-burg/60 leading-relaxed mb-5">Today his daughter Claire runs the shop with the same philosophy: no scores, no hype, no wine you wouldn't serve at your own table. If it's on the shelf, we've tasted it and we'd buy it ourselves.</p>
+        <p class="text-burg/60 leading-relaxed mb-10">We stock roughly 400 bottles at any time — enough to be interesting, small enough that we know every one.</p>
+        <div class="flex gap-12">
+          <div>
+            <div class="font-serif text-4xl font-bold">46+</div>
+            <div class="text-burg/40 text-xs tracking-widest uppercase mt-1">Years Open</div>
+          </div>
+          <div>
+            <div class="font-serif text-4xl font-bold">400+</div>
+            <div class="text-burg/40 text-xs tracking-widest uppercase mt-1">Labels in Stock</div>
+          </div>
+          <div>
+            <div class="font-serif text-4xl font-bold">12</div>
+            <div class="text-burg/40 text-xs tracking-widest uppercase mt-1">Tastings / Year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES / WHAT WE DO -->
+  <section class="py-24 px-6 md:px-16 bg-burg-dk">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">More Than a Shop</p>
+        <h2 class="font-serif text-5xl font-light text-parch">How We Can Help</h2>
+        <div class="w-10 h-px bg-gold mx-auto mt-5"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="border border-gold/20 p-8 hover:border-gold transition-colors duration-300 group">
+          <div class="text-gold text-3xl mb-5">&#9798;</div>
+          <h3 class="font-serif text-xl text-parch mb-3">Personal Recommendations</h3>
+          <p class="text-parch/40 text-sm leading-relaxed">Tell us the occasion, the food, or just your mood. We'll find the right bottle. No guessing, no overwhelm.</p>
+        </div>
+        <div class="border border-gold/20 p-8 hover:border-gold transition-colors duration-300 group">
+          <div class="text-gold text-3xl mb-5">&#9881;</div>
+          <h3 class="font-serif text-xl text-parch mb-3">Gift Curation</h3>
+          <p class="text-parch/40 text-sm leading-relaxed">From a single bottle beautifully wrapped to a custom case with a handwritten note. We make gift-giving easy.</p>
+        </div>
+        <div class="border border-gold/20 p-8 hover:border-gold transition-colors duration-300 group">
+          <div class="text-gold text-3xl mb-5">&#9825;</div>
+          <h3 class="font-serif text-xl text-parch mb-3">Tasting Events</h3>
+          <p class="text-parch/40 text-sm leading-relaxed">Monthly in-shop tastings with a focus on a single region or producer. Free to attend. Just show up.</p>
+        </div>
+        <div class="border border-gold/20 p-8 hover:border-gold transition-colors duration-300 group">
+          <div class="text-gold text-3xl mb-5">&#128218;</div>
+          <h3 class="font-serif text-xl text-parch mb-3">Cellar Building</h3>
+          <p class="text-parch/40 text-sm leading-relaxed">Planning a collection to age? We'll help you choose bottles across regions and vintages with a 10-year view.</p>
+        </div>
+        <div class="border border-gold/20 p-8 hover:border-gold transition-colors duration-300 group">
+          <div class="text-gold text-3xl mb-5">&#128230;</div>
+          <h3 class="font-serif text-xl text-parch mb-3">Local Delivery</h3>
+          <p class="text-parch/40 text-sm leading-relaxed">Free delivery within 5 miles on orders over $60. Same-day available before 2pm. Call to arrange.</p>
+        </div>
+        <div class="border border-gold/20 p-8 hover:border-gold transition-colors duration-300 group">
+          <div class="text-gold text-3xl mb-5">&#9993;</div>
+          <h3 class="font-serif text-xl text-parch mb-3">Monthly Newsletter</h3>
+          <p class="text-parch/40 text-sm leading-relaxed">New arrivals, tasting notes, and one producer story per month. No spam, just wine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6 md:px-16 bg-parch">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">Regulars</p>
+        <h2 class="font-serif text-5xl font-light">What They Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="font-serif text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-burg/60 text-sm leading-relaxed mb-5">I've been coming here for twenty years. Claire knows what I like before I say a word. Walked out once with a bottle I'd never heard of and it became my all-time favorite.</p>
+          <div class="text-gold text-[10px] tracking-widest uppercase">&mdash; Robert M., 20-year regular</div>
+        </div>
+        <div>
+          <div class="font-serif text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-burg/60 text-sm leading-relaxed mb-5">They did the wine for our wedding. Asked us four questions and nailed every single bottle. The Burgundy at the rehearsal dinner still comes up at dinner parties.</p>
+          <div class="text-gold text-[10px] tracking-widest uppercase">&mdash; Sarah &amp; Tom K.</div>
+        </div>
+        <div>
+          <div class="font-serif text-gold text-5xl leading-none mb-4">&ldquo;</div>
+          <p class="text-burg/60 text-sm leading-relaxed mb-5">The monthly tastings are the best thing happening in this neighborhood. Free, unpretentious, and I always leave with something I want to drink again.</p>
+          <div class="text-gold text-[10px] tracking-widest uppercase">&mdash; Dana L., monthly regular</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT / HOURS / MAP CTA -->
+  <section id="visit" class="py-24 px-6 md:px-16 bg-burg">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-3">Come In</p>
+        <h2 class="font-serif text-5xl font-light text-parch">Find Us</h2>
+        <div class="w-10 h-px bg-gold mx-auto mt-5"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-12">
+        <div>
+          <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-4">Location</p>
+          <div class="text-parch/50 text-sm leading-loose">
+            312 Merchant Row<br>
+            Old Quarter neighborhood<br>
+            <a href="#" class="text-gold hover:underline underline-offset-2 mt-2 inline-block text-[10px] tracking-widest uppercase">Get directions &rarr;</a>
+          </div>
+        </div>
+        <div>
+          <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-4">Hours</p>
+          <div class="text-parch/50 text-sm space-y-1.5">
+            <div class="flex justify-between max-w-[200px]"><span>Mon &ndash; Thu</span><span>11am &ndash; 8pm</span></div>
+            <div class="flex justify-between max-w-[200px]"><span>Fri &ndash; Sat</span><span>10am &ndash; 9pm</span></div>
+            <div class="flex justify-between max-w-[200px]"><span>Sunday</span><span>12pm &ndash; 6pm</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="text-gold text-[10px] tracking-[0.4em] uppercase mb-4">Contact</p>
+          <div class="text-parch/50 text-sm space-y-1.5">
+            <div><a href="tel:+15555550505" class="hover:text-gold transition-colors">(555) 555-0505</a></div>
+            <div><a href="mailto:hello@oldvineshop.com" class="hover:text-gold transition-colors">hello@oldvineshop.com</a></div>
+            <div class="flex gap-4 mt-3">
+              <a href="#" class="text-parch/30 hover:text-gold transition-colors text-[10px] tracking-widest uppercase">Instagram</a>
+              <span class="text-parch/10">/</span>
+              <a href="#" class="text-parch/30 hover:text-gold transition-colors text-[10px] tracking-widest uppercase">Newsletter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-parch border-t border-burg/10">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="inline-flex items-center gap-4 mb-8">
+        <div class="h-px w-10 bg-gold"></div>
+        <span class="text-gold text-[10px] tracking-[0.3em] uppercase">Demo by Automatically Everything</span>
+        <div class="h-px w-10 bg-gold"></div>
+      </div>
+      <h2 class="font-serif text-4xl md:text-5xl font-light mb-5">Love the look?<br>Let&rsquo;s build yours.</h2>
+      <p class="text-burg/50 leading-relaxed mb-10 max-w-lg mx-auto">This is a demo site. Automatically Everything designs and builds custom websites for wine shops, bottle shops, and local businesses &mdash; built to match your style and bring in more customers.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-block bg-burg text-parch px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-burg-dk transition-colors">Talk to Us About Your Site</a>
+        <a href="/" class="inline-block border border-burg text-burg px-10 py-4 font-bold tracking-widest uppercase text-[11px] hover:bg-burg hover:text-parch transition-colors">View All Demo Sites</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-6 bg-burg-dk border-t border-gold/20 text-center">
+    <div class="font-serif text-gold text-xl tracking-widest uppercase mb-2">The Old Vine</div>
+    <div class="text-parch/20 text-xs tracking-widest">312 Merchant Row &middot; Old Quarter &middot; (555) 555-0505</div>
+    <div class="text-parch/10 text-xs mt-4">&copy; <span id="yr"></span> The Old Vine Wine &amp; Spirits. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Render picks from CONFIG.picks.
+    // To change featured bottles: edit the picks array above.
+    (function renderPicks() {
+      const grid = document.getElementById('picks-grid');
+      CONFIG.picks.forEach(function(pick) {
+        const card = document.createElement('div');
+        card.className = 'group';
+        card.innerHTML =
+          '<div class="aspect-[3/4] mb-5 overflow-hidden relative ph">' +
+            '<img src="' + pick.src + '" alt="' + pick.name + '" ' +
+                'class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+                'loading="lazy">' +
+          '</div>' +
+          '<div class="border-t border-gold/30 pt-4">' +
+            '<p class="text-gold text-[9px] tracking-widest uppercase mb-1">' + pick.type + '</p>' +
+            '<h4 class="font-serif text-xl leading-snug mb-1">' + pick.name + '</h4>' +
+            '<p class="text-burg/50 text-xs mb-3">' + pick.region + '</p>' +
+            '<p class="text-burg/50 text-xs leading-relaxed italic mb-4">' + pick.note + '</p>' +
+            '<div class="flex items-center justify-between">' +
+              '<span class="font-serif text-2xl font-bold text-burg">' + pick.price + '</span>' +
+              '<a href="#visit" class="text-gold text-[10px] tracking-widest uppercase font-bold hover:underline underline-offset-2">In store &rarr;</a>' +
+            '</div>' +
+          '</div>';
+        grid.appendChild(card);
+      });
+    })();
+
+    // Render gallery from CONFIG.gallery.
+    // To add images: add entries to CONFIG.gallery above.
+    // First item spans 2 columns as a feature image; rest are square.
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item, i) {
+        const cell = document.createElement('div');
+        const isFeatured = (i === 0);
+        cell.className = [
+          'relative overflow-hidden ph-dark group cursor-pointer',
+          isFeatured ? 'col-span-2 aspect-[16/9]' : 'col-span-1 aspect-square',
+        ].join(' ');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" ' +
+              'class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+              'loading="lazy">' +
+          '<div class="absolute inset-0 bg-burg/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-parch text-[10px] tracking-widest uppercase font-semibold">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

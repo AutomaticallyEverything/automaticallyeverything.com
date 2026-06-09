@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surge Auto Wash &mdash; Fast. Clean. Done.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:    '#050F1E',
+            'navy-lt':'#0A1E35',
+            blue:    '#0055FF',
+            'blue-lt':'#1A6AFF',
+            cyan:    '#00C8FF',
+            'off-white':'#F0F4FF',
+          },
+          fontFamily: {
+            display: ['Barlow Condensed', 'Impact', 'sans-serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .ph-navy {
+      background: repeating-linear-gradient(
+        45deg, #0c1e35, #0c1e35 12px, #0a1a2e 12px, #0a1a2e 24px
+      );
+    }
+    .ph-mid {
+      background: repeating-linear-gradient(
+        45deg, #1a2e4a, #1a2e4a 12px, #162840 12px, #162840 24px
+      );
+    }
+    /* scrollbar hide */
+    .scroll-hide { scrollbar-width: none; -ms-overflow-style: none; }
+    .scroll-hide::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-navy text-off-white" style="font-family:'Inter',sans-serif;">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONTENT CONFIG — edit this block to update packages and gallery.
+
+  packages: Wash tiers shown in the pricing section.
+            Set popular:true on one to highlight it.
+            features: list of included items.
+
+  gallery:  Photos shown in the gallery grid.
+            Add entries; they fill automatically.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      packages: [
+        {
+          name:     'Quick Rinse',
+          tagline:  'In and out',
+          price:    '$10',
+          popular:  false,
+          features: [
+            'Exterior wash',
+            'High-pressure rinse',
+            'Spot-free rinse',
+            'Air dry',
+          ],
+        },
+        {
+          name:     'Express Clean',
+          tagline:  'Our most popular',
+          price:    '$18',
+          popular:  true,
+          features: [
+            'Everything in Quick Rinse',
+            'Tire & wheel scrub',
+            'Underbody rinse',
+            'Air freshener',
+            'Hand towel dry',
+          ],
+        },
+        {
+          name:     'Full Detail',
+          tagline:  'The complete wash',
+          price:    '$28',
+          popular:  false,
+          features: [
+            'Everything in Express Clean',
+            'Tire shine',
+            'Interior vacuum',
+            'Dashboard wipe-down',
+            'Window treatment',
+          ],
+        },
+        {
+          name:     'Elite',
+          tagline:  'Showroom ready',
+          price:    '$42',
+          popular:  false,
+          features: [
+            'Everything in Full Detail',
+            'Hand wax',
+            'Seat wipe-down',
+            'Odor eliminator',
+            'Ceramic spray sealant',
+          ],
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/carwash-express/gallery-tunnel.jpg',   alt: 'Wash tunnel in action' },
+        { src: '/assets/demos/carwash-express/gallery-shine.jpg',    alt: 'Gleaming clean car' },
+        { src: '/assets/demos/carwash-express/gallery-tires.jpg',    alt: 'Freshly cleaned wheels' },
+        { src: '/assets/demos/carwash-express/gallery-spray.jpg',    alt: 'High-pressure spray' },
+        { src: '/assets/demos/carwash-express/gallery-dry.jpg',      alt: 'Air dry blowers' },
+        { src: '/assets/demos/carwash-express/gallery-result.jpg',   alt: 'Finished vehicle' },
+        { src: '/assets/demos/carwash-express/gallery-night.jpg',    alt: 'Lit tunnel at night' },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 bg-blue flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+        </div>
+        <span style="font-family:'Barlow Condensed',sans-serif" class="font-bold text-2xl tracking-wide uppercase">Surge<span class="text-blue">.</span></span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#packages" class="text-white/50 hover:text-white transition-colors">Packages</a>
+        <a href="#gallery"  class="text-white/50 hover:text-white transition-colors">Gallery</a>
+        <a href="#club"     class="text-white/50 hover:text-white transition-colors">Monthly Club</a>
+        <a href="#location" class="bg-blue text-white px-5 py-2.5 font-semibold hover:bg-blue-lt transition-colors">Find Us &rarr;</a>
+      </div>
+      <button class="md:hidden text-white/60 hover:text-white" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-navy-lt border-t border-white/5 px-6 pb-5 pt-4 flex flex-col gap-4 text-sm">
+      <a href="#packages" class="text-white/60 hover:text-white font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Packages</a>
+      <a href="#gallery"  class="text-white/60 hover:text-white font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#club"     class="text-white/60 hover:text-white font-medium" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Monthly Club</a>
+      <a href="#location" class="bg-blue text-white px-4 py-3 font-semibold text-center">Find Us &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center overflow-hidden bg-navy">
+    <div class="absolute inset-0 ph-navy"></div>
+    <img src="/assets/demos/carwash-express/hero.jpg" alt="Surge Auto Wash tunnel"
+         class="absolute inset-0 w-full h-full object-cover object-center opacity-40">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 lg:px-20 py-24">
+      <!-- live status pill -->
+      <div class="inline-flex items-center gap-2 mb-8 bg-blue/15 border border-blue/30 px-4 py-2 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-cyan animate-pulse"></span>
+        <span class="text-cyan text-xs font-semibold tracking-widest uppercase">Open Now &middot; No Wait</span>
+      </div>
+
+      <h1 style="font-family:'Barlow Condensed',sans-serif"
+          class="text-7xl md:text-9xl lg:text-[10rem] font-black leading-none tracking-tight uppercase mb-4">
+        Fast.<br><span class="text-blue">Clean.</span><br>Done.
+      </h1>
+      <p class="text-white/40 text-xl max-w-md mb-10 leading-relaxed">
+        Professional auto wash in under 5 minutes. Open 7 days. No appointment needed.
+      </p>
+
+      <div class="flex flex-wrap gap-4 mb-16">
+        <a href="#packages" class="bg-blue text-white px-8 py-4 font-semibold text-sm hover:bg-blue-lt transition-colors">See Packages &rarr;</a>
+        <a href="#club"     class="border border-white/20 text-white/70 px-8 py-4 font-semibold text-sm hover:border-white/60 hover:text-white transition-colors">Monthly Unlimited</a>
+      </div>
+
+      <!-- stat strip -->
+      <div class="flex flex-wrap gap-10">
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif" class="text-5xl font-black text-blue">&lt;5</div>
+          <div class="text-white/30 text-xs tracking-widest uppercase mt-1">Minutes avg.</div>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif" class="text-5xl font-black">7</div>
+          <div class="text-white/30 text-xs tracking-widest uppercase mt-1">Days a week</div>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif" class="text-5xl font-black">4.8<span class="text-blue text-3xl">★</span></div>
+          <div class="text-white/30 text-xs tracking-widest uppercase mt-1">Google rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="py-24 px-6 md:px-16 bg-navy-lt">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-blue text-xs font-semibold tracking-widest uppercase mb-3">Pricing</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif"
+            class="text-6xl md:text-7xl font-black uppercase tracking-tight">
+          Pick Your Wash
+        </h2>
+      </div>
+
+      <!--
+        Packages rendered from CONFIG.packages above.
+        To add or change wash tiers: edit the packages array.
+        Set popular:true on exactly one to highlight it.
+      -->
+      <div id="packages-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+
+      <p class="text-white/20 text-xs mt-6">All washes include free vacuum use at self-serve stations. Prices subject to change. Oversized vehicles add $5.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-navy">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-blue text-xs font-semibold tracking-widest uppercase mb-3">The Wash</p>
+          <h2 style="font-family:'Barlow Condensed',sans-serif"
+              class="text-6xl md:text-7xl font-black uppercase tracking-tight">Gallery</h2>
+        </div>
+      </div>
+      <!--
+        Gallery rendered from CONFIG.gallery above.
+        To add photos: add entries to CONFIG.gallery.
+        First two items span 2 columns on desktop.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2" style="grid-auto-flow:dense;"></div>
+    </div>
+  </section>
+
+  <!-- MONTHLY CLUB -->
+  <section id="club" class="py-24 px-6 md:px-16 bg-blue">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div class="max-w-lg">
+        <p class="text-white/60 text-xs font-semibold tracking-widest uppercase mb-4">Surge Monthly Club</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif"
+            class="text-6xl md:text-7xl font-black uppercase tracking-tight text-white leading-none mb-6">
+          Unlimited Washes.<br>One Flat Price.
+        </h2>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-white/80 text-sm">
+            <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold shrink-0">✓</span>
+            Wash as often as you want, every single day
+          </li>
+          <li class="flex items-center gap-3 text-white/80 text-sm">
+            <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold shrink-0">✓</span>
+            Cancel anytime — no contracts, no hassle
+          </li>
+          <li class="flex items-center gap-3 text-white/80 text-sm">
+            <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold shrink-0">✓</span>
+            Members-only fast lane — skip the queue
+          </li>
+          <li class="flex items-center gap-3 text-white/80 text-sm">
+            <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold shrink-0">✓</span>
+            Save over 50% vs. paying per wash
+          </li>
+        </ul>
+      </div>
+      <div class="bg-navy p-8 shrink-0 w-full md:w-auto md:min-w-[280px]">
+        <p class="text-blue text-xs font-semibold tracking-widest uppercase mb-4">Monthly Club Plans</p>
+        <div class="space-y-4 mb-8">
+          <div class="flex justify-between items-center border-b border-white/10 pb-4">
+            <div>
+              <div class="font-semibold">Express Unlimited</div>
+              <div class="text-white/40 text-xs mt-0.5">Express Clean every day</div>
+            </div>
+            <div style="font-family:'Barlow Condensed',sans-serif" class="text-3xl font-black text-blue">$29<span class="text-white/30 text-base font-normal">/mo</span></div>
+          </div>
+          <div class="flex justify-between items-center border-b border-white/10 pb-4">
+            <div>
+              <div class="font-semibold">Full Unlimited</div>
+              <div class="text-white/40 text-xs mt-0.5">Full Detail every day</div>
+            </div>
+            <div style="font-family:'Barlow Condensed',sans-serif" class="text-3xl font-black text-blue">$44<span class="text-white/30 text-base font-normal">/mo</span></div>
+          </div>
+          <div class="flex justify-between items-center">
+            <div>
+              <div class="font-semibold">Elite Unlimited</div>
+              <div class="text-white/40 text-xs mt-0.5">Elite wash every day</div>
+            </div>
+            <div style="font-family:'Barlow Condensed',sans-serif" class="text-3xl font-black text-blue">$59<span class="text-white/30 text-base font-normal">/mo</span></div>
+          </div>
+        </div>
+        <a href="#location" class="block bg-blue text-white px-6 py-4 font-semibold text-sm text-center hover:bg-blue-lt transition-colors">Sign Up at the Wash &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="py-24 px-6 md:px-16 bg-navy-lt">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-blue text-xs font-semibold tracking-widest uppercase mb-3">Google Reviews</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif"
+            class="text-6xl md:text-7xl font-black uppercase tracking-tight">
+          What They Said
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-navy p-7 border border-white/5">
+          <div class="text-blue text-sm tracking-widest mb-4">★★★★★</div>
+          <p class="text-white/60 text-sm leading-relaxed mb-6">&ldquo;I go through here 3–4 times a month. The Express Clean is unreal for $18. My car comes out spotless every time. The monthly plan basically pays for itself.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-blue/20 flex items-center justify-center text-xs font-bold text-blue">JH</div>
+            <div>
+              <div class="text-sm font-semibold">Jason H.</div>
+              <div class="text-white/20 text-xs">Monthly member &middot; 14 months</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-navy p-7 border border-white/5">
+          <div class="text-blue text-sm tracking-widest mb-4">★★★★★</div>
+          <p class="text-white/60 text-sm leading-relaxed mb-6">&ldquo;Fastest car wash I've ever been to. Pulled in, got the Full Detail, was out in under 6 minutes. Car looked better than when I drive it off the lot.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-blue/20 flex items-center justify-center text-xs font-bold text-blue">KP</div>
+            <div>
+              <div class="text-sm font-semibold">Karen P.</div>
+              <div class="text-white/20 text-xs">Regular customer</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-navy p-7 border border-white/5">
+          <div class="text-blue text-sm tracking-widest mb-4">★★★★★</div>
+          <p class="text-white/60 text-sm leading-relaxed mb-6">&ldquo;I manage a small fleet and we run every vehicle through Surge weekly. The membership pricing made it a no-brainer. Staff is always helpful and it's consistently clean.&rdquo;</p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-blue/20 flex items-center justify-center text-xs font-bold text-blue">MT</div>
+            <div>
+              <div class="text-sm font-semibold">Marcus T.</div>
+              <div class="text-white/20 text-xs">Fleet account &middot; 2 years</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION + HOURS -->
+  <section id="location" class="py-24 px-6 md:px-16 bg-navy">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 border-t border-white/10 pt-16">
+      <div>
+        <p class="text-blue text-xs font-semibold tracking-widest uppercase mb-4">Location</p>
+        <div class="text-white/40 text-sm leading-loose">
+          5200 Commerce Blvd<br>
+          Near the highway on-ramp<br>
+          <a href="#" class="text-blue hover:underline underline-offset-2 mt-2 inline-block text-xs tracking-widest uppercase font-semibold">Get directions &rarr;</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-blue text-xs font-semibold tracking-widest uppercase mb-4">Hours</p>
+        <div class="text-white/40 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[200px]"><span>Mon &ndash; Fri</span><span>7am &ndash; 8pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Saturday</span><span>7am &ndash; 7pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Sunday</span><span>8am &ndash; 6pm</span></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-blue text-xs font-semibold tracking-widest uppercase mb-4">Contact</p>
+        <div class="text-white/40 text-sm space-y-1.5">
+          <div><a href="tel:+15555550707" class="hover:text-blue transition-colors">(555) 555-0707</a></div>
+          <div><a href="mailto:hello@surgeauto.com" class="hover:text-blue transition-colors">hello@surgeauto.com</a></div>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-white/30 hover:text-blue transition-colors text-xs tracking-widest uppercase">Instagram</a>
+            <span class="text-white/10">/</span>
+            <a href="#" class="text-white/30 hover:text-blue transition-colors text-xs tracking-widest uppercase">Google</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-navy-lt border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-blue text-xs font-semibold tracking-widest uppercase mb-4">Demo by Automatically Everything</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif"
+            class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-4">
+          Want a site like this<br>for your car wash?
+        </h2>
+        <p class="text-white/40 text-lg max-w-md leading-relaxed">This is a demo. We design and build custom websites for car washes and local businesses &mdash; fast, modern, and built to bring in more customers.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/" class="bg-blue text-white px-10 py-5 font-bold text-sm hover:bg-blue-lt transition-colors whitespace-nowrap text-center">Get in Touch &rarr;</a>
+        <a href="/" class="border border-white/20 text-white/60 px-10 py-5 font-bold text-sm hover:border-white/50 hover:text-white transition-colors whitespace-nowrap text-center">View All Demos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 px-6 md:px-16 bg-navy border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <span style="font-family:'Barlow Condensed',sans-serif" class="font-bold text-xl tracking-wide uppercase">Surge<span class="text-blue">.</span> Auto Wash</span>
+      <div class="text-white/15 text-xs">&copy; <span id="yr"></span> Surge Auto Wash. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Render packages from CONFIG.packages.
+    // To add or change wash tiers: edit the packages array above.
+    (function renderPackages() {
+      const grid = document.getElementById('packages-grid');
+      CONFIG.packages.forEach(function(pkg) {
+        const card = document.createElement('div');
+        const isPopular = pkg.popular;
+        card.className = [
+          'flex flex-col p-7 border transition-colors duration-300',
+          isPopular
+            ? 'bg-blue border-blue'
+            : 'bg-navy-lt border-white/10 hover:border-blue/50',
+        ].join(' ');
+
+        const featureItems = pkg.features.map(function(f) {
+          return '<li class="flex items-start gap-2 text-sm ' +
+            (isPopular ? 'text-white/80' : 'text-white/50') + '">' +
+            '<span class="' + (isPopular ? 'text-white' : 'text-blue') + ' mt-0.5 text-xs">✓</span>' +
+            f + '</li>';
+        }).join('');
+
+        card.innerHTML =
+          (isPopular ? '<div class="text-white/80 text-[10px] font-semibold tracking-widest uppercase mb-3">★ ' + pkg.tagline + '</div>' :
+                       '<div class="text-white/30 text-[10px] font-medium tracking-widest uppercase mb-3">' + pkg.tagline + '</div>') +
+          '<h3 style="font-family:\'Barlow Condensed\',sans-serif" ' +
+              'class="text-4xl font-black uppercase tracking-tight mb-1">' + pkg.name + '</h3>' +
+          '<div style="font-family:\'Barlow Condensed\',sans-serif" ' +
+              'class="text-5xl font-black ' + (isPopular ? 'text-white' : 'text-blue') + ' mb-6">' +
+            pkg.price +
+          '</div>' +
+          '<ul class="space-y-2.5 flex-1">' + featureItems + '</ul>' +
+          '<a href="#location" class="mt-8 block border ' +
+            (isPopular ? 'border-white text-white hover:bg-white hover:text-blue' : 'border-blue text-blue hover:bg-blue hover:text-white') +
+            ' px-4 py-3 text-center text-xs font-bold tracking-widest uppercase transition-colors">Get This Wash</a>';
+
+        grid.appendChild(card);
+      });
+    })();
+
+    // Render gallery from CONFIG.gallery.
+    // To add photos: add entries to CONFIG.gallery above.
+    // First two items span 2 columns on desktop.
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item, i) {
+        const isFeatured = (i === 0);
+        const cell = document.createElement('div');
+        cell.className = [
+          'relative overflow-hidden ph-navy group cursor-pointer',
+          isFeatured ? 'col-span-2 aspect-[16/9]' : 'col-span-1 aspect-square',
+        ].join(' ');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" ' +
+              'class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" ' +
+              'loading="lazy">' +
+          '<div class="absolute inset-0 bg-blue/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-white text-[10px] tracking-widest uppercase font-semibold">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>

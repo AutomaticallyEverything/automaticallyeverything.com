@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Moth Tattoo &mdash; Custom Tattooing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void:    '#080808',
+            'void-lt':'#111111',
+            panel:   '#1A1A1A',
+            'panel-lt':'#222222',
+            ash:     '#F0F0F0',
+            red:     '#CC2020',
+            'red-lt':'#E02828',
+            silver:  '#909090',
+          },
+          fontFamily: {
+            display: ['Barlow Condensed', 'Impact', 'sans-serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .ph    { background: repeating-linear-gradient(45deg,#202020,#202020 12px,#1a1a1a 12px,#1a1a1a 24px); }
+    .ph-lt { background: repeating-linear-gradient(45deg,#2a2a2a,#2a2a2a 12px,#242424 12px,#242424 24px); }
+    .scroll-hide { scrollbar-width:none; -ms-overflow-style:none; }
+    .scroll-hide::-webkit-scrollbar { display:none; }
+  </style>
+</head>
+<body class="bg-void text-ash">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONFIG — edit to update artists and gallery.
+
+  artists: Each artist gets a card with their specialty
+           and a horizontal scroll of their portfolio images.
+
+  gallery: Main portfolio grid — add freely.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      artists: [
+        {
+          name:      'Sable',
+          specialty: 'Blackwork · Geometric · Mandalas',
+          bio:       '12 years. Trained in Amsterdam. Drawn to bold shapes, sacred geometry, and work that reads from across the room.',
+          portfolio: [
+            { src: '/assets/demos/tattoo-dark/sable-1.jpg', alt: 'Blackwork sleeve' },
+            { src: '/assets/demos/tattoo-dark/sable-2.jpg', alt: 'Geometric back piece' },
+            { src: '/assets/demos/tattoo-dark/sable-3.jpg', alt: 'Mandala hand' },
+          ],
+        },
+        {
+          name:      'Ren Voss',
+          specialty: 'Fine Line · Illustrative · Portraits',
+          bio:       '8 years. Background in illustration and printmaking. Turns reference photos and personal stories into permanent art.',
+          portfolio: [
+            { src: '/assets/demos/tattoo-dark/ren-1.jpg', alt: 'Fine line botanical' },
+            { src: '/assets/demos/tattoo-dark/ren-2.jpg', alt: 'Portrait tattoo' },
+            { src: '/assets/demos/tattoo-dark/ren-3.jpg', alt: 'Illustrative floral' },
+          ],
+        },
+        {
+          name:      'Kaz',
+          specialty: 'Japanese · Neo-Traditional · Color',
+          bio:       '15 years. Every piece is a collaboration. Brings old-school Japanese technique into a contemporary visual language.',
+          portfolio: [
+            { src: '/assets/demos/tattoo-dark/kaz-1.jpg', alt: 'Japanese koi sleeve' },
+            { src: '/assets/demos/tattoo-dark/kaz-2.jpg', alt: 'Neo-traditional fox' },
+            { src: '/assets/demos/tattoo-dark/kaz-3.jpg', alt: 'Color botanical' },
+          ],
+        },
+      ],
+
+      gallery: [
+        { src: '/assets/demos/tattoo-dark/gallery-1.jpg',  alt: 'Blackwork chest piece',      featured: true  },
+        { src: '/assets/demos/tattoo-dark/gallery-2.jpg',  alt: 'Fine line sleeve',           featured: false },
+        { src: '/assets/demos/tattoo-dark/gallery-3.jpg',  alt: 'Japanese back piece',        featured: false },
+        { src: '/assets/demos/tattoo-dark/gallery-4.jpg',  alt: 'Geometric forearm',          featured: false },
+        { src: '/assets/demos/tattoo-dark/gallery-5.jpg',  alt: 'Portrait upper arm',         featured: false },
+        { src: '/assets/demos/tattoo-dark/gallery-6.jpg',  alt: 'Neo-trad floral',            featured: true  },
+        { src: '/assets/demos/tattoo-dark/gallery-7.jpg',  alt: 'Minimalist wrist piece',     featured: false },
+        { src: '/assets/demos/tattoo-dark/gallery-8.jpg',  alt: 'Color mandala',              featured: false },
+        { src: '/assets/demos/tattoo-dark/gallery-9.jpg',  alt: 'Script lettering',           featured: false },
+        { src: '/assets/demos/tattoo-dark/gallery-10.jpg', alt: 'Botanical illustrative',     featured: false },
+      ],
+    };
+  </script>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-void/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif" class="font-black text-2xl tracking-wider uppercase">
+          Iron Moth<span class="text-red">.</span>
+        </div>
+        <div class="text-silver text-[9px] tracking-[0.35em] uppercase mt-0.5">Custom Tattoo Studio</div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#artists"  class="text-ash/40 hover:text-ash transition-colors">Artists</a>
+        <a href="#gallery"  class="text-ash/40 hover:text-ash transition-colors">Gallery</a>
+        <a href="#about"    class="text-ash/40 hover:text-ash transition-colors">About</a>
+        <a href="#book" class="bg-red text-white px-5 py-2.5 font-semibold text-sm hover:bg-red-lt transition-colors">Book a Consult</a>
+      </div>
+      <button class="md:hidden text-ash/50 hover:text-ash" onclick="document.getElementById('mob-nav').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mob-nav" class="hidden md:hidden bg-void-lt border-t border-white/5 px-6 pb-5 pt-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#artists"  class="text-ash/50 hover:text-ash" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Artists</a>
+      <a href="#gallery"  class="text-ash/50 hover:text-ash" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">Gallery</a>
+      <a href="#about"    class="text-ash/50 hover:text-ash" onclick="this.closest('[id=mob-nav]').classList.add('hidden')">About</a>
+      <a href="#book" class="bg-red text-white px-4 py-3 font-semibold text-center">Book a Consult</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-end overflow-hidden bg-void">
+    <div class="absolute inset-0 ph"></div>
+    <img src="/assets/demos/tattoo-dark/hero.jpg" alt="Iron Moth Tattoo Studio" class="absolute inset-0 w-full h-full object-cover opacity-45">
+    <div class="absolute inset-0 bg-gradient-to-t from-void via-void/60 to-void/10"></div>
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-red"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 lg:px-20 pb-20 md:pb-28">
+      <div class="inline-flex items-center gap-2 mb-8 border border-red/30 px-4 py-2 w-fit">
+        <span class="w-1.5 h-1.5 bg-red"></span>
+        <span class="text-red text-xs font-semibold tracking-[0.3em] uppercase">By Appointment Only &middot; Est. 2013</span>
+      </div>
+      <h1 style="font-family:'Barlow Condensed',sans-serif"
+          class="text-7xl md:text-9xl lg:text-[9rem] font-black uppercase leading-none tracking-tight mb-5">
+        Permanent<br><span class="text-red">Art.</span>
+      </h1>
+      <p class="text-ash/40 text-xl max-w-lg leading-relaxed mb-10">
+        Three artists. Three distinct styles. One standard: work that lasts a lifetime and still looks good at 80.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#artists" class="bg-red text-white px-8 py-4 font-semibold text-sm hover:bg-red-lt transition-colors">Meet the Artists &rarr;</a>
+        <a href="#gallery" class="border border-white/20 text-ash/60 px-8 py-4 font-semibold text-sm hover:border-white/50 hover:text-ash transition-colors">View Gallery</a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-20 right-8 md:right-16 hidden md:flex flex-col gap-1 text-right">
+      <div style="font-family:'Barlow Condensed',sans-serif" class="text-5xl font-black text-red">4.9★</div>
+      <div class="text-ash/25 text-xs tracking-widest uppercase">500+ Google reviews</div>
+    </div>
+  </section>
+
+  <!-- ARTISTS -->
+  <section id="artists" class="py-24 px-6 md:px-16 bg-void-lt">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-red text-xs font-semibold tracking-[0.3em] uppercase mb-3">The Talent</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif" class="text-6xl md:text-7xl font-black uppercase tracking-tight">Our Artists</h2>
+      </div>
+
+      <!--
+        Artists rendered from CONFIG.artists above.
+        Each gets a bio card + horizontal portfolio strip.
+        To add an artist: add an entry to CONFIG.artists.
+      -->
+      <div id="artists-list" class="space-y-16"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 px-6 md:px-16 bg-void">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <p class="text-red text-xs font-semibold tracking-[0.3em] uppercase mb-3">The Work</p>
+          <h2 style="font-family:'Barlow Condensed',sans-serif" class="text-6xl md:text-7xl font-black uppercase tracking-tight">Portfolio</h2>
+        </div>
+        <a href="#book" class="hidden md:block text-red text-sm font-semibold hover:underline underline-offset-2">Book a piece &rarr;</a>
+      </div>
+      <!--
+        Gallery rendered from CONFIG.gallery.
+        featured:true items span 2 cols × 2 rows.
+        To add images: add entries to CONFIG.gallery.
+      -->
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2" style="grid-auto-flow:dense; grid-auto-rows:180px;"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 px-6 md:px-16 bg-panel">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="aspect-[4/5] overflow-hidden ph">
+          <img src="/assets/demos/tattoo-dark/about.jpg" alt="Iron Moth studio interior" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute top-3 left-3 w-8 h-8 border-t-2 border-l-2 border-red pointer-events-none"></div>
+        <div class="absolute bottom-3 right-3 w-8 h-8 border-b-2 border-r-2 border-red pointer-events-none"></div>
+      </div>
+      <div>
+        <p class="text-red text-xs font-semibold tracking-[0.3em] uppercase mb-4">The Studio</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif" class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-6 leading-tight">
+          We Don&rsquo;t Do<br>Walk-Ins.
+        </h2>
+        <p class="text-ash/50 leading-relaxed mb-5">Iron Moth is appointment-only by design. Every piece starts with a consultation where we understand what you want, what will hold up over time, and what placement will serve the work best.</p>
+        <p class="text-ash/50 leading-relaxed mb-5">We turn away work that isn't a good fit — not to be difficult, but because we'd rather do three things brilliantly than fifteen things adequately.</p>
+        <p class="text-ash/50 leading-relaxed mb-10">If we're not the right shop for what you're after, we'll tell you and point you somewhere that is.</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="bg-void p-5 text-center border border-white/5">
+            <div style="font-family:'Barlow Condensed',sans-serif" class="text-4xl font-black text-red">10+</div>
+            <div class="text-ash/30 text-xs uppercase tracking-widest mt-1">Years open</div>
+          </div>
+          <div class="bg-void p-5 text-center border border-white/5">
+            <div style="font-family:'Barlow Condensed',sans-serif" class="text-4xl font-black text-red">3</div>
+            <div class="text-ash/30 text-xs uppercase tracking-widest mt-1">Artists</div>
+          </div>
+          <div class="bg-void p-5 text-center border border-white/5">
+            <div style="font-family:'Barlow Condensed',sans-serif" class="text-4xl font-black text-red">4.9★</div>
+            <div class="text-ash/30 text-xs uppercase tracking-widest mt-1">Google</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLES / WHAT WE DO -->
+  <section class="py-24 px-6 md:px-16 bg-void-lt">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14">
+        <p class="text-red text-xs font-semibold tracking-[0.3em] uppercase mb-3">Styles We Work In</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif" class="text-6xl font-black uppercase tracking-tight">What We Do</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-px bg-white/5">
+        <div class="bg-void-lt p-8 hover:bg-panel transition-colors">
+          <h3 style="font-family:'Barlow Condensed',sans-serif" class="text-2xl font-bold uppercase tracking-tight text-ash mb-3">Blackwork &amp; Geometric</h3>
+          <p class="text-ash/40 text-sm leading-relaxed">Bold lines, patterns, and shapes that define space. Sacred geometry, ornamental, and architectural work.</p>
+        </div>
+        <div class="bg-void-lt p-8 hover:bg-panel transition-colors">
+          <h3 style="font-family:'Barlow Condensed',sans-serif" class="text-2xl font-bold uppercase tracking-tight text-ash mb-3">Fine Line &amp; Illustrative</h3>
+          <p class="text-ash/40 text-sm leading-relaxed">Delicate linework, botanical illustration, portraiture. Work that rewards close inspection.</p>
+        </div>
+        <div class="bg-void-lt p-8 hover:bg-panel transition-colors">
+          <h3 style="font-family:'Barlow Condensed',sans-serif" class="text-2xl font-bold uppercase tracking-tight text-ash mb-3">Japanese &amp; Neo-Traditional</h3>
+          <p class="text-ash/40 text-sm leading-relaxed">Color and technique rooted in tradition, updated for a contemporary aesthetic. Built to age well.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK CTA -->
+  <section id="book" class="py-24 px-6 md:px-16 bg-red">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <h2 style="font-family:'Barlow Condensed',sans-serif" class="text-6xl md:text-7xl font-black uppercase tracking-tight text-white leading-tight mb-4">
+          Start with<br>a Consult.
+        </h2>
+        <p class="text-white/70 leading-relaxed max-w-sm">Tell us your idea, the placement, and who you want to work with. We'll get back to you within 48 hours.</p>
+      </div>
+      <div class="flex flex-col gap-4 shrink-0">
+        <a href="mailto:book@ironmothtattoo.com" class="bg-white text-red px-10 py-5 font-bold text-sm hover:bg-ash transition-colors text-center">Email Us &rarr;</a>
+        <a href="tel:+15555551717" class="border-2 border-white text-white px-10 py-5 font-bold text-sm hover:bg-white hover:text-red transition-colors text-center">(555) 555-1717</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="py-16 px-6 md:px-16 bg-void border-t border-white/5">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-red text-[10px] tracking-[0.3em] uppercase mb-4">Studio</p>
+        <div class="text-ash/40 text-sm leading-loose">203 Foundry Lane<br>The Arts Quarter</div>
+      </div>
+      <div>
+        <p class="text-red text-[10px] tracking-[0.3em] uppercase mb-4">Hours</p>
+        <div class="text-ash/40 text-sm space-y-1.5">
+          <div class="flex justify-between max-w-[200px]"><span>Tue &ndash; Sat</span><span>12pm &ndash; 8pm</span></div>
+          <div class="flex justify-between max-w-[200px]"><span>Sun &ndash; Mon</span><span>Closed</span></div>
+        </div>
+        <p class="text-ash/20 text-xs mt-3">Walk-ins not accepted. Consultation required.</p>
+      </div>
+      <div>
+        <p class="text-red text-[10px] tracking-[0.3em] uppercase mb-4">Contact</p>
+        <div class="text-ash/40 text-sm space-y-1.5">
+          <div>(555) 555-1717</div>
+          <div>book@ironmothtattoo.com</div>
+          <div class="flex gap-4 mt-3">
+            <a href="#" class="text-ash/25 hover:text-red transition-colors text-xs uppercase tracking-widest">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AE CTA -->
+  <section class="py-20 px-6 md:px-16 bg-void-lt border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div>
+        <p class="text-red text-xs font-semibold tracking-[0.3em] uppercase mb-4">Demo by Automatically Everything</p>
+        <h2 style="font-family:'Barlow Condensed',sans-serif" class="text-5xl md:text-6xl font-black uppercase tracking-tight mb-4">
+          Want a site like this<br>for your studio?
+        </h2>
+        <p class="text-ash/40 text-lg max-w-md leading-relaxed">This is a demo. We build custom websites for tattoo studios and local businesses — portfolio-first, fast, and built to fill your books.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/" class="bg-red text-white px-10 py-5 font-semibold text-sm hover:bg-red-lt transition-colors whitespace-nowrap text-center">Get in Touch &rarr;</a>
+        <a href="/"   class="border border-white/20 text-ash/50 px-10 py-5 font-semibold text-sm hover:border-white/50 hover:text-ash transition-colors whitespace-nowrap text-center">View All Demos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 px-6 md:px-16 bg-void border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <span style="font-family:'Barlow Condensed',sans-serif" class="font-black text-xl uppercase tracking-wider">Iron Moth<span class="text-red">.</span></span>
+      <div class="text-ash/15 text-xs">&copy; <span id="yr"></span> Iron Moth Tattoo. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Render each artist with bio + portfolio strip
+    (function renderArtists() {
+      const list = document.getElementById('artists-list');
+      CONFIG.artists.forEach(function(artist) {
+        const block = document.createElement('div');
+        block.className = 'grid md:grid-cols-[280px_1fr] gap-8 items-start';
+
+        const portfolioItems = artist.portfolio.map(function(p) {
+          return '<div class="flex-none w-[180px] md:w-[200px] aspect-square overflow-hidden ph shrink-0">' +
+            '<img src="' + p.src + '" alt="' + p.alt + '" class="w-full h-full object-cover" loading="lazy">' +
+          '</div>';
+        }).join('');
+
+        block.innerHTML =
+          '<div>' +
+            '<div class="text-red text-xs font-semibold tracking-widest uppercase mb-2">' + artist.specialty + '</div>' +
+            '<h3 style="font-family:\'Barlow Condensed\',sans-serif" class="text-4xl font-black uppercase tracking-tight text-ash mb-4">' + artist.name + '</h3>' +
+            '<p class="text-ash/50 text-sm leading-relaxed mb-5">' + artist.bio + '</p>' +
+            '<a href="#book" class="inline-block border border-red text-red px-5 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-red hover:text-white transition-colors">Book with ' + artist.name.split(' ')[0] + '</a>' +
+          '</div>' +
+          '<div class="flex gap-3 overflow-x-auto scroll-hide pb-2">' + portfolioItems + '</div>';
+        list.appendChild(block);
+      });
+    })();
+
+    // Render portfolio gallery
+    (function renderGallery() {
+      const grid = document.getElementById('gallery-grid');
+      CONFIG.gallery.forEach(function(item) {
+        const cell = document.createElement('div');
+        const feat = item.featured;
+        cell.className = 'relative overflow-hidden ph group cursor-pointer ' + (feat ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1');
+        cell.innerHTML =
+          '<img src="' + item.src + '" alt="' + item.alt + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+          '<div class="absolute inset-0 bg-red/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">' +
+            '<span class="text-white text-[10px] tracking-widest uppercase font-semibold">' + item.alt + '</span>' +
+          '</div>';
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>
