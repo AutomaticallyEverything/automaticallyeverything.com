@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groundwork Landscape Co. &mdash; Yard Makeovers &amp; Maintenance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coal:  '#1C1C1A',
+            'coal-lt': '#2A2A27',
+            bone:  '#F2EDE4',
+            ember: '#E2683C',
+            moss:  '#5E6B3A',
+          },
+          fontFamily: {
+            display: ['"Archivo Black"', 'Impact', 'sans-serif'],
+            sans:    ['Archivo', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .img-fallback { background: linear-gradient(135deg, #3B4325, #5E6B3A 45%, #2A2A27); }
+    .ba { position: relative; overflow: hidden; cursor: ew-resize; user-select: none; -webkit-user-select: none; touch-action: pan-y; }
+    .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ba .after { clip-path: inset(0 0 0 50%); }
+    .ba .handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #E2683C; transform: translateX(-50%); }
+    .ba .handle::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 38px; height: 38px; background: #E2683C; border: 4px solid #1C1C1A; }
+  </style>
+</head>
+<body class="bg-bone text-coal font-sans antialiased pb-20 md:pb-0">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONTENT CONFIG — everything business-specific lives here.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      name: 'Groundwork Landscape Co.',
+      short: 'GROUNDWORK',
+      phone: '(805) 555-0129',
+      email: 'crew@groundworklandscape.example',
+      license: 'Licensed C-27 · Insured',
+      towns: ['Paso Robles', 'Templeton', 'Atascadero', 'San Miguel', 'Shandon', 'Creston'],
+      plans: [
+        { name: 'Every other week', price: '$140', items: ['Mow, edge & blow', 'Weed beds', 'Irrigation check monthly'] },
+        { name: 'Weekly', price: '$240', featured: true, items: ['Everything in bi-weekly', 'Shrub trimming', 'Seasonal color swaps', 'Irrigation check every visit'] },
+        { name: 'Estate', price: 'Custom', items: ['Large & acreage properties', 'Dedicated crew', 'Tree & vineyard-edge care'] },
+      ],
+      services: ['Yard makeovers', 'Pavers & patios', 'Artificial turf', 'Drip & sprinkler repair', 'Retaining walls', 'Fire pits & lighting', 'Cleanups & hauling', 'Tree trimming'],
+      reviews: [
+        { name: 'Brandon K.', town: 'Paso Robles', text: 'Our backyard was dirt and weeds. Three weeks later we have a patio, turf and a fire pit the whole street is jealous of.' },
+        { name: 'Linda M.', town: 'Templeton', text: 'Weekly crew is always on time and actually communicates. First landscaper we\'ve kept more than a season.' },
+        { name: 'Jorge S.', town: 'Atascadero', text: 'Fixed sprinkler problems two other companies couldn\'t figure out. Honest pricing.' },
+      ],
+    };
+  </script>
+
+  <header class="sticky top-0 z-40 bg-coal text-bone">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#" class="font-display text-xl tracking-wide"><span data-short></span><span class="text-ember">.</span></a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-bone/70">
+        <a href="#makeovers" class="hover:text-bone">Makeovers</a>
+        <a href="#plans" class="hover:text-bone">Maintenance</a>
+        <a href="#reviews" class="hover:text-bone">Reviews</a>
+      </nav>
+      <a data-tel class="bg-ember text-coal font-bold px-4 py-2 hover:brightness-110"><span data-phone></span></a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-coal text-bone">
+    <div class="max-w-6xl mx-auto px-5 pt-14 pb-0 grid lg:grid-cols-2 gap-10 items-end">
+      <div class="pb-14">
+        <p class="text-ember font-bold uppercase tracking-[0.25em] text-xs" data-license></p>
+        <h1 class="font-display text-5xl md:text-7xl leading-[0.95] mt-4">YARDS<br>THAT WORK<br><span class="text-ember">AS HARD</span><br>AS YOU DO.</h1>
+        <p class="mt-6 text-bone/70 text-lg max-w-md">Makeovers, hardscape and reliable weekly maintenance in <span data-towns-short></span>.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#quote" class="bg-ember text-coal font-bold px-7 py-4 hover:brightness-110">Get a free quote</a>
+          <a href="#makeovers" class="border border-bone/30 font-bold px-7 py-4 hover:border-bone">See makeovers</a>
+        </div>
+      </div>
+      <div class="aspect-[4/3] lg:aspect-[4/5] img-fallback">
+        <img src="/assets/demos/landscape-bold/hero.jpg" alt="Modern backyard with fire pit" class="w-full h-full object-cover" onerror="this.remove()">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services ticker -->
+  <section class="bg-ember text-coal overflow-hidden">
+    <div id="services" class="max-w-6xl mx-auto px-5 py-4 flex flex-wrap gap-x-6 gap-y-1 font-bold uppercase text-sm tracking-wide"></div>
+  </section>
+
+  <!-- Makeovers -->
+  <section id="makeovers" class="py-24 px-5">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-10 items-center">
+      <div class="lg:col-span-2">
+        <h2 class="font-display text-4xl md:text-5xl leading-none">BEFORE.<br><span class="text-ember">AFTER.</span></h2>
+        <p class="mt-5 text-coal/70 text-lg">Drag to see a Paso Robles backyard go from overgrown and forgotten to weekend-ready in two weeks: reset pavers, fresh gravel, low-water planting and turf.</p>
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <div class="aspect-square img-fallback"><img src="/assets/demos/landscape-bold/crew.jpg" alt="Crew planting" class="w-full h-full object-cover" onerror="this.remove()"></div>
+          <div class="aspect-square img-fallback"><img src="/assets/demos/landscape-bold/lawn.jpg" alt="Freshly mowed lawn" class="w-full h-full object-cover" onerror="this.remove()"></div>
+        </div>
+      </div>
+      <div class="lg:col-span-3 ba aspect-[4/3] img-fallback" id="ba">
+        <img src="/assets/demos/landscape-bold/ba-before.jpg" alt="Backyard before" onerror="this.style.display='none'">
+        <img src="/assets/demos/landscape-bold/ba-after.jpg" alt="Backyard after" class="after" onerror="this.style.display='none'">
+        <span class="absolute left-3 top-3 bg-coal text-bone text-xs font-bold px-2 py-1">BEFORE</span>
+        <span class="absolute right-3 top-3 bg-ember text-coal text-xs font-bold px-2 py-1">AFTER</span>
+        <div class="handle"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section id="plans" class="py-24 px-5 bg-coal text-bone">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display text-4xl md:text-5xl">MAINTENANCE PLANS</h2>
+      <p class="mt-3 text-bone/60">Typical residential lot. Same crew, same day, no contracts.</p>
+      <div id="plan-grid" class="mt-12 grid md:grid-cols-3 gap-px bg-bone/10"></div>
+    </div>
+  </section>
+
+  <!-- Reviews + area -->
+  <section id="reviews" class="py-24 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div id="review-grid" class="grid md:grid-cols-3 gap-6"></div>
+      <div class="mt-16 border-t-4 border-coal pt-8 md:flex items-center justify-between gap-8">
+        <h2 class="font-display text-2xl">WE WORK IN</h2>
+        <p id="towns" class="mt-3 md:mt-0 text-lg font-bold"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section id="quote" class="py-24 px-5 bg-moss text-bone">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="font-display text-4xl md:text-5xl leading-none">FREE QUOTE.<br>NO PRESSURE.</h2>
+        <p class="mt-5 text-bone/80">Send a few details and a photo if you have one. We'll get back to you within a day.</p>
+        <a data-tel class="mt-6 inline-block font-display text-2xl text-bone underline decoration-ember"><span data-phone></span></a>
+      </div>
+      <form id="quote-form" class="grid gap-3">
+        <input required placeholder="Name" class="bg-bone text-coal px-4 py-3">
+        <input required type="tel" placeholder="Phone" class="bg-bone text-coal px-4 py-3">
+        <select class="bg-bone text-coal px-4 py-3"><option>Yard makeover</option><option>Weekly maintenance</option><option>Irrigation repair</option><option>Cleanup</option></select>
+        <textarea rows="3" placeholder="What are you thinking?" class="bg-bone text-coal px-4 py-3"></textarea>
+        <button class="bg-ember text-coal font-bold py-4 hover:brightness-110">SEND IT</button>
+        <p id="quote-thanks" class="hidden font-bold">Got it! (Demo form; on your site this goes to your inbox.)</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-coal text-bone/60 py-8 px-5 text-sm">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-2">
+      <p><span class="text-bone font-bold" data-name></span> &middot; <span data-license></span></p>
+      <p><a data-tel class="hover:text-bone"><span data-phone></span></a> &middot; <span data-email></span></p>
+    </div>
+  </footer>
+
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-50 grid grid-cols-2">
+    <a data-tel class="bg-coal text-bone font-bold text-center py-4">CALL</a>
+    <a href="#quote" class="bg-ember text-coal font-bold text-center py-4">FREE QUOTE</a>
+  </div>
+
+  <script>
+    (function () {
+      const $ = (s) => document.querySelectorAll(s);
+      const tel = 'tel:' + CONFIG.phone.replace(/\D/g, '');
+      $('[data-name]').forEach((el) => el.textContent = CONFIG.name);
+      $('[data-short]').forEach((el) => el.textContent = CONFIG.short);
+      $('[data-phone]').forEach((el) => el.textContent = CONFIG.phone);
+      $('[data-tel]').forEach((el) => el.href = tel);
+      $('[data-email]').forEach((el) => el.textContent = CONFIG.email);
+      $('[data-license]').forEach((el) => el.textContent = CONFIG.license);
+      $('[data-towns-short]').forEach((el) => el.textContent = CONFIG.towns.slice(0, 3).join(', ') + ' and nearby');
+
+      document.getElementById('services').innerHTML = CONFIG.services.map((s) => `<span>${s} <span class="opacity-40">/</span></span>`).join('');
+      document.getElementById('plan-grid').innerHTML = CONFIG.plans.map((p) => `
+        <div class="p-8 ${p.featured ? 'bg-ember text-coal' : 'bg-coal-lt'}">
+          <p class="font-bold uppercase tracking-widest text-xs ${p.featured ? '' : 'text-ember'}">${p.featured ? 'Most popular' : '&nbsp;'}</p>
+          <h3 class="font-display text-2xl mt-2">${p.name.toUpperCase()}</h3>
+          <p class="font-display text-5xl mt-4">${p.price}<span class="font-sans text-base font-normal opacity-60">${p.price === 'Custom' ? '' : '/mo'}</span></p>
+          <ul class="mt-6 space-y-2">${p.items.map((i) => `<li>— ${i}</li>`).join('')}</ul>
+          <a href="#quote" class="mt-8 block text-center font-bold py-3 ${p.featured ? 'bg-coal text-bone' : 'border border-bone/30'}">START</a>
+        </div>`).join('');
+      document.getElementById('review-grid').innerHTML = CONFIG.reviews.map((r) => `
+        <figure class="border-4 border-coal p-6 bg-white">
+          <p class="text-ember font-display">★★★★★</p>
+          <blockquote class="mt-3">${r.text}</blockquote>
+          <figcaption class="mt-4 font-bold">${r.name} <span class="font-normal text-coal/50">/ ${r.town}</span></figcaption></figure>`).join('');
+      document.getElementById('towns').textContent = CONFIG.towns.join(' · ');
+
+      const ba = document.getElementById('ba');
+      const after = ba.querySelector('.after'), handle = ba.querySelector('.handle');
+      const set = (x) => { const r = ba.getBoundingClientRect(); const pct = Math.min(100, Math.max(0, ((x - r.left) / r.width) * 100));
+        after.style.clipPath = `inset(0 0 0 ${pct}%)`; handle.style.left = pct + '%'; };
+      let dragging = false;
+      ba.addEventListener('pointerdown', (e) => { dragging = true; set(e.clientX); });
+      window.addEventListener('pointermove', (e) => dragging && set(e.clientX));
+      window.addEventListener('pointerup', () => dragging = false);
+      document.getElementById('quote-form').addEventListener('submit', (e) => { e.preventDefault(); document.getElementById('quote-thanks').classList.remove('hidden'); });
+    })();
+  </script>
+</body>
+</html>

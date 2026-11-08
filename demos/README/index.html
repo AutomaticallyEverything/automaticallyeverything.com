@@ -1,0 +1,62 @@
+<h1>Demo Templates</h1>
+<p>28 Nunjucks demo site templates shown to potential customers at <code>/examples/</code> to illustrate what their site could look like. Most business types have two style variants; pool service and landscaping have four.</p>
+<table>
+<thead>
+<tr>
+<th>Business type</th>
+<th>Templates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Barbershop</td>
+<td>barber-classic, barber-modern</td>
+</tr>
+<tr>
+<td>Car wash</td>
+<td>carwash-express, carwash-neighborhood</td>
+</tr>
+<tr>
+<td>Coffee shop</td>
+<td>coffee-bold, coffee-modern</td>
+</tr>
+<tr>
+<td>Auto detailing</td>
+<td>detailing-bold, detailing-premium</td>
+</tr>
+<tr>
+<td>Pool service</td>
+<td>pool-bright, pool-premium, pool-simple, pool-commercial</td>
+</tr>
+<tr>
+<td>Landscaping</td>
+<td>landscape-native, landscape-bold, landscape-family, landscape-essentials</td>
+</tr>
+<tr>
+<td>Florist</td>
+<td>florist-elegant, florist-modern</td>
+</tr>
+<tr>
+<td>Pet grooming</td>
+<td>pet-grooming-cozy, pet-grooming-fresh</td>
+</tr>
+<tr>
+<td>Salon</td>
+<td>salon-bright, salon-luxe</td>
+</tr>
+<tr>
+<td>Tattoo shop</td>
+<td>tattoo-dark, tattoo-fresh</td>
+</tr>
+<tr>
+<td>Wine shop</td>
+<td>wine-cellar, wine-natural</td>
+</tr>
+<tr>
+<td>Yoga studio</td>
+<td>yoga-bold, yoga-calm</td>
+</tr>
+</tbody>
+</table>
+<p>Each template is a self-contained <code>.njk</code> file. Assets (images, previews) live in <code>src/assets/demos/{name}/</code>. The <code>index.njk</code> in this folder is the gallery/index page that lists all demos.</p>
+<p>The pool and landscaping templates keep every business-specific detail (name, phone, towns, services, prices, reviews) in the <code>CONFIG</code> block at the top, so customizing one for a prospect means editing that block only. Their <code>preview.jpg</code> is a screenshot of the demo itself; re-take it if the hero image changes.</p>

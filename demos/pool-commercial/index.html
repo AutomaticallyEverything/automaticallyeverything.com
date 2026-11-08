@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meridian Aquatic Services &mdash; Commercial &amp; HOA Pool Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate9: '#0B1B2B',
+            steel:  '#1E3A52',
+            signal: '#16A34A',
+            paper:  '#F7F8FA',
+            rule:   '#D9DEE5',
+          },
+          fontFamily: {
+            sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .img-fallback { background: linear-gradient(135deg, #1E3A52, #0B1B2B); }
+  </style>
+</head>
+<body class="bg-paper text-slate9 font-sans antialiased pb-20 md:pb-0">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONTENT CONFIG — everything business-specific lives here.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      name: 'Meridian Aquatic Services',
+      phone: '(805) 555-0118',
+      emergency: '(805) 555-0119',
+      email: 'accounts@meridianaquatic.example',
+      license: 'CA C-53 #000000 · CPO-certified staff · $2M liability',
+      stats: [
+        { value: '140+', label: 'commercial pools under contract' },
+        { value: '100%', label: 'county inspections passed, 2025' },
+        { value: '< 4 hr', label: 'emergency response' },
+      ],
+      // Placeholder client names for the demo; replace with real (permitted) clients.
+      clients: ['Larkspur Commons HOA', 'Bellwether Inn & Suites', 'Quailbrook Apartments', 'Ridgeline Athletic Club', 'Amberwood Senior Living', 'Thistle Hill HOA'],
+      segments: [
+        { title: 'HOAs & communities', text: 'Board-friendly monthly reports, budget-predictable contracts and resident-ready pools all season.' },
+        { title: 'Hotels & resorts', text: 'Early-morning service windows, guest-facing professionalism and fast turnaround on closures.' },
+        { title: 'Apartments & senior living', text: 'Safety-first chemistry, ADA lift checks and documentation for property managers.' },
+        { title: 'Clubs & schools', text: 'High bather-load chemistry, lap pool care and coordination around swim schedules.' },
+      ],
+      compliance: [
+        'Daily or scheduled chemistry logs, available online',
+        'County health department inspection preparation',
+        'VGB Act drain cover tracking and replacement',
+        'Safety signage, gates and equipment audits',
+        'Chemical storage handled to code',
+        'Certificates of insurance on request',
+      ],
+      plans: [
+        { name: 'Standard', freq: '3 visits / week', items: ['Chemistry & cleaning', 'Digital service logs', 'Monthly board report'] },
+        { name: 'Full Service', freq: '5–7 visits / week', featured: true, items: ['Everything in Standard', 'Equipment maintenance & minor repairs', 'Inspection prep & attendance', 'Priority emergency response'] },
+        { name: 'Seasonal', freq: 'Apr – Oct', items: ['Opening & closing', 'Peak-season visit schedule', 'Off-season monthly checks'] },
+      ],
+    };
+  </script>
+
+  <!-- Utility bar -->
+  <div class="bg-slate9 text-white/70 text-xs">
+    <div class="max-w-6xl mx-auto px-5 py-2 flex justify-between gap-4">
+      <span class="hidden sm:inline" data-license></span>
+      <span>24/7 emergency line: <a data-tel-emergency class="text-white font-semibold"><span data-emergency></span></a></span>
+    </div>
+  </div>
+
+  <header class="bg-white border-b border-rule sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#" class="font-bold tracking-tight flex items-center gap-2"><span class="w-6 h-6 bg-steel grid place-items-center text-white text-xs">M</span><span data-name></span></a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-slate9/70">
+        <a href="#who" class="hover:text-slate9">Who we serve</a>
+        <a href="#compliance" class="hover:text-slate9">Compliance</a>
+        <a href="#agreements" class="hover:text-slate9">Agreements</a>
+      </nav>
+      <a href="#proposal" class="bg-steel text-white text-sm font-semibold px-4 py-2 hover:bg-slate9">Request a proposal</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="absolute inset-0 img-fallback">
+      <img src="/assets/demos/pool-commercial/hero.jpg" alt="Community pool with lap lanes" class="w-full h-full object-cover" onerror="this.remove()">
+      <div class="absolute inset-0 bg-slate9/70"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-5 py-24 md:py-32 text-white">
+      <p class="font-mono text-xs tracking-widest text-signal uppercase">Commercial &amp; HOA pool management</p>
+      <h1 class="mt-4 text-4xl md:text-6xl font-bold tracking-tight max-w-3xl leading-[1.05]">Inspection-ready pools. Every day, every property.</h1>
+      <p class="mt-5 text-lg text-white/75 max-w-2xl">Service agreements, compliance documentation and 24/7 response for HOAs, hotels, apartments and clubs across North County.</p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="#proposal" class="bg-signal text-white font-semibold px-7 py-4 hover:brightness-110">Request a proposal</a>
+        <a data-tel class="border border-white/40 font-semibold px-7 py-4 hover:bg-white/10">Call <span data-phone></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats + clients -->
+  <section class="bg-white border-b border-rule">
+    <div id="stats" class="max-w-6xl mx-auto px-5 py-10 grid sm:grid-cols-3 gap-8"></div>
+    <div class="border-t border-rule">
+      <div class="max-w-6xl mx-auto px-5 py-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate9/50">
+        <span class="font-mono text-xs uppercase tracking-widest">Trusted by</span>
+        <span id="clients" class="contents"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Segments -->
+  <section id="who" class="py-20 px-5">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Who we serve</h2>
+      <div id="segments" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-rule border border-rule"></div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section id="compliance" class="py-20 px-5 bg-slate9 text-white">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="font-mono text-xs tracking-widest text-signal uppercase">Compliance</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">The paperwork is part of the job.</h2>
+        <p class="mt-4 text-white/70">Your pool is only as good as its last inspection. We keep the records that prove it.</p>
+        <ul id="compliance-list" class="mt-8 space-y-3"></ul>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="aspect-[3/4] img-fallback"><img src="/assets/demos/pool-commercial/equipment-room.jpg" alt="Commercial pool equipment room" class="w-full h-full object-cover" onerror="this.remove()"></div>
+        <div class="aspect-[3/4] img-fallback mt-10"><img src="/assets/demos/pool-commercial/resort.jpg" alt="Hotel pool" class="w-full h-full object-cover" onerror="this.remove()"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agreements -->
+  <section id="agreements" class="py-20 px-5">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Service agreements</h2>
+      <p class="mt-2 text-slate9/60">Priced per property after a site walk. Annual or seasonal terms.</p>
+      <div id="plans" class="mt-10 grid md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Proposal form -->
+  <section id="proposal" class="py-20 px-5 bg-white border-t border-rule">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-10">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold tracking-tight">Request a proposal</h2>
+        <p class="mt-3 text-slate9/60">We'll schedule a site walk and send a written proposal within five business days.</p>
+        <dl class="mt-8 space-y-4 text-sm">
+          <div><dt class="font-mono text-xs uppercase tracking-widest text-slate9/50">Office</dt><dd><a data-tel class="font-semibold"><span data-phone></span></a></dd></div>
+          <div><dt class="font-mono text-xs uppercase tracking-widest text-slate9/50">24/7 emergency</dt><dd><a data-tel-emergency class="font-semibold"><span data-emergency></span></a></dd></div>
+          <div><dt class="font-mono text-xs uppercase tracking-widest text-slate9/50">Accounts</dt><dd data-email></dd></div>
+        </dl>
+      </div>
+      <form id="proposal-form" class="md:col-span-3 grid sm:grid-cols-2 gap-4">
+        <input required placeholder="Name" class="border border-rule px-4 py-3">
+        <input required placeholder="Title / role" class="border border-rule px-4 py-3">
+        <input required placeholder="Property or company name" class="sm:col-span-2 border border-rule px-4 py-3">
+        <select class="border border-rule px-4 py-3 bg-white"><option>HOA / community</option><option>Hotel / resort</option><option>Apartments</option><option>Senior living</option><option>Club / school</option></select>
+        <select class="border border-rule px-4 py-3 bg-white"><option>1 pool</option><option>2 pools / pool + spa</option><option>3+ bodies of water</option></select>
+        <input type="email" required placeholder="Email" class="border border-rule px-4 py-3">
+        <input type="tel" placeholder="Phone" class="border border-rule px-4 py-3">
+        <textarea rows="3" placeholder="Current provider, contract end date, open inspection items…" class="sm:col-span-2 border border-rule px-4 py-3"></textarea>
+        <button class="sm:col-span-2 bg-steel text-white font-semibold py-4 hover:bg-slate9">Request proposal</button>
+        <p id="proposal-thanks" class="hidden sm:col-span-2 text-signal font-semibold">Received. (Demo form; on your site this goes to your inbox and CRM.)</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-slate9 text-white/60 py-8 px-5 text-sm">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-2">
+      <p><span class="text-white font-semibold" data-name></span> &middot; <span data-license></span></p>
+      <p><a data-tel class="hover:text-white"><span data-phone></span></a> &middot; <span data-email></span></p>
+    </div>
+  </footer>
+
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-50 grid grid-cols-2">
+    <a data-tel-emergency class="bg-slate9 text-white font-semibold text-center py-4">24/7 line</a>
+    <a href="#proposal" class="bg-signal text-white font-semibold text-center py-4">Get a proposal</a>
+  </div>
+
+  <script>
+    (function () {
+      const $ = (s) => document.querySelectorAll(s);
+      const tel = (n) => 'tel:' + n.replace(/\D/g, '');
+      $('[data-name]').forEach((el) => el.textContent = CONFIG.name);
+      $('[data-phone]').forEach((el) => el.textContent = CONFIG.phone);
+      $('[data-emergency]').forEach((el) => el.textContent = CONFIG.emergency);
+      $('[data-tel]').forEach((el) => el.href = tel(CONFIG.phone));
+      $('[data-tel-emergency]').forEach((el) => el.href = tel(CONFIG.emergency));
+      $('[data-email]').forEach((el) => el.textContent = CONFIG.email);
+      $('[data-license]').forEach((el) => el.textContent = CONFIG.license);
+
+      document.getElementById('stats').innerHTML = CONFIG.stats.map((s) => `
+        <div class="border-l-2 border-signal pl-4"><p class="text-3xl font-bold">${s.value}</p><p class="text-sm text-slate9/60">${s.label}</p></div>`).join('');
+      document.getElementById('clients').innerHTML = CONFIG.clients.map((c) => `<span class="font-semibold text-slate9/60">${c}</span>`).join('');
+      document.getElementById('segments').innerHTML = CONFIG.segments.map((s) => `
+        <div class="bg-white p-7"><h3 class="font-bold text-lg">${s.title}</h3><p class="mt-3 text-sm text-slate9/60">${s.text}</p></div>`).join('');
+      document.getElementById('compliance-list').innerHTML = CONFIG.compliance.map((c) => `
+        <li class="flex gap-3"><span class="text-signal font-mono">✓</span><span>${c}</span></li>`).join('');
+      document.getElementById('plans').innerHTML = CONFIG.plans.map((p) => `
+        <div class="border ${p.featured ? 'border-steel border-2 bg-white' : 'border-rule bg-white'} p-7">
+          ${p.featured ? '<p class="font-mono text-xs uppercase tracking-widest text-signal mb-2">Most common</p>' : ''}
+          <h3 class="text-xl font-bold">${p.name}</h3>
+          <p class="font-mono text-sm text-slate9/50 mt-1">${p.freq}</p>
+          <ul class="mt-5 space-y-2 text-sm">${p.items.map((i) => `<li class="flex gap-2"><span class="text-signal">—</span>${i}</li>`).join('')}</ul>
+          <a href="#proposal" class="mt-7 block text-center font-semibold py-3 ${p.featured ? 'bg-steel text-white' : 'border border-rule'}">Request pricing</a>
+        </div>`).join('');
+      document.getElementById('proposal-form').addEventListener('submit', (e) => { e.preventDefault(); document.getElementById('proposal-thanks').classList.remove('hidden'); });
+    })();
+  </script>
+</body>
+</html>

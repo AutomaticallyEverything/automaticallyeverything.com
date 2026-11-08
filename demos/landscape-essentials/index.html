@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valley Yard Care &mdash; Mowing, Trimming &amp; Cleanups</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { leaf: '#15803D', 'leaf-dk': '#14532D', sun: '#FDE68A' },
+          fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .img-fallback { background: linear-gradient(135deg, #86EFAC, #15803D); }
+  </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased pb-24 md:pb-0">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONTENT CONFIG — the whole site is this block.
+  Built for one-person / small-crew businesses: fill in and publish.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      name: 'Valley Yard Care',
+      owner: 'Miguel',
+      phone: '(805) 555-0137',
+      text: true,                       // show "Text me" button
+      hours: 'Mon–Sat, 7am–5pm',
+      towns: ['Paso Robles', 'Templeton', 'Atascadero'],
+      services: [
+        { title: 'Mowing & edging', text: 'Weekly or every other week.' },
+        { title: 'Hedge & shrub trimming', text: 'Clean shapes, cleaned up after.' },
+        { title: 'Yard cleanups', text: 'Leaves, weeds, hauling. One-time or seasonal.' },
+      ],
+      photos: [
+        { src: '/assets/demos/landscape-essentials/hedges.jpg', alt: 'Trimmed hedges' },
+        { src: '/assets/demos/landscape-essentials/mulch.jpg', alt: 'Fresh mulch bed' },
+        { src: '/assets/demos/landscape-essentials/cleanup.jpg', alt: 'Backyard after cleanup' },
+      ],
+      languages: 'Hablamos español',
+    };
+  </script>
+
+  <!-- Hero: everything that matters on one screen -->
+  <section class="relative min-h-[88vh] flex items-end">
+    <div class="absolute inset-0 img-fallback">
+      <img src="/assets/demos/landscape-essentials/hero.jpg" alt="Tidy front yard" class="w-full h-full object-cover" onerror="this.remove()">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10"></div>
+    </div>
+    <div class="relative w-full max-w-3xl mx-auto px-5 pb-14 text-white">
+      <p class="inline-block bg-sun text-leaf-dk text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full" data-langs></p>
+      <h1 class="mt-4 text-5xl md:text-7xl font-extrabold tracking-tight leading-none" data-name></h1>
+      <p class="mt-4 text-xl text-white/85">Mowing, trimming and cleanups in <span data-towns></span>.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a data-tel class="bg-leaf text-white text-xl font-extrabold text-center px-8 py-5 rounded-2xl hover:brightness-110">📞 Call <span data-phone></span></a>
+        <a data-sms class="bg-white text-leaf-dk text-xl font-extrabold text-center px-8 py-5 rounded-2xl">💬 Text me</a>
+      </div>
+      <p class="mt-4 text-white/70" data-hours></p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-16 px-5">
+    <div id="services" class="max-w-3xl mx-auto grid sm:grid-cols-3 gap-6 text-center"></div>
+  </section>
+
+  <!-- Photos -->
+  <section class="px-5 pb-16">
+    <div id="photos" class="max-w-5xl mx-auto grid grid-cols-3 gap-2 sm:gap-4"></div>
+  </section>
+
+  <!-- Closing call -->
+  <section class="bg-leaf-dk text-white py-16 px-5 text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold">Free quotes. Usually same week.</h2>
+    <p class="mt-3 text-white/75">Ask for <span data-owner></span>. <span data-hours></span>.</p>
+    <a data-tel class="mt-8 inline-block bg-sun text-leaf-dk text-2xl font-extrabold px-10 py-5 rounded-2xl"><span data-phone></span></a>
+  </section>
+
+  <footer class="py-6 px-5 text-center text-sm text-gray-500">
+    <span data-name></span> &middot; <span data-towns></span>
+  </footer>
+
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-white/95 backdrop-blur border-t border-gray-200 grid grid-cols-2 gap-3">
+    <a data-tel class="bg-leaf text-white font-extrabold text-center py-4 rounded-xl">Call</a>
+    <a data-sms class="bg-gray-100 text-leaf-dk font-extrabold text-center py-4 rounded-xl">Text</a>
+  </div>
+
+  <script>
+    (function () {
+      const $ = (s) => document.querySelectorAll(s);
+      const digits = CONFIG.phone.replace(/\D/g, '');
+      $('[data-name]').forEach((el) => el.textContent = CONFIG.name);
+      $('[data-owner]').forEach((el) => el.textContent = CONFIG.owner);
+      $('[data-phone]').forEach((el) => el.textContent = CONFIG.phone);
+      $('[data-tel]').forEach((el) => el.href = 'tel:' + digits);
+      $('[data-sms]').forEach((el) => CONFIG.text ? el.href = 'sms:' + digits : el.remove());
+      $('[data-hours]').forEach((el) => el.textContent = CONFIG.hours);
+      $('[data-towns]').forEach((el) => el.textContent = CONFIG.towns.join(', '));
+      $('[data-langs]').forEach((el) => CONFIG.languages ? el.textContent = CONFIG.languages : el.remove());
+      document.getElementById('services').innerHTML = CONFIG.services.map((s) => `
+        <div><p class="text-xl font-extrabold">${s.title}</p><p class="mt-1 text-gray-500">${s.text}</p></div>`).join('');
+      document.getElementById('photos').innerHTML = CONFIG.photos.map((p) => `
+        <div class="aspect-square rounded-xl overflow-hidden img-fallback"><img src="${p.src}" alt="${p.alt}" class="w-full h-full object-cover" onerror="this.remove()"></div>`).join('');
+    })();
+  </script>
+</body>
+</html>

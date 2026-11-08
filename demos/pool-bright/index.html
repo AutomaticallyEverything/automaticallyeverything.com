@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Day Pool Care &mdash; Weekly Pool Service</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sky:   '#0EA5E9',
+            'sky-dk': '#0284C7',
+            sun:   '#FACC15',
+            navy:  '#0B2545',
+            foam:  '#F0F9FF',
+          },
+          fontFamily: {
+            display: ['Nunito', 'system-ui', 'sans-serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .img-fallback { background: linear-gradient(135deg, #38BDF8, #0EA5E9 55%, #0284C7); }
+    .ba { position: relative; overflow: hidden; cursor: ew-resize; user-select: none; -webkit-user-select: none; touch-action: pan-y; }
+    .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ba .after { clip-path: inset(0 0 0 50%); }
+    .ba .handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: #fff; transform: translateX(-50%); box-shadow: 0 0 12px rgba(0,0,0,.3); }
+    .ba .handle::after { content: '⇆'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 44px; height: 44px; border-radius: 9999px; background: #FACC15; color: #0B2545; display: grid; place-items: center; font-weight: 800; }
+  </style>
+</head>
+<body class="bg-white text-navy font-sans antialiased pb-20 md:pb-0">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONTENT CONFIG — everything business-specific lives here.
+  Swap in a real business's name, phone, towns, services and reviews.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      name: 'Sunny Day Pool Care',
+      tagline: 'Weekly pool service that just shows up.',
+      phone: '(805) 555-0142',
+      email: 'hello@sunnydaypools.example',
+      rating: { stars: '4.9', count: 87 },
+      towns: ['Paso Robles', 'Templeton', 'Atascadero', 'San Miguel', 'Creston', 'Shandon'],
+      plans: [
+        { name: 'Chemicals Only', price: '$95', per: '/mo', items: ['Weekly water test & balance', 'All chemicals included', 'Service report by text'] },
+        { name: 'Full Service', price: '$165', per: '/mo', featured: true, items: ['Everything in Chemicals Only', 'Skim, brush & vacuum', 'Empty baskets, check equipment', 'Filter clean every quarter'] },
+        { name: 'Green-to-Clean', price: 'from $350', per: ' one time', items: ['Algae treatment & shock', 'Filter deep clean', 'Back to swimmable in days'] },
+      ],
+      extras: ['Pump & filter repair', 'Heater diagnostics', 'Salt system service', 'Leak detection', 'Seasonal opening', 'Vacation coverage'],
+      reviews: [
+        { name: 'Maria G.', town: 'Paso Robles', text: 'Our pool has never looked this good. They text a photo after every visit so I know it\'s done.' },
+        { name: 'Dan R.', town: 'Templeton', text: 'Turned our green swamp around in four days, then kept it perfect all summer. Fair price, zero hassle.' },
+        { name: 'The Okafors', town: 'Atascadero', text: 'Same tech every week, always friendly, always on time. Wish every service worked like this.' },
+      ],
+    };
+  </script>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-sky-100">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-display font-black text-xl">
+        <span class="w-9 h-9 rounded-full bg-sun grid place-items-center text-lg">☀</span>
+        <span data-name></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-navy/70">
+        <a href="#plans" class="hover:text-sky">Plans</a>
+        <a href="#results" class="hover:text-sky">Results</a>
+        <a href="#area" class="hover:text-sky">Service area</a>
+        <a href="#reviews" class="hover:text-sky">Reviews</a>
+      </nav>
+      <a data-tel class="hidden sm:inline-flex items-center gap-2 bg-sky text-white font-bold px-4 py-2 rounded-full hover:bg-sky-dk"><span>📞</span><span data-phone></span></a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative min-h-[560px] flex items-end md:items-center">
+    <div class="absolute inset-0 img-fallback">
+      <img src="/assets/demos/pool-bright/hero.jpg" alt="" class="w-full h-full object-cover" onerror="this.remove()">
+      <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent md:bg-gradient-to-r md:from-navy/80 md:via-navy/40"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-5 py-16 text-white w-full">
+      <p class="inline-flex items-center gap-2 bg-white/15 backdrop-blur px-3 py-1 rounded-full text-sm font-semibold mb-5">
+        ★ <span data-rating></span> on Google &middot; Licensed &amp; insured
+      </p>
+      <h1 class="font-display font-black text-4xl md:text-6xl leading-[1.05] max-w-2xl">Crystal-clear pools in <span class="text-sun" data-town-first></span> &amp; nearby</h1>
+      <p class="mt-4 text-lg md:text-xl text-white/85 max-w-xl" data-tagline></p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#quote" class="bg-sun text-navy font-extrabold px-7 py-4 rounded-full text-lg hover:brightness-95">Get a free quote</a>
+        <a data-tel class="bg-white/15 backdrop-blur border border-white/40 font-bold px-7 py-4 rounded-full text-lg hover:bg-white/25">Call <span data-phone></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="bg-foam border-b border-sky-100">
+    <div class="max-w-6xl mx-auto px-5 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm font-semibold">
+      <div>🧪 Water tested every visit</div><div>📸 Photo report by text</div><div>🗓 Same day, same tech</div><div>✅ No contracts</div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section id="plans" class="py-20 px-5">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display font-black text-3xl md:text-4xl text-center">Simple monthly plans</h2>
+      <p class="text-center text-navy/60 mt-2">Prices for a typical residential pool. Bigger pool or spa? We'll quote it.</p>
+      <div id="plan-grid" class="mt-10 grid md:grid-cols-3 gap-6"></div>
+      <div class="mt-10 text-center">
+        <p class="font-bold mb-3">Also available:</p>
+        <div id="extras" class="flex flex-wrap justify-center gap-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / after -->
+  <section id="results" class="py-20 px-5 bg-navy text-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="font-display font-black text-3xl md:text-4xl">From green to clean.</h2>
+        <p class="mt-4 text-white/75 text-lg">Drag the slider. This pool went from algae to swimmable in four days, then went on our weekly route.</p>
+        <a href="#quote" class="mt-6 inline-block bg-sun text-navy font-extrabold px-6 py-3 rounded-full">Rescue my pool</a>
+      </div>
+      <div class="ba aspect-[4/3] rounded-3xl img-fallback" id="ba">
+        <img src="/assets/demos/pool-bright/ba-before.jpg" alt="Green pool before" onerror="this.style.display='none'">
+        <img src="/assets/demos/pool-bright/ba-after.jpg" alt="Clear pool after" class="after" onerror="this.style.display='none'">
+        <span class="absolute left-3 bottom-3 bg-black/60 text-xs font-bold px-2 py-1 rounded">BEFORE</span>
+        <span class="absolute right-3 bottom-3 bg-sun text-navy text-xs font-bold px-2 py-1 rounded">AFTER</span>
+        <div class="handle"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works + photos -->
+  <section class="py-20 px-5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="aspect-square rounded-3xl overflow-hidden img-fallback"><img src="/assets/demos/pool-bright/tech.jpg" alt="Technician skimming a pool" class="w-full h-full object-cover" onerror="this.remove()"></div>
+        <div class="aspect-square rounded-3xl overflow-hidden img-fallback mt-10"><img src="/assets/demos/pool-bright/equipment.jpg" alt="Clean pool equipment" class="w-full h-full object-cover" onerror="this.remove()"></div>
+      </div>
+      <div>
+        <h2 class="font-display font-black text-3xl md:text-4xl">How it works</h2>
+        <ol class="mt-6 space-y-5">
+          <li class="flex gap-4"><span class="w-10 h-10 shrink-0 rounded-full bg-sky text-white grid place-items-center font-black">1</span><div><p class="font-bold">Tell us about your pool</p><p class="text-navy/60">Quick form or a call. We'll quote it the same day.</p></div></li>
+          <li class="flex gap-4"><span class="w-10 h-10 shrink-0 rounded-full bg-sky text-white grid place-items-center font-black">2</span><div><p class="font-bold">First visit &amp; reset</p><p class="text-navy/60">We balance the water, clean the filter and check every piece of equipment.</p></div></li>
+          <li class="flex gap-4"><span class="w-10 h-10 shrink-0 rounded-full bg-sky text-white grid place-items-center font-black">3</span><div><p class="font-bold">Every week, like clockwork</p><p class="text-navy/60">Same day, same tech, photo report after every visit.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service area -->
+  <section id="area" class="py-16 px-5 bg-foam">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="font-display font-black text-3xl">Where we service</h2>
+      <div id="towns" class="mt-6 flex flex-wrap justify-center gap-3"></div>
+      <p class="mt-5 text-navy/60">Just outside these towns? Call us, we probably still come out.</p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="py-20 px-5">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display font-black text-3xl md:text-4xl text-center">Neighbors love their pools again</h2>
+      <p class="text-center text-navy/60 mt-2">★ <span data-rating></span> average on Google</p>
+      <div id="review-grid" class="mt-10 grid md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Quote form -->
+  <section id="quote" class="py-20 px-5 bg-sky text-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-display font-black text-3xl md:text-4xl text-center">Get a free quote</h2>
+      <p class="text-center text-white/85 mt-2">We reply within one business day. Faster? Call <a data-tel class="underline font-bold"><span data-phone></span></a>.</p>
+      <form id="quote-form" class="mt-8 bg-white text-navy rounded-3xl p-6 md:p-8 grid sm:grid-cols-2 gap-4">
+        <input required placeholder="Your name" class="border border-sky-100 rounded-xl px-4 py-3">
+        <input required type="tel" placeholder="Phone" class="border border-sky-100 rounded-xl px-4 py-3">
+        <input placeholder="Town" class="border border-sky-100 rounded-xl px-4 py-3">
+        <select class="border border-sky-100 rounded-xl px-4 py-3 bg-white"><option>Weekly service</option><option>Green-to-clean</option><option>Repair</option><option>Something else</option></select>
+        <textarea placeholder="Anything we should know? (pool size, spa, equipment issues)" rows="3" class="sm:col-span-2 border border-sky-100 rounded-xl px-4 py-3"></textarea>
+        <button class="sm:col-span-2 bg-sun font-extrabold py-4 rounded-full text-lg hover:brightness-95">Send my quote request</button>
+        <p id="quote-thanks" class="hidden sm:col-span-2 text-center font-semibold text-sky-dk">Thanks! This is a demo form, but on your site this lands in your inbox.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-navy text-white/70 py-10 px-5 text-sm">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-4">
+      <div><p class="font-display font-black text-white text-lg" data-name></p><p>Licensed &amp; insured &middot; Serving <span data-towns-inline></span></p></div>
+      <div class="md:text-right"><p><a data-tel class="hover:text-white"><span data-phone></span></a></p><p data-email></p></div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile action bar -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-50 grid grid-cols-2 gap-px bg-sky-100 border-t border-sky-100">
+    <a data-tel class="bg-white text-navy font-bold text-center py-4">📞 Call</a>
+    <a href="#quote" class="bg-sun text-navy font-extrabold text-center py-4">Free quote</a>
+  </div>
+
+  <script>
+    (function () {
+      const $ = (s) => document.querySelectorAll(s);
+      const tel = 'tel:' + CONFIG.phone.replace(/\D/g, '');
+      $('[data-name]').forEach((el) => el.textContent = CONFIG.name);
+      $('[data-phone]').forEach((el) => el.textContent = CONFIG.phone);
+      $('[data-tel]').forEach((el) => el.href = tel);
+      $('[data-email]').forEach((el) => el.textContent = CONFIG.email);
+      $('[data-tagline]').forEach((el) => el.textContent = CONFIG.tagline);
+      $('[data-rating]').forEach((el) => el.textContent = `${CONFIG.rating.stars} (${CONFIG.rating.count} reviews)`);
+      $('[data-town-first]').forEach((el) => el.textContent = CONFIG.towns[0]);
+      $('[data-towns-inline]').forEach((el) => el.textContent = CONFIG.towns.join(', '));
+
+      document.getElementById('plan-grid').innerHTML = CONFIG.plans.map((p) => `
+        <div class="rounded-3xl p-7 ${p.featured ? 'bg-navy text-white shadow-2xl md:-translate-y-3' : 'bg-foam'}">
+          ${p.featured ? '<span class="inline-block bg-sun text-navy text-xs font-extrabold px-3 py-1 rounded-full mb-3">MOST POPULAR</span>' : ''}
+          <h3 class="font-display font-black text-xl">${p.name}</h3>
+          <p class="mt-2"><span class="font-display font-black text-4xl">${p.price}</span><span class="opacity-60">${p.per}</span></p>
+          <ul class="mt-5 space-y-2 text-sm">${p.items.map((i) => `<li class="flex gap-2"><span class="text-sky">✔</span>${i}</li>`).join('')}</ul>
+          <a href="#quote" class="mt-6 block text-center font-bold py-3 rounded-full ${p.featured ? 'bg-sun text-navy' : 'bg-white border border-sky-100'}">Choose ${p.name}</a>
+        </div>`).join('');
+      document.getElementById('extras').innerHTML = CONFIG.extras.map((x) => `<span class="bg-foam border border-sky-100 px-4 py-2 rounded-full text-sm font-semibold">${x}</span>`).join('');
+      document.getElementById('towns').innerHTML = CONFIG.towns.map((t) => `<span class="bg-white shadow-sm px-5 py-2.5 rounded-full font-bold">📍 ${t}</span>`).join('');
+      document.getElementById('review-grid').innerHTML = CONFIG.reviews.map((r) => `
+        <figure class="bg-foam rounded-3xl p-7">
+          <p class="text-sun text-lg">★★★★★</p>
+          <blockquote class="mt-3 text-navy/80">“${r.text}”</blockquote>
+          <figcaption class="mt-4 font-bold">${r.name} <span class="font-normal text-navy/50">&middot; ${r.town}</span></figcaption>
+        </figure>`).join('');
+
+      // Before/after slider (clip-path so both images keep the same crop)
+      const ba = document.getElementById('ba');
+      const after = ba.querySelector('.after'), handle = ba.querySelector('.handle');
+      const set = (x) => { const r = ba.getBoundingClientRect(); const pct = Math.min(100, Math.max(0, ((x - r.left) / r.width) * 100));
+        after.style.clipPath = `inset(0 0 0 ${pct}%)`; handle.style.left = pct + '%'; };
+      let dragging = false;
+      ba.addEventListener('pointerdown', (e) => { dragging = true; set(e.clientX); });
+      window.addEventListener('pointermove', (e) => dragging && set(e.clientX));
+      window.addEventListener('pointerup', () => dragging = false);
+
+      document.getElementById('quote-form').addEventListener('submit', (e) => { e.preventDefault(); document.getElementById('quote-thanks').classList.remove('hidden'); });
+    })();
+  </script>
+</body>
+</html>

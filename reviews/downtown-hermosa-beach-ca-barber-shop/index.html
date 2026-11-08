@@ -5,7 +5,7 @@
     <title>Barber Shops in Downtown Hermosa Beach, CA — Website Review</title>
     <meta name="robots" content="Noimageindex"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="/style/e2f79518f395021c83b5653660e690c2aecbef1493d75a9a0d64004f75d39efe-output.css" rel="stylesheet" />
+    <link href="/style/aa3017f4b0e6eb908538df06d0b2644f06299e170b2467fc41ac8d66102afa31-output.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,6 +39,9 @@
     z-index: 50;
   }
   .ae-tip:hover::after { opacity: 1; }
+  .ae-filter { border-color: #d6d3d1; background: rgba(255,255,255,.6); color: #57534e; transition: all .15s; }
+  .ae-filter:hover { border-color: #78716c; color: #1c1917; }
+  .ae-filter.is-active { background: #1c1917; border-color: #1c1917; color: #fafaf9; }
 </style>
 
   </head>
@@ -69,7 +72,7 @@
             
           
             
-              <a href="/reviews/" class="text-stone-500 hover:text-stone-900 transition-colors">Reviews</a>
+              <a href="/reviews/" class="text-stone-500 hover:text-stone-900 transition-colors">Site Checkups</a>
             
           
             
@@ -102,7 +105,7 @@
           
         
           
-            <a href="/reviews/" class="text-stone-600 hover:text-stone-900 transition-colors">Reviews</a>
+            <a href="/reviews/" class="text-stone-600 hover:text-stone-900 transition-colors">Site Checkups</a>
           
         
           
@@ -121,6 +124,11 @@
 
 
 
+
+
+
+
+
   
   <section class="pt-16 pb-12 px-6 border-b border-stone-200/60">
     <div class="max-w-7xl mx-auto">
@@ -129,26 +137,21 @@
       </p>
       <h1 class="font-display text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-5">Barber Shops in Downtown Hermosa Beach, CA — Website Review</h1>
       
-        <p class="text-stone-500 text-lg leading-relaxed max-w-2xl mb-3">Every few months we take a look at how local businesses in a neighborhood show up online. Not a ranking &mdash; just an honest snapshot of the practical stuff: does the site load quickly, is it easy to use on a phone, is there a clear way to get in touch?</p>
-        <p class="text-stone-500 text-lg leading-relaxed max-w-2xl">Businesses appear in no particular order. We&rsquo;re checking function, not design &mdash; a beautiful site and a plain one can score identically here. A few checks are automated, so if we got something wrong, <a href="/contact/" class="underline hover:text-stone-800">reach out</a> and we&rsquo;ll correct it.</p>
+        <p class="text-stone-500 text-lg leading-relaxed max-w-5xl mb-3">Every few months we take a look at how local businesses in a neighborhood show up online. Not a ranking &mdash; just an honest snapshot of the practical stuff: does the site load quickly, is it easy to use on a phone, is there a clear way to get in touch?</p>
+        <p class="text-stone-500 text-lg leading-relaxed max-w-5xl">Businesses appear in no particular order. We&rsquo;re checking function, not design &mdash; a beautiful site and a plain one can score identically here. A few checks are automated, so if we got something wrong, <a href="/contact/" class="underline hover:text-stone-800">reach out</a> and we&rsquo;ll correct it.</p>
       
-      <p class="mt-4 text-sm text-stone-400">Reviewed June 2026 &middot; 8 businesses</p>
+      <p class="mt-4 text-sm text-stone-400">Checked June 2026 &middot; 8 businesses</p>
     </div>
   </section>
 
   
   <section class="px-6 py-10 border-b border-stone-200/60">
     <div class="max-w-7xl mx-auto">
-      <dl class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <dl class="grid grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="border border-stone-200 bg-white/60 p-6 text-center">
-          <dt class="text-xs font-semibold uppercase tracking-widest text-stone-400">Businesses Reviewed</dt>
+          <dt class="text-xs font-semibold uppercase tracking-widest text-stone-400">Businesses Checked</dt>
           <dd class="mt-3 font-display text-4xl font-bold text-stone-800">8</dd>
-        </div>
-        <div class="border border-stone-200 bg-white/60 p-6 text-center">
-          <dt class="text-xs font-semibold uppercase tracking-widest text-stone-400">Average Score</dt>
-          <dd class="mt-3 font-display text-4xl font-bold text-stone-800">
-            7.4<span class="text-lg font-normal text-stone-400">&thinsp;/&thinsp;11</span>
-          </dd>
+          <dd class="mt-1 text-sm text-stone-500">Average score 67%</dd>
         </div>
         
         <div class="border border-stone-200 bg-white/60 p-6 text-center">
@@ -157,6 +160,7 @@
             
             88%
           </dd>
+          <dd class="mt-1 text-sm text-stone-500">of all businesses</dd>
         </div>
         
         <div class="border border-stone-200 bg-white/60 p-6 text-center">
@@ -165,7 +169,10 @@
             
             63%
           </dd>
+          <dd class="mt-1 text-sm text-stone-500">of all businesses</dd>
         </div>
+        
+        
         
       </dl>
     </div>
@@ -175,10 +182,14 @@
   
 
   
+
+  
+
+  
   <section class="px-6 py-12">
     <div class="max-w-7xl mx-auto">
 
-      <div class="flex items-center justify-between flex-wrap gap-4 mb-8 pb-6 border-b border-stone-200">
+      <div class="flex items-center justify-between flex-wrap gap-4 mb-4">
         <h2 class="font-display text-2xl font-bold">All Businesses</h2>
         <input
           type="text"
@@ -189,9 +200,13 @@
       </div>
 
       
+      <div class="mb-8 pb-2 border-b border-stone-200"></div>
+      
 
+      
       <div class="flex flex-col gap-4">
         
+          
           
           
           
@@ -199,25 +214,23 @@
           
 
           <div class="business-card border border-stone-200 bg-white/60 overflow-hidden"
-               data-name="coronado barber co.">
+               data-name="coronado barber co." data-category="own">
 
-            
             
               <div class="flex h-80 sm:h-72 bg-stone-100" style="gap: 2px">
                 <div class="flex-[7] overflow-hidden">
-                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/coronado-barber-co-desktop.jpg" alt="Coronado Barber Co. desktop" class="w-full h-full object-cover object-top"/>
+                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/coronado-barber-co-desktop.jpg" alt="Coronado Barber Co. desktop" loading="lazy" class="w-full h-full object-cover object-top"/>
                 </div>
                 <div class="flex-[3] overflow-hidden">
                   
-                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/coronado-barber-co-mobile.jpg" alt="Coronado Barber Co. mobile" class="w-full h-full object-cover object-top"/>
+                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/coronado-barber-co-mobile.jpg" alt="Coronado Barber Co. mobile" loading="lazy" class="w-full h-full object-cover object-top"/>
                   
                 </div>
               </div>
             
 
-            
             <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-5">
+              <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="flex-1 min-w-0">
                   
                     <a href="https://www.coronadobarberco.com/" target="_blank" rel="noopener noreferrer"
@@ -226,11 +239,16 @@
                   
                     <p class="text-xs text-stone-400 mt-0.5 truncate">Coronado Barber Co.  1403 Hermosa Ave Hermosa Beach, California 90254-3539</p>
                   
+                  <div class="mt-1">
+    
+  </div>
                 </div>
                 <span class="flex-shrink-0 inline-flex items-center px-2.5 py-1 text-sm font-semibold bg-amber-50 text-amber-700 border border-amber-200">
                   8<span class="font-normal opacity-60">/11</span>
                 </span>
               </div>
+
+              
 
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 gap-x-4 text-xs">
                 
@@ -244,15 +262,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found · Found phone: (503) 611-3991">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Phone number</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Phone number</span>
+      
+    </div>
+  
                     
                   
                 
@@ -266,15 +284,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No address or map found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Address or map</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No address or map found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Address or map</span>
+      
+    </div>
+  
                     
                   
                 
@@ -288,15 +306,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Mobile friendly</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Mobile friendly</span>
+      
+    </div>
+  
                     
                   
                 
@@ -310,15 +328,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 531ms">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 531ms</span></span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 531ms">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 531ms</span></span>
+      
+    </div>
+  
                     
                   
                 
@@ -332,15 +350,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: &quot;Book now&quot; button">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Call to action</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: &quot;Book now&quot; button">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Call to action</span>
+      
+    </div>
+  
                     
                   
                 
@@ -354,15 +372,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Square Appointments">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Online booking</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Square Appointments">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Online booking</span>
+      
+    </div>
+  
                     
                   
                 
@@ -376,15 +394,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Facebook, Instagram, LinkedIn, TikTok, Twitter, Yelp, YouTube">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Social links</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Facebook, Instagram, LinkedIn, TikTok, Twitter, Yelp, YouTube">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Social links</span>
+      
+    </div>
+  
                     
                   
                 
@@ -398,15 +416,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;Published 2026-03-25&quot;">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Appears active</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;Published 2026-03-25&quot;">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Appears active</span>
+      
+    </div>
+  
                     
                   
                 
@@ -420,15 +438,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: coronadobarberco.com">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Custom domain</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: coronadobarberco.com">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Custom domain</span>
+      
+    </div>
+  
                     
                   
                 
@@ -442,15 +460,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Business email</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Business email</span>
+      
+    </div>
+  
                     
                   
                 
@@ -466,15 +484,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Hours listed</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Hours listed</span>
+      
+    </div>
+  
                     
                   
                 
@@ -489,29 +507,28 @@
           
           
           
+          
             
           
 
           <div class="business-card border border-stone-200 bg-white/60 overflow-hidden"
-               data-name="talbot&#39;s barbershop">
+               data-name="talbot&#39;s barbershop" data-category="own">
 
-            
             
               <div class="flex h-80 sm:h-72 bg-stone-100" style="gap: 2px">
                 <div class="flex-[7] overflow-hidden">
-                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/talbot-s-barbershop-desktop.jpg" alt="Talbot&#39;s Barbershop desktop" class="w-full h-full object-cover object-top"/>
+                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/talbot-s-barbershop-desktop.jpg" alt="Talbot&#39;s Barbershop desktop" loading="lazy" class="w-full h-full object-cover object-top"/>
                 </div>
                 <div class="flex-[3] overflow-hidden">
                   
-                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/talbot-s-barbershop-mobile.jpg" alt="Talbot&#39;s Barbershop mobile" class="w-full h-full object-cover object-top"/>
+                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/talbot-s-barbershop-mobile.jpg" alt="Talbot&#39;s Barbershop mobile" loading="lazy" class="w-full h-full object-cover object-top"/>
                   
                 </div>
               </div>
             
 
-            
             <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-5">
+              <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="flex-1 min-w-0">
                   
                     <a href="https://talbotsbarbershop.salonmonster.com/" target="_blank" rel="noopener noreferrer"
@@ -520,11 +537,16 @@
                   
                     <p class="text-xs text-stone-400 mt-0.5 truncate">132 Pier Avenue Hermosa Beach California 90254</p>
                   
+                  <div class="mt-1">
+    
+  </div>
                 </div>
                 <span class="flex-shrink-0 inline-flex items-center px-2.5 py-1 text-sm font-semibold bg-red-50 text-red-700 border border-red-200">
                   4<span class="font-normal opacity-60">/11</span>
                 </span>
               </div>
+
+              
 
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 gap-x-4 text-xs">
                 
@@ -538,15 +560,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No clickable phone number found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Phone number</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No clickable phone number found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Phone number</span>
+      
+    </div>
+  
                     
                   
                 
@@ -560,15 +582,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No address or map found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Address or map</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No address or map found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Address or map</span>
+      
+    </div>
+  
                     
                   
                 
@@ -582,15 +604,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Mobile friendly</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Mobile friendly</span>
+      
+    </div>
+  
                     
                   
                 
@@ -604,15 +626,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 328ms">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 328ms</span></span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 328ms">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 328ms</span></span>
+      
+    </div>
+  
                     
                   
                 
@@ -626,15 +648,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: SalonMonster booking page">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Call to action</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: SalonMonster booking page">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Call to action</span>
+      
+    </div>
+  
                     
                   
                 
@@ -648,15 +670,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via SalonMonster">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Online booking</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via SalonMonster">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Online booking</span>
+      
+    </div>
+  
                     
                   
                 
@@ -670,15 +692,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No social profile links found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Social links</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No social profile links found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Social links</span>
+      
+    </div>
+  
                     
                   
                 
@@ -692,15 +714,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No signs of recent maintenance — copyright year may be outdated">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Appears active</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No signs of recent maintenance — copyright year may be outdated">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Appears active</span>
+      
+    </div>
+  
                     
                   
                 
@@ -714,15 +736,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Using a free platform subdomain, not a custom domain · Uses: talbotsbarbershop.salonmonster.com">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Custom domain</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Using a free platform subdomain, not a custom domain · Uses: talbotsbarbershop.salonmonster.com">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Custom domain</span>
+      
+    </div>
+  
                     
                   
                 
@@ -736,15 +758,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Business email</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Business email</span>
+      
+    </div>
+  
                     
                   
                 
@@ -760,15 +782,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Hours listed</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Hours listed</span>
+      
+    </div>
+  
                     
                   
                 
@@ -783,40 +805,44 @@
           
           
           
+          
             
           
 
           <div class="business-card border border-stone-200 bg-white/60 overflow-hidden"
-               data-name="hermosa barbershop and supply">
+               data-name="hermosa barbershop and supply" data-category="own">
 
-            
             
               <div class="flex h-80 sm:h-72 bg-stone-100" style="gap: 2px">
                 <div class="flex-[7] overflow-hidden">
-                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/hermosa-barbershop-and-supply-desktop.jpg" alt="Hermosa Barbershop and Supply desktop" class="w-full h-full object-cover object-top"/>
+                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/hermosa-barbershop-and-supply-desktop.jpg" alt="Hermosa Barbershop and Supply desktop" loading="lazy" class="w-full h-full object-cover object-top"/>
                 </div>
                 <div class="flex-[3] overflow-hidden">
                   
-                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/hermosa-barbershop-and-supply-mobile.jpg" alt="Hermosa Barbershop and Supply mobile" class="w-full h-full object-cover object-top"/>
+                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/hermosa-barbershop-and-supply-mobile.jpg" alt="Hermosa Barbershop and Supply mobile" loading="lazy" class="w-full h-full object-cover object-top"/>
                   
                 </div>
               </div>
             
 
-            
             <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-5">
+              <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="flex-1 min-w-0">
                   
                     <a href="https://booksy.com/en-us/902655_hermosa-barbershop-supply_barber-shop_101425_hermosa-beach#ba_s=seo" target="_blank" rel="noopener noreferrer"
                        class="block text-lg font-bold text-stone-800 hover:text-stone-500 leading-snug transition-colors">Hermosa Barbershop and Supply</a>
                   
                   
+                  <div class="mt-1">
+    
+  </div>
                 </div>
                 <span class="flex-shrink-0 inline-flex items-center px-2.5 py-1 text-sm font-semibold bg-amber-50 text-amber-700 border border-amber-200">
                   8<span class="font-normal opacity-60">/11</span>
                 </span>
               </div>
+
+              
 
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 gap-x-4 text-xs">
                 
@@ -830,15 +856,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found · Found phone: (523) 698-6743">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Phone number</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Phone number</span>
+      
+    </div>
+  
                     
                   
                 
@@ -852,15 +878,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Physical address or map embed found · Found address: 200 Pier Ave">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Address or map</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Physical address or map embed found · Found address: 200 Pier Ave">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Address or map</span>
+      
+    </div>
+  
                     
                   
                 
@@ -874,15 +900,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Mobile friendly</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Mobile friendly</span>
+      
+    </div>
+  
                     
                   
                 
@@ -896,15 +922,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 1.3s">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 1.3s</span></span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 1.3s">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 1.3s</span></span>
+      
+    </div>
+  
                     
                   
                 
@@ -918,15 +944,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: Booksy booking page">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Call to action</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: Booksy booking page">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Call to action</span>
+      
+    </div>
+  
                     
                   
                 
@@ -940,15 +966,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Booksy">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Online booking</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Booksy">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Online booking</span>
+      
+    </div>
+  
                     
                   
                 
@@ -962,15 +988,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Instagram, Facebook">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Social links</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Instagram, Facebook">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Social links</span>
+      
+    </div>
+  
                     
                   
                 
@@ -984,15 +1010,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;© 2026 Booksy Inc. All rights reserv&quot;">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Appears active</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;© 2026 Booksy Inc. All rights reserv&quot;">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Appears active</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1006,15 +1032,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Using a free platform subdomain, not a custom domain · Uses: booksy.com">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Custom domain</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Using a free platform subdomain, not a custom domain · Uses: booksy.com">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Custom domain</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1028,15 +1054,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Business email</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Business email</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1052,15 +1078,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Hours listed</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Hours listed</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1075,29 +1101,28 @@
           
           
           
+          
             
           
 
           <div class="business-card border border-stone-200 bg-white/60 overflow-hidden"
-               data-name="high tide barbers">
+               data-name="high tide barbers" data-category="own">
 
-            
             
               <div class="flex h-80 sm:h-72 bg-stone-100" style="gap: 2px">
                 <div class="flex-[7] overflow-hidden">
-                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/high-tide-barbers-desktop.jpg" alt="High Tide Barbers desktop" class="w-full h-full object-cover object-top"/>
+                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/high-tide-barbers-desktop.jpg" alt="High Tide Barbers desktop" loading="lazy" class="w-full h-full object-cover object-top"/>
                 </div>
                 <div class="flex-[3] overflow-hidden">
                   
-                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/high-tide-barbers-mobile.jpg" alt="High Tide Barbers mobile" class="w-full h-full object-cover object-top"/>
+                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/high-tide-barbers-mobile.jpg" alt="High Tide Barbers mobile" loading="lazy" class="w-full h-full object-cover object-top"/>
                   
                 </div>
               </div>
             
 
-            
             <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-5">
+              <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="flex-1 min-w-0">
                   
                     <a href="https://www.thehightidebarbers.com/" target="_blank" rel="noopener noreferrer"
@@ -1106,11 +1131,16 @@
                   
                     <p class="text-xs text-stone-400 mt-0.5 truncate">1601 CA-1 280, Suite 34 Hermosa Beach, California 90254</p>
                   
+                  <div class="mt-1">
+    
+  </div>
                 </div>
                 <span class="flex-shrink-0 inline-flex items-center px-2.5 py-1 text-sm font-semibold bg-amber-50 text-amber-700 border border-amber-200">
                   8<span class="font-normal opacity-60">/11</span>
                 </span>
               </div>
+
+              
 
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 gap-x-4 text-xs">
                 
@@ -1124,15 +1154,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found · Found phone: (732) 908-9971">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Phone number</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Phone number</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1146,15 +1176,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Physical address or map embed found · Found Google Maps embed">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Address or map</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Physical address or map embed found · Found Google Maps embed">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Address or map</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1168,15 +1198,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Mobile friendly</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Mobile friendly</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1190,15 +1220,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 399ms">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 399ms</span></span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 399ms">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 399ms</span></span>
+      
+    </div>
+  
                     
                   
                 
@@ -1212,15 +1242,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: Square booking button">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Call to action</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: Square booking button">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Call to action</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1234,15 +1264,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Square Appointments">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Online booking</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Square Appointments">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Online booking</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1256,15 +1286,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No social profile links found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Social links</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No social profile links found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Social links</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1278,15 +1308,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;Published 2026-03-25&quot;">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Appears active</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;Published 2026-03-25&quot;">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Appears active</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1300,15 +1330,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: thehightidebarbers.com">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Custom domain</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: thehightidebarbers.com">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Custom domain</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1322,15 +1352,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Business email</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Business email</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1346,15 +1376,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Hours listed</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Hours listed</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1369,29 +1399,28 @@
           
           
           
+          
             
           
 
           <div class="business-card border border-stone-200 bg-white/60 overflow-hidden"
-               data-name="superhero barbershop">
+               data-name="superhero barbershop" data-category="own">
 
-            
             
               <div class="flex h-80 sm:h-72 bg-stone-100" style="gap: 2px">
                 <div class="flex-[7] overflow-hidden">
-                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/superhero-barbershop-desktop.jpg" alt="Superhero Barbershop desktop" class="w-full h-full object-cover object-top"/>
+                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/superhero-barbershop-desktop.jpg" alt="Superhero Barbershop desktop" loading="lazy" class="w-full h-full object-cover object-top"/>
                 </div>
                 <div class="flex-[3] overflow-hidden">
                   
-                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/superhero-barbershop-mobile.jpg" alt="Superhero Barbershop mobile" class="w-full h-full object-cover object-top"/>
+                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/superhero-barbershop-mobile.jpg" alt="Superhero Barbershop mobile" loading="lazy" class="w-full h-full object-cover object-top"/>
                   
                 </div>
               </div>
             
 
-            
             <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-5">
+              <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="flex-1 min-w-0">
                   
                     <a href="https://www.superherobarbershop.com/" target="_blank" rel="noopener noreferrer"
@@ -1400,11 +1429,16 @@
                   
                     <p class="text-xs text-stone-400 mt-0.5 truncate">1600 Pacific Coast Hwy Hermosa Beach, CA 90254</p>
                   
+                  <div class="mt-1">
+    
+  </div>
                 </div>
                 <span class="flex-shrink-0 inline-flex items-center px-2.5 py-1 text-sm font-semibold bg-green-100 text-green-800 border border-green-200">
                   9<span class="font-normal opacity-60">/11</span>
                 </span>
               </div>
+
+              
 
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 gap-x-4 text-xs">
                 
@@ -1418,15 +1452,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found · Found phone: (336) 534-4877">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Phone number</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Phone number</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1440,15 +1474,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Physical address or map embed found · Found address: 1600 Pacific Coast Hwy Hermosa Beach, CA 90254">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Address or map</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Physical address or map embed found · Found address: 1600 Pacific Coast Hwy Hermosa Beach, CA 90254">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Address or map</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1462,15 +1496,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Mobile friendly</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Mobile friendly</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1484,15 +1518,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 181ms">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 181ms</span></span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 181ms">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 181ms</span></span>
+      
+    </div>
+  
                     
                   
                 
@@ -1506,15 +1540,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: &quot;Book Appointment&quot; button">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Call to action</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: &quot;Book Appointment&quot; button">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Call to action</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1528,15 +1562,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Booksy">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Online booking</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Booksy">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Online booking</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1550,15 +1584,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Facebook, Yelp">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Social links</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Facebook, Yelp">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Social links</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1572,15 +1606,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No signs of recent maintenance — copyright year may be outdated">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Appears active</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No signs of recent maintenance — copyright year may be outdated">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Appears active</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1594,15 +1628,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: superherobarbershop.com">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Custom domain</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: superherobarbershop.com">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Custom domain</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1616,15 +1650,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Business email</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Business email</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1640,15 +1674,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Operating hours found on the site · Found hours: schema.org markup">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Hours listed</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Operating hours found on the site · Found hours: schema.org markup">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Hours listed</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1663,40 +1697,44 @@
           
           
           
+          
             
           
 
           <div class="business-card border border-stone-200 bg-white/60 overflow-hidden"
-               data-name="floyd&#39;s barbershop">
+               data-name="floyd&#39;s barbershop" data-category="own">
 
-            
             
               <div class="flex h-80 sm:h-72 bg-stone-100" style="gap: 2px">
                 <div class="flex-[7] overflow-hidden">
-                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/floyd-s-barbershop-desktop.jpg" alt="Floyd&#39;s Barbershop desktop" class="w-full h-full object-cover object-top"/>
+                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/floyd-s-barbershop-desktop.jpg" alt="Floyd&#39;s Barbershop desktop" loading="lazy" class="w-full h-full object-cover object-top"/>
                 </div>
                 <div class="flex-[3] overflow-hidden">
                   
-                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/floyd-s-barbershop-mobile.jpg" alt="Floyd&#39;s Barbershop mobile" class="w-full h-full object-cover object-top"/>
+                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/floyd-s-barbershop-mobile.jpg" alt="Floyd&#39;s Barbershop mobile" loading="lazy" class="w-full h-full object-cover object-top"/>
                   
                 </div>
               </div>
             
 
-            
             <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-5">
+              <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="flex-1 min-w-0">
                   
                     <a href="https://www.floydsbarbershop.com/hermosa" target="_blank" rel="noopener noreferrer"
                        class="block text-lg font-bold text-stone-800 hover:text-stone-500 leading-snug transition-colors">Floyd&#39;s Barbershop</a>
                   
                   
+                  <div class="mt-1">
+    
+  </div>
                 </div>
                 <span class="flex-shrink-0 inline-flex items-center px-2.5 py-1 text-sm font-semibold bg-amber-50 text-amber-700 border border-amber-200">
                   8<span class="font-normal opacity-60">/11</span>
                 </span>
               </div>
+
+              
 
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 gap-x-4 text-xs">
                 
@@ -1710,15 +1748,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found · Found phone: (995) 590-3928">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Phone number</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Phone number</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1732,15 +1770,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Physical address or map embed found · Found address: 99 Barbershop Contact (on contact page)">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Address or map</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Physical address or map embed found · Found address: 99 Barbershop Contact (on contact page)">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Address or map</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1754,15 +1792,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Mobile friendly</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Mobile friendly</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1776,15 +1814,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 273ms">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 273ms</span></span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 273ms">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 273ms</span></span>
+      
+    </div>
+  
                     
                   
                 
@@ -1798,15 +1836,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: &quot;Book Now&quot; button">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Call to action</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: &quot;Book Now&quot; button">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Call to action</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1820,15 +1858,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No online booking system found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Online booking</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No online booking system found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Online booking</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1842,15 +1880,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Instagram, Facebook, LinkedIn, YouTube, TikTok">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Social links</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Instagram, Facebook, LinkedIn, YouTube, TikTok">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Social links</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1864,15 +1902,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;© 2026 Floyd&amp;#x27;s 99 Barbershop Hm&quot;">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Appears active</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;© 2026 Floyd&amp;#x27;s 99 Barbershop Hm&quot;">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Appears active</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1886,15 +1924,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: floydsbarbershop.com">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Custom domain</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: floydsbarbershop.com">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Custom domain</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1908,15 +1946,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Business email</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Business email</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1932,15 +1970,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Hours listed</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Hours listed</span>
+      
+    </div>
+  
                     
                   
                 
@@ -1955,40 +1993,44 @@
           
           
           
+          
             
           
 
           <div class="business-card border border-stone-200 bg-white/60 overflow-hidden"
-               data-name="mateo cuts hair">
+               data-name="mateo cuts hair" data-category="own">
 
-            
             
               <div class="flex h-80 sm:h-72 bg-stone-100" style="gap: 2px">
                 <div class="flex-[7] overflow-hidden">
-                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/mateo-cuts-hair-desktop.jpg" alt="Mateo Cuts Hair desktop" class="w-full h-full object-cover object-top"/>
+                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/mateo-cuts-hair-desktop.jpg" alt="Mateo Cuts Hair desktop" loading="lazy" class="w-full h-full object-cover object-top"/>
                 </div>
                 <div class="flex-[3] overflow-hidden">
                   
-                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/mateo-cuts-hair-mobile.jpg" alt="Mateo Cuts Hair mobile" class="w-full h-full object-cover object-top"/>
+                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/mateo-cuts-hair-mobile.jpg" alt="Mateo Cuts Hair mobile" loading="lazy" class="w-full h-full object-cover object-top"/>
                   
                 </div>
               </div>
             
 
-            
             <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-5">
+              <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="flex-1 min-w-0">
                   
                     <a href="https://mateocutshair-104051.square.site/" target="_blank" rel="noopener noreferrer"
                        class="block text-lg font-bold text-stone-800 hover:text-stone-500 leading-snug transition-colors">Mateo Cuts Hair</a>
                   
                   
+                  <div class="mt-1">
+    
+  </div>
                 </div>
                 <span class="flex-shrink-0 inline-flex items-center px-2.5 py-1 text-sm font-semibold bg-amber-50 text-amber-700 border border-amber-200">
                   7<span class="font-normal opacity-60">/11</span>
                 </span>
               </div>
+
+              
 
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 gap-x-4 text-xs">
                 
@@ -2002,15 +2044,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found · Found phone: (682) 360-0437">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Phone number</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Phone number</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2024,15 +2066,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No address or map found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Address or map</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No address or map found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Address or map</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2046,15 +2088,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Mobile friendly</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Mobile friendly</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2068,15 +2110,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 466ms">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 466ms</span></span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 466ms">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 466ms</span></span>
+      
+    </div>
+  
                     
                   
                 
@@ -2090,15 +2132,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: Square booking button">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Call to action</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: Square booking button">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Call to action</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2112,15 +2154,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Square Appointments">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Online booking</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Square Appointments">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Online booking</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2134,15 +2176,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Facebook, Instagram, LinkedIn, TikTok, Twitter, Yelp, YouTube">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Social links</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Social profile links found · Found: Facebook, Instagram, LinkedIn, TikTok, Twitter, Yelp, YouTube">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Social links</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2156,15 +2198,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;Published 2026-03-25&quot;">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Appears active</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;Published 2026-03-25&quot;">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Appears active</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2178,15 +2220,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Using a free platform subdomain, not a custom domain · Uses: mateocutshair-104051.square.site">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Custom domain</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Using a free platform subdomain, not a custom domain · Uses: mateocutshair-104051.square.site">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Custom domain</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2200,15 +2242,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Business email</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Business email</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2224,15 +2266,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Hours listed</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Hours listed</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2247,29 +2289,28 @@
           
           
           
+          
             
           
 
           <div class="business-card border border-stone-200 bg-white/60 overflow-hidden"
-               data-name="shoreline hermosa beach">
+               data-name="shoreline hermosa beach" data-category="own">
 
-            
             
               <div class="flex h-80 sm:h-72 bg-stone-100" style="gap: 2px">
                 <div class="flex-[7] overflow-hidden">
-                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/shoreline-hermosa-beach-desktop.jpg" alt="Shoreline Hermosa Beach desktop" class="w-full h-full object-cover object-top"/>
+                  <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/shoreline-hermosa-beach-desktop.jpg" alt="Shoreline Hermosa Beach desktop" loading="lazy" class="w-full h-full object-cover object-top"/>
                 </div>
                 <div class="flex-[3] overflow-hidden">
                   
-                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/shoreline-hermosa-beach-mobile.jpg" alt="Shoreline Hermosa Beach mobile" class="w-full h-full object-cover object-top"/>
+                    <img src="/reviews/sitescreenshots/downtown-hermosa-beach-ca-barber-shop/shoreline-hermosa-beach-mobile.jpg" alt="Shoreline Hermosa Beach mobile" loading="lazy" class="w-full h-full object-cover object-top"/>
                   
                 </div>
               </div>
             
 
-            
             <div class="p-6">
-              <div class="flex items-start justify-between gap-3 mb-5">
+              <div class="flex items-start justify-between gap-3 mb-4">
                 <div class="flex-1 min-w-0">
                   
                     <a href="https://www.shorelinehermosabeach.com/" target="_blank" rel="noopener noreferrer"
@@ -2278,11 +2319,16 @@
                   
                     <p class="text-xs text-stone-400 mt-0.5 truncate">1131 Aviation Blvd Hermosa Beach, California 90254</p>
                   
+                  <div class="mt-1">
+    
+  </div>
                 </div>
                 <span class="flex-shrink-0 inline-flex items-center px-2.5 py-1 text-sm font-semibold bg-amber-50 text-amber-700 border border-amber-200">
                   7<span class="font-normal opacity-60">/11</span>
                 </span>
               </div>
+
+              
 
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-3 gap-x-4 text-xs">
                 
@@ -2296,15 +2342,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found · Found phone: (210) 824-8842">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Phone number</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Tap-to-call link or phone number found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Phone number</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2318,15 +2364,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No address or map found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Address or map</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No address or map found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Address or map</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2340,15 +2386,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Mobile friendly</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has viewport meta tag — designed for phones">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Mobile friendly</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2362,15 +2408,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 290ms">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 290ms</span></span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Page loaded quickly · 290ms">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Fast load<span class="ml-1 text-stone-400">· 290ms</span></span>
+      
+    </div>
+  
                     
                   
                 
@@ -2384,15 +2430,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: &quot;Book now&quot; button">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Call to action</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Prominent next-step button or link found · Found CTA: &quot;Book now&quot; button">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Call to action</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2406,15 +2452,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Square Appointments">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Online booking</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Online booking link or embed found · Online booking via Square Appointments">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Online booking</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2428,15 +2474,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No social profile links found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Social links</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No social profile links found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Social links</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2450,15 +2496,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;Published 2026-03-25&quot;">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Appears active</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Site appears recently maintained · Found: &quot;Published 2026-03-25&quot;">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Appears active</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2472,15 +2518,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: shorelinehermosabeach.com">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-700">Custom domain</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="Has its own domain name · At custom domain: shorelinehermosabeach.com">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-700">Custom domain</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2494,15 +2540,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Business email</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No email address found">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Business email</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2518,15 +2564,15 @@
                     
                     
                       
-        <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
-          
-            <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
-            </svg>
-            <span class="text-stone-400">Hours listed</span>
-          
-        </div>
+    <div class="ae-criterion flex items-center gap-1.5 ae-tip" data-tip="No operating hours found — customers can&#39;t tell when you&#39;re open">
       
+        <svg class="flex-shrink-0 w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+        </svg>
+        <span class="text-stone-400">Hours listed</span>
+      
+    </div>
+  
                     
                   
                 
@@ -2540,7 +2586,10 @@
         
       </div>
 
-      <p id="no-results" class="hidden text-center text-stone-400 py-16 text-sm">No businesses match your search.</p>
+      
+      
+
+      <p id="no-results" class="hidden text-center text-stone-400 py-16 text-sm">No businesses match.</p>
     </div>
   </section>
 
@@ -2549,17 +2598,18 @@
   <section class="px-6 pb-12 border-t border-stone-200/60 pt-12">
     <div class="max-w-7xl mx-auto">
       <h2 class="font-display text-2xl font-bold mb-2">See something you like?</h2>
-      <p class="text-stone-500 text-sm mb-8 max-w-2xl">We built these as starting points for real businesses. Pick one that fits your style and we&rsquo;ll make it yours — your name, photos, and services. Get up and running fast and save 60% off the normal one-time design fee.</p>
+      <p class="text-stone-500 mb-8 max-w-5xl">We built these as starting points for real businesses. Pick one that fits your style and we&rsquo;ll make it yours — your name, photos, and services. Get up and running fast and save 60% off the normal one-time design fee.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
         <a href="/demos/barber-classic/" target="_blank" rel="noopener noreferrer"
            class="group border border-stone-200 bg-white/60 overflow-hidden hover:border-stone-400 transition-colors">
-          <div class="aspect-video overflow-hidden bg-stone-100">
-            <img src="/assets/demos/barber-classic/preview.jpg" alt="Old Blade Barbershop" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+          <div class="relative aspect-video overflow-hidden bg-stone-100">
+            <span class="absolute top-3 right-3 z-10 w-16 h-16 rounded-full bg-amber-50 text-stone-800 ring-2 ring-white shadow-lg flex items-center justify-center text-center text-[11px] leading-tight font-extrabold uppercase tracking-wide rotate-12 pointer-events-none">View<br>demo</span>
+            <img src="/assets/demos/barber-classic/preview.jpg" alt="Old Blade Barbershop" loading="lazy" onerror="this.style.display='none'" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
           </div>
           <div class="p-5 flex items-center justify-between gap-4">
             <div class="min-w-0">
-              <div class="font-display font-bold text-stone-800 truncate">Old Blade Barbershop</div>
+              <div class="font-display font-bold text-stone-800 truncate"><span class="text-stone-400 font-medium">Demo:</span> Old Blade Barbershop</div>
               <div class="text-sm text-stone-500 mt-0.5">Classic barbershop style</div>
             </div>
             <span class="shrink-0 text-sm font-semibold text-stone-600 group-hover:text-stone-900 transition-colors">View demo &rarr;</span>
@@ -2568,12 +2618,13 @@
         
         <a href="/demos/barber-modern/" target="_blank" rel="noopener noreferrer"
            class="group border border-stone-200 bg-white/60 overflow-hidden hover:border-stone-400 transition-colors">
-          <div class="aspect-video overflow-hidden bg-stone-100">
-            <img src="/assets/demos/barber-modern/preview.jpg" alt="Modern Cut Studio" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+          <div class="relative aspect-video overflow-hidden bg-stone-100">
+            <span class="absolute top-3 right-3 z-10 w-16 h-16 rounded-full bg-amber-50 text-stone-800 ring-2 ring-white shadow-lg flex items-center justify-center text-center text-[11px] leading-tight font-extrabold uppercase tracking-wide rotate-12 pointer-events-none">View<br>demo</span>
+            <img src="/assets/demos/barber-modern/preview.jpg" alt="Modern Cut Studio" loading="lazy" onerror="this.style.display='none'" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
           </div>
           <div class="p-5 flex items-center justify-between gap-4">
             <div class="min-w-0">
-              <div class="font-display font-bold text-stone-800 truncate">Modern Cut Studio</div>
+              <div class="font-display font-bold text-stone-800 truncate"><span class="text-stone-400 font-medium">Demo:</span> Modern Cut Studio</div>
               <div class="text-sm text-stone-500 mt-0.5">Clean, contemporary design</div>
             </div>
             <span class="shrink-0 text-sm font-semibold text-stone-600 group-hover:text-stone-900 transition-colors">View demo &rarr;</span>
@@ -2587,17 +2638,19 @@
 
   
   <section class="py-20 px-6 bg-stone-900">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-display text-4xl font-bold text-white mb-4">Is your business on this list?</h2>
-      <p class="text-stone-400 text-lg mb-10 max-w-xl mx-auto">
-        We build simple, professional websites for small businesses — $30/month, unlimited changes, always a real person to call.
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="/" class="bg-white text-stone-900 px-8 py-4 font-bold text-sm hover:bg-stone-100 transition-colors">
-          See our work &rarr;
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+      <div class="max-w-3xl">
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Is your business on this list?</h2>
+        <p class="text-stone-400 text-lg leading-relaxed">
+          We build simple, professional websites for small businesses &mdash; $30/month, unlimited changes, always a real person to call. If something above caught your eye, we&rsquo;re happy to fix it for you.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a href="/contact/" class="bg-white text-stone-900 px-8 py-4 font-bold text-sm hover:bg-stone-100 transition-colors text-center">
+          Get in touch &rarr;
         </a>
-        <a href="/contact/" class="border border-white/30 text-white/80 px-8 py-4 font-bold text-sm hover:border-white hover:text-white transition-colors">
-          Get in touch
+        <a href="/" class="border border-white/30 text-white/80 px-8 py-4 font-bold text-sm hover:border-white hover:text-white transition-colors text-center">
+          See our work
         </a>
       </div>
     </div>
@@ -2627,6 +2680,9 @@
     z-index: 50;
   }
   .ae-tip:hover::after { opacity: 1; }
+  .ae-filter { border-color: #d6d3d1; background: rgba(255,255,255,.6); color: #57534e; transition: all .15s; }
+  .ae-filter:hover { border-color: #78716c; color: #1c1917; }
+  .ae-filter.is-active { background: #1c1917; border-color: #1c1917; color: #fafaf9; }
 </style>
 
 
@@ -2634,17 +2690,34 @@
 <script>
 (function () {
   var searchInput = document.getElementById('business-search');
+  var filters = document.querySelectorAll('.ae-filter');
   var cards = document.querySelectorAll('.business-card');
+  var noSiteSection = document.getElementById('no-site-section');
   var noResults = document.getElementById('no-results');
-  searchInput.addEventListener('input', function () {
-    var q = this.value.toLowerCase().trim();
-    var visible = 0;
-    cards.forEach(function(card) {
-      var show = !q || card.dataset.name.includes(q);
+  var activeFilter = 'all';
+
+  function apply() {
+    var q = searchInput.value.toLowerCase().trim();
+    var visible = 0, visibleNoSite = 0;
+    cards.forEach(function (card) {
+      var show = (!q || card.dataset.name.includes(q)) && (activeFilter === 'all' || card.dataset.category === activeFilter);
       card.style.display = show ? '' : 'none';
-      if (show) visible++;
+      if (show) {
+        visible++;
+        if (noSiteSection && noSiteSection.contains(card)) visibleNoSite++;
+      }
     });
+    if (noSiteSection) noSiteSection.style.display = visibleNoSite ? '' : 'none';
     noResults.classList.toggle('hidden', visible > 0);
+  }
+
+  searchInput.addEventListener('input', apply);
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeFilter = btn.dataset.filter;
+      filters.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      apply();
+    });
   });
 }());
 </script>
@@ -2671,17 +2744,34 @@
 <script>
 (function () {
   var searchInput = document.getElementById('business-search');
+  var filters = document.querySelectorAll('.ae-filter');
   var cards = document.querySelectorAll('.business-card');
+  var noSiteSection = document.getElementById('no-site-section');
   var noResults = document.getElementById('no-results');
-  searchInput.addEventListener('input', function () {
-    var q = this.value.toLowerCase().trim();
-    var visible = 0;
-    cards.forEach(function(card) {
-      var show = !q || card.dataset.name.includes(q);
+  var activeFilter = 'all';
+
+  function apply() {
+    var q = searchInput.value.toLowerCase().trim();
+    var visible = 0, visibleNoSite = 0;
+    cards.forEach(function (card) {
+      var show = (!q || card.dataset.name.includes(q)) && (activeFilter === 'all' || card.dataset.category === activeFilter);
       card.style.display = show ? '' : 'none';
-      if (show) visible++;
+      if (show) {
+        visible++;
+        if (noSiteSection && noSiteSection.contains(card)) visibleNoSite++;
+      }
     });
+    if (noSiteSection) noSiteSection.style.display = visibleNoSite ? '' : 'none';
     noResults.classList.toggle('hidden', visible > 0);
+  }
+
+  searchInput.addEventListener('input', apply);
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activeFilter = btn.dataset.filter;
+      filters.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      apply();
+    });
   });
 }());
 </script>

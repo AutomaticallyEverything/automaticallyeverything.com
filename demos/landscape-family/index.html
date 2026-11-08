@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hartley &amp; Sons Landscaping &mdash; Family Owned Since 1994</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bark:   '#3E2C23',
+            olive:  '#6B7B3A',
+            wheat:  '#F5ECDC',
+            butter: '#FBF6EC',
+            rust:   '#B4532A',
+          },
+          fontFamily: {
+            display: ['Lora', 'Georgia', 'serif'],
+            sans:    ['"Nunito Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .img-fallback { background: linear-gradient(150deg, #C9B48A, #8A9A5B 60%, #6B7B3A); }
+  </style>
+</head>
+<body class="bg-butter text-bark font-sans antialiased pb-20 md:pb-0">
+
+  <!--
+  ═══════════════════════════════════════════════════
+  CONTENT CONFIG — everything business-specific lives here.
+  ═══════════════════════════════════════════════════
+  -->
+  <script>
+    const CONFIG = {
+      name: 'Hartley & Sons Landscaping',
+      since: 1994,
+      phone: '(805) 555-0174',
+      email: 'office@hartleyandsons.example',
+      owners: 'Tom, Danny & Luis Hartley',
+      story: [
+        'Tom Hartley started mowing lawns in Paso Robles in 1994 with a borrowed truck and one mower. Thirty years later his sons Danny and Luis run the crews, and Tom still stops by most job sites to make sure the edges are straight.',
+        'We\'re not the biggest company in town and we don\'t want to be. We want to be the one you call for the next thirty years.',
+      ],
+      services: ['Weekly yard care', 'Lawn & garden installs', 'Sprinkler & drip repair', 'Tree & shrub trimming', 'Seasonal cleanups', 'Vegetable bed builds'],
+      towns: ['Paso Robles', 'Templeton', 'Atascadero', 'San Miguel', 'Creston'],
+      rating: { stars: '5.0', count: 212 },
+      reviews: [
+        { name: 'Patty W.', text: 'Hartleys have taken care of our yard for 12 years. Like having family look after the place.' },
+        { name: 'Greg L.', text: 'Danny walked the whole property with me and gave honest advice, even talked me out of spending money I didn\'t need to.' },
+        { name: 'Rosa M.', text: 'Built our raised garden beds and the tomatoes have never been better. Kind, careful crew.' },
+        { name: 'The Nguyens', text: 'Fixed a sprinkler leak another company missed for a year. Our water bill dropped right away.' },
+        { name: 'Bill & Ann S.', text: 'Always on time, always clean up after themselves. Tom still remembers our dog\'s name.' },
+        { name: 'Marcus T.', text: 'Fair prices, real people, and they answer the phone. Can\'t ask for more.' },
+      ],
+      community: ['Proud local youth baseball sponsor', 'Free cleanup day for seniors every spring', 'Local nursery plants whenever possible'],
+    };
+  </script>
+
+  <header class="bg-butter border-b border-bark/10">
+    <div class="max-w-6xl mx-auto px-5 h-20 flex items-center justify-between">
+      <a href="#" class="leading-tight">
+        <span class="block font-display text-xl" data-name></span>
+        <span class="block text-xs text-olive font-bold uppercase tracking-widest">Family owned since <span data-since></span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-bark/70">
+        <a href="#story" class="hover:text-bark">Our story</a>
+        <a href="#services" class="hover:text-bark">Services</a>
+        <a href="#reviews" class="hover:text-bark">Reviews</a>
+      </nav>
+      <a data-tel class="hidden sm:inline-block bg-rust text-white font-bold px-5 py-2.5 rounded-lg hover:brightness-110"><span data-phone></span></a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 py-12 grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="text-rust font-bold">★★★★★ <span data-rating></span></p>
+      <h1 class="mt-3 font-display text-4xl md:text-6xl leading-[1.08]">Your neighbors have trusted us with their yards for <em class="text-olive"><span data-years></span> years.</em></h1>
+      <p class="mt-5 text-lg text-bark/70 max-w-lg">Yard care, gardens and sprinkler repair from a local family that answers its own phone.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#estimate" class="bg-olive text-white font-bold px-7 py-4 rounded-lg hover:brightness-110">Get a free estimate</a>
+        <a data-tel class="bg-white border border-bark/15 font-bold px-7 py-4 rounded-lg hover:border-bark/40">Call <span data-phone></span></a>
+      </div>
+    </div>
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden img-fallback shadow-xl">
+      <img src="/assets/demos/landscape-family/hero.jpg" alt="Front yard garden under an oak" class="w-full h-full object-cover" onerror="this.remove()">
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section id="story" class="py-20 px-5 bg-wheat">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden img-fallback">
+        <img src="/assets/demos/landscape-family/truck.jpg" alt="The family work truck" class="w-full h-full object-cover" onerror="this.remove()">
+      </div>
+      <div>
+        <p class="text-olive font-bold uppercase tracking-widest text-xs">Our story</p>
+        <h2 class="mt-2 font-display text-3xl md:text-4xl">Three generations of Hartleys? Two so far.</h2>
+        <div id="story-text" class="mt-5 space-y-4 text-bark/80 text-lg leading-relaxed"></div>
+        <p class="mt-6 font-display italic text-xl">— <span data-owners></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-5">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-display text-3xl md:text-4xl text-center">What we do</h2>
+      <div id="service-list" class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4"></div>
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        <figure><div class="aspect-[4/3] rounded-2xl overflow-hidden img-fallback"><img src="/assets/demos/landscape-family/garden-bed.jpg" alt="Raised garden beds" class="w-full h-full object-cover" onerror="this.remove()"></div><figcaption class="mt-2 text-sm text-bark/60">Raised vegetable beds, Templeton</figcaption></figure>
+        <figure><div class="aspect-[4/3] rounded-2xl overflow-hidden img-fallback"><img src="/assets/demos/landscape-family/flower-border.jpg" alt="Flower border along a fence" class="w-full h-full object-cover" onerror="this.remove()"></div><figcaption class="mt-2 text-sm text-bark/60">Perennial border, Paso Robles</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews wall -->
+  <section id="reviews" class="py-20 px-5 bg-bark text-wheat">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center">
+        <p class="text-4xl font-display">★ <span data-rating-stars></span></p>
+        <p class="mt-1 text-wheat/70"><span data-rating-count></span> reviews on Google</p>
+      </div>
+      <div id="review-wall" class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Community + area -->
+  <section class="py-20 px-5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display text-3xl">Part of the community</h2>
+        <ul id="community" class="mt-6 space-y-3 text-lg"></ul>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl">Where we work</h2>
+        <div id="towns" class="mt-6 flex flex-wrap gap-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estimate -->
+  <section id="estimate" class="py-20 px-5 bg-wheat">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-display text-3xl md:text-4xl">Let's take a look at your yard</h2>
+      <p class="mt-3 text-bark/70">Free estimates. A Hartley will call you back, usually the same day.</p>
+      <form id="estimate-form" class="mt-8 text-left grid gap-4 bg-white p-7 rounded-2xl shadow-sm">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input required placeholder="Your name" class="border border-bark/15 rounded-lg px-4 py-3">
+          <input required type="tel" placeholder="Phone" class="border border-bark/15 rounded-lg px-4 py-3">
+        </div>
+        <input placeholder="Address or town" class="border border-bark/15 rounded-lg px-4 py-3">
+        <textarea rows="3" placeholder="What can we help with?" class="border border-bark/15 rounded-lg px-4 py-3"></textarea>
+        <button class="bg-olive text-white font-bold py-4 rounded-lg hover:brightness-110">Request my free estimate</button>
+        <p id="estimate-thanks" class="hidden text-center text-olive font-bold">Thank you! (Demo form; on your site this comes straight to you.)</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="py-8 px-5 text-sm text-bark/60 border-t border-bark/10">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-2">
+      <p><span class="font-display text-bark" data-name></span> &middot; Family owned since <span data-since></span> &middot; Licensed C-27</p>
+      <p><a data-tel class="hover:text-bark"><span data-phone></span></a> &middot; <span data-email></span></p>
+    </div>
+  </footer>
+
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-50 grid grid-cols-2">
+    <a data-tel class="bg-rust text-white font-bold text-center py-4">Call us</a>
+    <a href="#estimate" class="bg-olive text-white font-bold text-center py-4">Free estimate</a>
+  </div>
+
+  <script>
+    (function () {
+      const $ = (s) => document.querySelectorAll(s);
+      const tel = 'tel:' + CONFIG.phone.replace(/\D/g, '');
+      const years = new Date().getFullYear() - CONFIG.since;
+      $('[data-name]').forEach((el) => el.textContent = CONFIG.name);
+      $('[data-since]').forEach((el) => el.textContent = CONFIG.since);
+      $('[data-years]').forEach((el) => el.textContent = years);
+      $('[data-owners]').forEach((el) => el.textContent = CONFIG.owners);
+      $('[data-phone]').forEach((el) => el.textContent = CONFIG.phone);
+      $('[data-tel]').forEach((el) => el.href = tel);
+      $('[data-email]').forEach((el) => el.textContent = CONFIG.email);
+      $('[data-rating]').forEach((el) => el.textContent = `${CONFIG.rating.stars} from ${CONFIG.rating.count} neighbors`);
+      $('[data-rating-stars]').forEach((el) => el.textContent = CONFIG.rating.stars);
+      $('[data-rating-count]').forEach((el) => el.textContent = CONFIG.rating.count);
+
+      document.getElementById('story-text').innerHTML = CONFIG.story.map((p) => `<p>${p}</p>`).join('');
+      document.getElementById('service-list').innerHTML = CONFIG.services.map((s) => `
+        <div class="bg-white rounded-xl p-5 font-bold flex items-center gap-3 shadow-sm"><span class="w-2 h-2 rounded-full bg-olive"></span>${s}</div>`).join('');
+      document.getElementById('review-wall').innerHTML = CONFIG.reviews.map((r) => `
+        <figure class="break-inside-avoid mb-6 bg-wheat/10 border border-wheat/15 rounded-2xl p-6">
+          <p class="text-rust">★★★★★</p><blockquote class="mt-2 text-lg">“${r.text}”</blockquote>
+          <figcaption class="mt-3 text-sm text-wheat/60">${r.name}</figcaption></figure>`).join('');
+      document.getElementById('community').innerHTML = CONFIG.community.map((c) => `<li class="flex gap-3"><span class="text-olive">✿</span>${c}</li>`).join('');
+      document.getElementById('towns').innerHTML = CONFIG.towns.map((t) => `<span class="bg-wheat px-4 py-2 rounded-full font-semibold">${t}</span>`).join('');
+      document.getElementById('estimate-form').addEventListener('submit', (e) => { e.preventDefault(); document.getElementById('estimate-thanks').classList.remove('hidden'); });
+    })();
+  </script>
+</body>
+</html>
